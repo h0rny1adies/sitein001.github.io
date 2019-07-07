@@ -1,33 +1,5 @@
 // This is the "Offline page" service worker
 
-myPushManager = ServiceWorker.pushManager 
-
-PushManager.subscribe()
-
-this.onpush = function(event) {
-  console.log(event.data);
-  // Отсюда можно записывать данные в IndexedDB, отправлять их в любое
-  // открытое окно, отображать уведомление и т. д.
-}
-
-navigator.serviceWorker.register('pwabuilder-sw.js').then(
-  function(serviceWorkerRegistration) {
-    serviceWorkerRegistration.pushManager.subscribe().then(
-      function(pushSubscription) {
-        console.log(pushSubscription.subscriptionId);
-        console.log(pushSubscription.endpoint);
-        // Детали push-подписки, требуемые сервером приложения,
-        // теперь доступны, и могут быть отправлены, к примеру,
-        // при помощи XMLHttpRequest.
-      }, function(error) {
-        // При разработке это часто помогает отлавливать ошибки в консоли.
-        // В продакшен-среде это также может быть полезно для отправки отчета
-        // об ошибках на сервер приложения.
-        console.log(error);
-      }
-    );
-  });
-
 const CACHE = "pwabuilder-page";
 
 // TODO: replace the following with the correct offline fallback page i.e.: const offlineFallbackPage = "offline.html";
