@@ -1,4 +1,7 @@
 // This is the "Offline page" service worker
+
+myPushManager = ServiceWorker.pushManager 
+
 PushManager.subscribe()
 
 const CACHE = "pwabuilder-page";
