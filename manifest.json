@@ -5,7 +5,7 @@
     "display" : "fullscreen",
     "start_url" : "https://sitein001.github.io/index.html",
     "short_name" : "Новости СНГ",
-    "theme_color" : "transparent",
+    "theme_color" : "#000000",
     "description" : "Актуальные новости",
     "orientation" : "any",
     "background_color" : "transparent",
