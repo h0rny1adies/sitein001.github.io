@@ -7,5 +7,17 @@ sid1=[TEASER_ID]&sid2=main&sid3=&sid4=full&sid5=" width="100%" height="100%" fra
 
 
 
-<script type="text/javascript" src="//www.gstatic.com/firebasejs/3.6.8/firebase.js"></script>
-<script type="text/javascript" src="/firebase_subscribe.js"></script>
+
+<script type="text/javascript">
+
+if (navigator.serviceWorker.controller) {
+  console.log('[PWA Builder] active service worker found, no need to register')
+} else {
+  navigator.serviceWorker.register('sw.js', {
+    scope: './'
+  }).then(function(reg) {
+    console.log('Service worker has been registered for scope:'+ reg.scope);
+  });
+}
+
+</script>
