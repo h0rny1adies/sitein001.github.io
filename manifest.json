@@ -3,7 +3,7 @@
     "name" : "Новости 24",
     "scope" : "/index.html",
     "display" : "fullscreen",
-    "start_url" : "https://sitein001.github.io/index.html",
+    "start_url" : "https://sitein001.github.io/pwa-main.html",
     "short_name" : "Новости СНГ",
     "theme_color" : "transparent",
     "description" : "Актуальные новости",
