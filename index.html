@@ -1,94 +1,66 @@
 <!DOCTYPE html>
-
-<html>
-
+<html lang="en">
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width initial-scale=1">
 
-    <link rel='manifest' href='/manifest.json'>
-    
-    <script type="text/javascript">
-        
-        // This is the "Offline page" service worker
+<link rel="apple-touch-icon" sizes="57x57" href="icons/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="icons/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="icons/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="icons/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="icons/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="icons/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="icons/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="icons/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="icons/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="icons/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="icons/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<meta name="msapplication-TileColor" content="#E6E6FA">
+<meta name="msapplication-TileImage" content="icons/ms-icon-144x144.png">
+<meta name="theme-color" content="#E6E6FA">
 
-// Add this below content to your HTML page, or add the js file to your page at the very top to register service worker
-
-// Check compatibility for the browser we're running this in
-if ("serviceWorker" in navigator) {
-  if (navigator.serviceWorker.controller) {
-    console.log("[PWA Builder] active service worker found, no need to register");
-  } else {
-    // Register the service worker
-    navigator.serviceWorker
-      .register("pwabuilder-sw.js", {
-        scope: "./"
-      })
-      .then(function (reg) {
-        console.log("[PWA Builder] Service worker has been registered for scope: " + reg.scope);
-      });
-  }
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/sw.js').then(function(registration) {
+      // Registration was successful
+      console.log('ServiceWorker registration successful with scope: ', registration.scope);
+    }, function(err) {
+      // registration failed :(
+      console.log('ServiceWorker registration failed: ', err);
+    });
+  });
 }
+</script>
 
-        
-    </script>
-    
-       
+  <title>Web Community Leads</title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+  <link rel="stylesheet" href="style/style.css">
+  <script src="https://use.fontawesome.com/4ca20d00e4.js"></script>
 </head>
-
-
 <body>
-    
-    //Скрипт подписи на пуши
-    
-  //  <script type="text/javascript" src="//www.gstatic.com/firebasejs/3.6.8/firebase.js"></script>
-//<script type="text/javascript" src="/firebase_subscribe.js"></script>
+  <div class="container">
+    <div class="box">
+      <h1>Web Community Leads UK and IE</h1>
+      <br>
+      <p>Web Community Leads UK and IE is a network of people who run meet up groups or similar events focused around web technologies.
+      <br>It exists to help event organisers to share resources and ask for advice when needed.</p>
 
-    
-    //Кнопка подписки на пуши
-    
-   // <button type="button" id="subscribe">Следить за изменениями</button>
-
-
-
- //   <button onclick="install()">
- // Install
-//</button>
-
-    <iframe src="https://news-7day.online/article/full/56883?utm_source=defolt1&
-utm_content=defolt1&utm_medium=defolt1&utm_term=defolt1&utm_campaign=15317652535d21ecebd49a7&
-sid1=[TEASER_ID]&sid2=main&sid3=&sid4=full&sid5=" width="100%" height="100%" frameborder="no" />
-
-
-    <script type="text/javascript">
-        let deferredPrompt = null;
-
-        window.addEventListener('beforeinstallprompt', (e) => {
-            // Prevent Chrome 67 and earlier from automatically showing the prompt
-            e.preventDefault();
-            // Stash the event so it can be triggered later.
-            deferredPrompt = e;
-        });
-
-        async function install() {
-            if (deferredPrompt) {
-                deferredPrompt.prompt();
-                console.log(deferredPrompt)
-                deferredPrompt.userChoice.then(function(choiceResult) {
-
-                    if (choiceResult.outcome === 'accepted') {
-                        console.log('Your PWA has been installed');
-                    } else {
-                        console.log('User chose to not install your PWA');
-                    }
-
-                    deferredPrompt = null;
-
-                });
-
-
-            }
-        }
-    </script>
-
+      <h3>How to get involved</h3>
+      <ol>
+        <li>Read though our <a href="https://github.com/webcommunityukie/Code-of-Conduct"><i class="fa fa-bolt"></i> Code of Conduct</a>.</li>
+        <li>Visit our <a href="https://webcommunityukie.slack.com"><i class="fa fa-slack"></i> Slack</a>, if you can track down someone already involved ask them to invite you and if you can't you are still welcome to join, details of how to can be found <a href="https://docs.google.com/document/d/1-9mtynxQfA445qTM_VRSfMJbkMKsoBKLiIFpTCPK_F4/edit?usp=sharing">here.</a></li>
+        <li>Check out all the <a href="https://drive.google.com/drive/u/1/folders/0B1OSazPpPBanODA3RGIxc0xiQ0k"><i class="fa fa-file-o"></i> Information and Resources</a> our community has compiled on running events.</li>
+        <li>Sign up to our <a href="http://eepurl.com/dAaFmv"><i class="fa fa-envelope"></i> newsletter</a> for updates.</li>
+      </ol>
+      <footer>
+        <a href="https://github.com/webcommunityukie/webcommunityukie.github.io">Code on GitHub</a>
+        <a href="http://goldsmiths.tech">Inspired by Hacksmiths</a>
+      </footer>
+    </div>
+  </div>
 </body>
-
 </html>
