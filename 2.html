@@ -1,12 +1,10 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
-    
-    <link rel="apple-touch-icon" sizes="57x57" href="icons/apple-icon-57x57.png">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width initial-scale=1">
+
+<link rel="apple-touch-icon" sizes="57x57" href="icons/apple-icon-57x57.png">
 <link rel="apple-touch-icon" sizes="60x60" href="icons/apple-icon-60x60.png">
 <link rel="apple-touch-icon" sizes="72x72" href="icons/apple-icon-72x72.png">
 <link rel="apple-touch-icon" sizes="76x76" href="icons/apple-icon-76x76.png">
@@ -26,8 +24,7 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
-   
-   <script>
+<script>
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', function() {
     navigator.serviceWorker.register('/sw.js').then(function(registration) {
@@ -40,10 +37,13 @@ if ('serviceWorker' in navigator) {
   });
 }
 </script>
-   
-   
-   
-    <style>
+
+  <title>Web Community Leads</title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+  <link rel="stylesheet" href="style/style.css">
+  <script src="https://use.fontawesome.com/4ca20d00e4.js"></script>
+  
+   <style>
         html,
         body {
             padding: 0;
@@ -336,11 +336,18 @@ if ('serviceWorker' in navigator) {
             }
         }
     </style>
-    <title>Video_Player</title>
+  
+  
 </head>
-
 <body>
-    <div class="wrap" style="background: black;">
+  <div class="container">
+  
+  
+  
+  
+  
+  
+      <div class="wrap" style="background: black;">
         <div class="fade">&nbsp;</div>
         <div class="content">
             <div class="play">
@@ -385,6 +392,11 @@ if ('serviceWorker' in navigator) {
     </script>
 
 
-</body>
 
+
+
+
+
+  </div>
+</body>
 </html>
