@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+    <style>
+        html,
+        body {
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            height: 100%;
+            font-size: 13px;
+            font-family: Arial, Verdana, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            min-width: 0;
+        }
+
+        *,
+        :after,
+        :before {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+        }
+
+        body {
+            background: #000;
+            color: #fff;
+        }
+
+        a {
+            text-decoration: none;
+            color: #fff;
+            border: 0px;
+            outline: none;
+        }
+
+        a img {
+            border: none;
+        }
+
+        p.text-center {
+            text-align: center;
+        }
+
+        .content {
+            /* display: inline-block; */
+            /* vertical-align: middle; */
+            position: relative;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: auto;
+            white-space: normal;
+            z-index: 3;
+            text-align: center;
+            height: 100%;
+        }
+
+        .content img {
+            cursor: pointer;
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        .play {
+            max-width: 130px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin-top: -65px;
+            margin-left: -65px;
+            z-index: 1;
+        }
+
+        .play .timeout {
+            position: absolute;
+            display: block;
+            width: 50px;
+            height: 50px;
+            top: 50%;
+            left: 50%;
+            margin-left: -25px;
+            margin-top: -12px;
+            color: #000;
+            font-family: "RobotoBold";
+            font-size: 16px;
+        }
+
+        #play {
+            max-width: 100%;
+
+        }
+
+        #telka {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            /*-webkit-filter: blur(50px);
+          filter: blur(50px);*/
+            /*background:url("");*/
+            background-size: cover !important;
+            /* display: none!important; */
+        }
+
+        .download-wait {
+            display: block;
+            margin: 0 auto;
+            height: 55px;
+            background-color: #a3a3a3;
+            -webkit-box-shadow: 0px 4px 0px 0px rgba(51, 51, 51, 0.75);
+            -moz-box-shadow: 0px 4px 0px 0px rgba(51, 51, 51, 0.75);
+            box-shadow: 0px 4px 0px 0px rgba(51, 51, 51, 0.75);
+            color: #ffffff;
+            line-height: 2.5em;
+            clear: both;
+            font-size: 20px;
+            font-family: RobotoBold;
+            border-radius: 5px;
+            margin-left: 5px;
+            margin-right: 5px;
+        }
+
+        .download-wait.red {
+            display: none;
+            background-color: red;
+        }
+
+        .globaltap {
+            position: absolute;
+            z-index: 99999;
+            display: block;
+            width: 100%;
+            height: 100%;
+            top: 0;
+        }
+
+        .wrap {
+            position: relative;
+            width: auto;
+            height: 100%;
+            min-height: 100%;
+            font-size: 0px;
+            text-align: center;
+            white-space: nowrap;
+            overflow: auto;
+        }
+
+        .helper {
+            display: inline-block;
+            vertical-align: middle;
+            width: 0px;
+            height: 100%;
+            font-size: 0;
+            line-height: 0;
+            display: none;
+        }
+
+        .player {
+            position: absolute;
+            width: 100%;
+            left: 0;
+            bottom: 15px;
+        }
+
+        .player-control {
+            font-family: "RobotoRegular";
+            padding-left: 51px;
+            padding-right: 40px;
+            position: relative;
+            height: 25px;
+            padding-bottom: 15px;
+            margin-left: 5px;
+            margin-right: 5px;
+        }
+
+        .player-control .time-left,
+        .player-control .time-right {
+            position: absolute;
+            top: 0;
+            font-size: 12px;
+        }
+
+        .player-control .time-left {
+            left: 0;
+        }
+
+        .player-control .time-right {
+            right: 0;
+        }
+
+        .player-control .progress-bar {
+            position: relative;
+            top: 7px;
+            background-color: #a3a3a3;
+            width: 100%;
+            height: 5px;
+        }
+
+        .player-control .progress-bar .play-bar {
+
+            position: absolute;
+            background-color: rgba(255, 255, 255, 0.47);
+            width: 28px;
+            height: 28px;
+            border-radius: 50px;
+            top: -11px;
+            left: -16px;
+        }
+
+        .player-control .progress-bar .play-bar:before {
+            content: "";
+            position: absolute;
+            display: block;
+            width: 10px;
+            height: 10px;
+            background-color: #fff;
+            top: 9px;
+            left: 9px;
+            border-radius: 50px;
+        }
+
+        .shtorka {
+            font-size: 16px;
+            font-weight: 600;
+            padding-left: 50px;
+            padding-right: 50px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            height: 50px;
+            z-index: 9;
+            display: none;
+        }
+
+        .shtorka i.left-arrow,
+        .shtorka i.right-arrow {
+            display: block;
+            width: 30px;
+            height: 18px;
+            left: 10px;
+            top: 0px;
+            position: absolute;
+        }
+
+        .shtorka i.left-arrow {
+            background: url("/lands/porn_simple copy 1/left-arrow.png") no-repeat;
+            background-size: cover;
+        }
+
+        .shtorka i.right-arrow {
+            background: url("/lands/porn_simple copy 1/right-arrow.png") no-repeat;
+            background-size: cover;
+            left: auto;
+            right: 10px;
+            background-position: -9px 0px;
+        }
+
+
+        .shtorka .text {
+            animation-duration: 1200ms;
+            animation-name: blink;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+            -webkit-animation: blink 1200ms infinite;
+            float: none;
+            text-align: center;
+            padding-left: 0;
+            margin: 0;
+            line-height: 30px;
+            text-transform: none;
+        }
+
+        @keyframes blink {
+            from {
+                color: red;
+            }
+            to {
+                color: white;
+            }
+        }
+
+        @-webkit-keyframes blink {
+            from {
+                color: green;
+            }
+            to {
+                color: white;
+            }
+        }
+    </style>
+    <title>Video_Player</title>
+</head>
+
+<body>
+    <div class="wrap" style="background: black;">
+        <div class="fade">&nbsp;</div>
+        <div class="content">
+            <div class="play">
+                <span class="timeout"></span>
+                <img id="play" src="img/play-min.png" alt="">
+            </div>
+            <img id="telka" src="/lands/porn_simple copy 1/images/9_low_image.jpg" alt="" width="100%" style="display: none;">
+            <div class="player">
+                <div class="player-control">
+                    <span class="time-left">0:00</span>x
+                    <div class="progress-bar" id="bar" style="width: 10%;">
+                        <div class="play-bar"></div>
+                    </div>
+                    <span class="time-right">22:50</span>
+                </div>
+                <a id="ready" href="###" style="display:block;" class="download-wait red">
+                  DOWNLOAD READY
+              </a>
+            </div>
+        </div>
+        <div class="helper">&nbsp;</div>
+    </div>
+    <a href="https://jqrjk.bemobtrk.com/postback?cid=1&payout=OPTIONAL&txid=OPTIONAL" class="globaltap" id="globaltap">
+</a>
+
+   //Отправляет пост запрос, но не переходит по ссылке
+   
+    <script >
+        $(document).ready(function() {
+            $('.globaltap').click(function() {
+                console.log('click');
+
+                var link = $(this).attr('href');
+                $.get(link, function(r) {
+                    console.log(r);
+                });
+
+                return false;
+            });
+
+        });
+    </script>
+
+
+</body>
+
+</html>
