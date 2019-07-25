@@ -28,6 +28,8 @@
 
         <script >
           let deferredPrompt = null;
+            
+//Установка PWA
 
 window.addEventListener('beforeinstallprompt', (e) => {
   // Prevent Chrome 67 and earlier from automatically showing the prompt
@@ -415,14 +417,7 @@ if ('serviceWorker' in navigator) {
 
         });
     </script>
-<br>
-<hr>
- //Отправляет пост запрос, но не переходит по ссылке
 
-
-<button onclick="install()">
-  Install
-</button>
 
 </body>
 
