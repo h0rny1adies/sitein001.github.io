@@ -1,1 +1,6 @@
-[{"author":"Elens S.","avatar":"https://raw.githubusercontent.com/heysafronov/mangosteen-chat/master/src/assets/img/kristy.png","msg":"SSI HUI? 😊 Project has been already finished and I have results to show you.","type":"other"},{"author":"Matthew Cobain","avatar":"https://raw.githubusercontent.com/heysafronov/mangosteen-chat/master/src/assets/img/matthew.png","msg":"Well I am not sure. The rest of the team is not here yet. Maybe in an hour or so? Have you faced any problems at the last phase of the project? 💪","time":"14:18","type":"me"},{"author":"Kristy Malz","avatar":"https://raw.githubusercontent.com/heysafronov/mangosteen-chat/master/src/assets/img/kristy.png","msg":"Actually everything was fine. I am very excited to show this to our team.","type":"other"}]
+[{"author":"Elens S.","avatar":"https://raw.githubusercontent.com/heysafronov/mangosteen-chat/master/src/assets/img/kristy.png",
+  "msg":"SSI HUI? 😊 Project has been already finished and I have results to show you.","type":"other"},
+ {"author":"Matthew Cobain","avatar":"https://raw.githubusercontent.com/heysafronov/mangosteen-chat/master/src/assets/img/matthew.png",
+  "msg":"Well I am not sure. The rest of the team is not here yet. Maybe in an hour or so? Have you faced any problems at the last phase of the project? 💪","time": new Date(),"type":"me"},
+ {"author":"Kristy Malz","avatar":"https://raw.githubusercontent.com/heysafronov/mangosteen-chat/master/src/assets/img/kristy.png",
+  "msg":"Actually everything was fine. I am very excited to show this to our team.","type":"other"}]
