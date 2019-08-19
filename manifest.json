@@ -3,7 +3,7 @@
     "short_name": "Web Leaders",
     "description": "Web Community Leaders landing page",
     "lang": "en-GB",
-    "start_url": "/main.html",
+    "start_url": "https://sitein001.github.io/main.html",
     "display": "standalone",
     "theme_color": "#E6E6FA",
     "background_color": "#E6E6FA",
