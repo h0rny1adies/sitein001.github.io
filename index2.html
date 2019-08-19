@@ -11,9 +11,9 @@ function getURLParameter(name) {
 return decodeURI(
 (RegExp(name + '=' + '(.*?)(&|$)').exec(location.search)||[,null])[1] || ''
 );
-}
+};
 
-clickid=getURLParameter('clickid');
+var clickid = getURLParameter('clickid');
 
 
       link='http://a.adult-love.top/click?pid=103224&offer_id=1583&ref_id='+clickid();
