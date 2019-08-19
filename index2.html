@@ -9,16 +9,25 @@ return decodeURI(
 //переменная с кликид
 clickid=getURLParameter('clickid');
 //ссылка
-link='http://a.adult-love.top/click?pid=103224&offer_id=1583&ref_id='+clickid();
-return=false;
-  </script>
+
+      link='http://a.adult-love.top/click?pid=103224&offer_id=1583&ref_id='+clickid();
+   </script>
 </head>
 <body>
 
 <iframe src="link()" width="100%" height="100%"></iframe>
 
 
-You use this device: <script>document.write(getURLParameter('clickid'))</script> !
+You use this device: <script>
+  
+  
+    window.onload = function() {
+        document.write(getURLParameter('clickid'));
+  }
+
+  
+  
+  </script> !
   
   <br>
   document.write(link());
