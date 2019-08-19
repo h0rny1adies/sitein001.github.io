@@ -1,9 +1,9 @@
 {
   "name": "Знакомства 18+",
-    "short_name": "Web Leaders",
-    "description": "Web Community Leaders landing page",
-    "lang": "en-GB",
-    "start_url": "/",
+    "short_name": "Знакомства 18+",
+    "description": "Знакомства 18+",
+    "lang": "ru-RU",
+    "start_url": "main.html",
     "display": "standalone",
     "theme_color": "#E6E6FA",
     "background_color": "#E6E6FA",
