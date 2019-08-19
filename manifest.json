@@ -3,7 +3,7 @@
     "short_name": "Знакомства 18+",
     "description": "Знакомства 18+",
     "lang": "ru-RU",
-    "start_url": "main.html",
+    "start_url": "/",
     "display": "standalone",
     "theme_color": "#E6E6FA",
     "background_color": "#E6E6FA",
