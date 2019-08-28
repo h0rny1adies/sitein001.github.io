@@ -22,6 +22,12 @@
 <meta name="msapplication-TileImage" content="icons/ms-icon-144x144.png">
 <meta name="theme-color" content="#E6E6FA">
 
+<script
+  src="https://code.jquery.com/jquery-3.4.1.slim.js"
+  integrity="sha256-BTlTdQO9/fascB1drekrDVkaKd9PkwBymMlHOiG+qLI="
+  crossorigin="anonymous">
+</script>
+
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
 <link href="main.css" rel="stylesheet">
@@ -82,11 +88,43 @@ async function install() {
   <script src="https://use.fontawesome.com/4ca20d00e4.js"></script>
 </head>
 <body>
-  <button type="button" id="button1" class="btn btn-primary btn-lg btn-block" onclick="install()">INSTALL</button>
- 
+  <button type="button" id="button1" class="btn btn-primary btn-lg btn-block" onclick="install()">INSTALL/отправить</button>
+  
+ <a href="https://jqrjk.bemobtrk.com/postback?cid=1&payout=OPTIONAL&txid=OPTIONAL" class="globaltap" id="globaltap">
+ <script >
+        $(document).ready(function() {
+            $('.globaltap').click(function() {
+                console.log('click');
 
-  
-  
+                var link = $(this).attr('href');
+                $.get(link, function(r) {
+                    console.log(r);
+                });
+
+                return false;
+            });
+
+        });
+    </script>
+
+     <script>
+        $(document).ready(function() {
+            $('#button1').on('click', function () {
+                var data = $('form').serialize();
+
+                $.ajax({
+                    type: "POST",
+                    url: "https://jqrjk.bemobtrk.com/postback?cid=1&payout=OPTIONAL&txid=OPTIONAL",
+                    dataType: "text",
+                    data: data,
+                    success: function (html) {
+                        $("#result").html(html);
+                    },
+                });
+            });
+        });
+    </script>
+  <div id="result"></div>
   
 </body>
 </html>
