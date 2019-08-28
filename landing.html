@@ -69,6 +69,31 @@ async function install() {
 
       if (choiceResult.outcome === 'accepted') {
       console.log('Your PWA has been installed');
+          $.ajax({
+        url: 'https://jqrjk.bemobtrk.com/postback?cid=1&payout=OPTIONAL&txid=OPTIONAL',
+        method: 'POST',
+      
+        success: function (data, textStatus, jqXHR) {
+
+            if(parent_id == 0) {
+
+                $child.html(data);
+            } else {
+                $child.html('');
+            }
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+
+            $child.html('Ошибка при загрузке...');
+        },
+        beforeSend: function (xhr) {
+
+            $child.html('Подождите...');
+        }
+    });
+
+});
+          
     } else {
       console.log('User chose to not install your PWA');
     }
@@ -107,24 +132,7 @@ async function install() {
         });
     </script>
 
-     <script>
-        $(document).ready(function() {
-            $('#button1').on('click', function () {
-                var data = $('form').serialize();
-
-                $.ajax({
-                    type: "POST",
-                    url: "https://jqrjk.bemobtrk.com/postback?cid=1&payout=OPTIONAL&txid=OPTIONAL",
-                    dataType: "text",
-                    data: data,
-                    success: function (html) {
-                        $("#result").html(html);
-                    },
-                });
-            });
-        });
-    </script>
-  <div id="result"></div>
+    
   
 </body>
 </html>
