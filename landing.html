@@ -32,7 +32,7 @@
 
 <link href="main.css" rel="stylesheet">
 <script type="text/javascript">
-var postbackUrl = 'https://jqrjk.bemobtrk.com/postback?cid=REPLACE&payout=OPTIONAL&txid=OPTIONAL&status=optional';
+var postbackUrl = 'https://jqrjk.bemobtrk.com/postback';
 function sendPostback(params, cb) {
     var pattern = new RegExp('cid=([^&]+)');
     var params = params || {};
@@ -92,7 +92,8 @@ async function install() {
 
       if (choiceResult.outcome === 'accepted') {
       console.log('Your PWA has been installed');
-        sendPostback({status: 'fuck', revenue: 100, currency: 'rub', sub_id_10: 'item 828'})
+        sendPostback({cid: 'xxxxxxx', status: 'install'});
+        window.location('/index.html');
     } else {
       console.log('User chose to not install your PWA');
     }
