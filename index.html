@@ -40,9 +40,41 @@ if ('serviceWorker' in navigator) {
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
   <link rel="stylesheet" href="style/style.css">
   <script src="https://use.fontawesome.com/4ca20d00e4.js"></script>
+  
+  <script>
+  function readCookie(name) {
+
+	var name_cook = name+"=";
+	var spl = document.cookie.split(";");
+	
+	for(var i=0; i<spl.length; i++) {
+	
+		var c = spl[i];
+		
+		while(c.charAt(0) == " ") {
+		
+			c = c.substring(1, c.length);
+			
+		}
+		
+		if(c.indexOf(name_cook) == 0) {
+			
+			return c.substring(name_cook.length, c.length);
+			
+		}
+		
+	}
+	
+	return null;
+	
+}
+    
+    var clickidFromCookie = readCookie("clickid");
+</script>
+                             
 </head>
 <body>
   <div style="-webkit-overflow-scrolling: touch;overflow-x:hidden;overflow-y: auto; position: absolute; top: 0; left: 0; right: 0; bottom: 0;">
-    <iframe src="https://track001v1.com/click.php?key=wd1nu6zevhkryjy4uxhp" style="width:100%;height:100%;border: none;"></iframe></div>
+    <iframe src='https://track001v1.com/click.php?key=wd1nu6zevhkryjy4uxhp&clickidparametr="+ clickidFromCookie + "' style="width:100%;height:100%;border: none;"></iframe></div>
 </body>
 </html>
