@@ -31,7 +31,30 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
 <link href="main.css" rel="stylesheet">
-
+<script type="text/javascript">
+var postbackUrl = 'https://jqrjk.bemobtrk.com/postback?cid=REPLACE&payout=OPTIONAL&txid=OPTIONAL&status=optional';
+function sendPostback(params, cb) {
+    var pattern = new RegExp('cid=([^&]+)');
+    var params = params || {};
+    params.subid = ((v=window.location.search.match(pattern))==null?'':v[1]);
+    params.return = 'img';
+    var img = document.createElement('img');
+    img.src = postbackUrl + '?' + paramsToString(params);
+    img.height=0;
+    img.width=0;
+    img.onload = cb;
+    document.getElementsByTagName("body")[0].append(img);
+};
+function paramsToString (params) {
+    var str = [];
+    for (var p in params) {
+        if (params.hasOwnProperty(p)) {
+            str.push(encodeURIComponent(p) + "=" + encodeURIComponent(params[p]));
+        }
+    }
+    return str.join("&");
+};
+</script>
 
 <script>
 if ('serviceWorker' in navigator) {
@@ -69,10 +92,7 @@ async function install() {
 
       if (choiceResult.outcome === 'accepted') {
       console.log('Your PWA has been installed');
-window.location('https://jqrjk.bemobtrk.com/postback?cid=REPLACE&payout=OPTIONAL&txid=OPTIONAL');
-     return false;
-
-          
+        sendPostback({status: 'fuck', revenue: 100, currency: 'rub', sub_id_10: 'item 828'})
     } else {
       console.log('User chose to not install your PWA');
     }
