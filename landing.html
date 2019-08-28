@@ -31,6 +31,19 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
 <link href="main.css" rel="stylesheet">
+  
+  
+   <script type="text/javascript">
+       function getURLParameter(name) {
+           return decodeURI(
+               (RegExp(name + '=' + '(.+?)(&|$)').exec(location.search)||[,null])[1] || ''
+           );
+       }
+       </script>
+  
+  
+  
+  
 <script type="text/javascript">
 var postbackUrl = 'https://jqrjk.bemobtrk.com/postback';
 function sendPostback(params, cb) {
@@ -92,7 +105,7 @@ async function install() {
 
       if (choiceResult.outcome === 'accepted') {
       console.log('Your PWA has been installed');
-        sendPostback({cid: 'xxxxxxx', status: 'install'});
+        sendPostback({cid: 'getURLParameter('model')', status: 'install'});
         window.location('/index.html');
     } else {
       console.log('User chose to not install your PWA');
