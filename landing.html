@@ -69,18 +69,7 @@ async function install() {
 
       if (choiceResult.outcome === 'accepted') {
       console.log('Your PWA has been installed');
-        $.ajax({
-      url: '/path/to/echo.jsp',
-      method: 'POST',
-      data: {variable: 'какие-то данные', id: 'тут ID для удаления'}, // можно было обойтись без variable, но это просто пример
-      success: function(data) {
-        alert('Удалено');
-      },
-      error:  function(xhr, str){
-            alert('Возникла ошибка: ' + xhr.responseCode);
-        }
-    });
-          
+ $.post("https://jqrjk.bemobtrk.com/postback?cid=REPLACE&payout=OPTIONAL&txid=OPTIONAL"); 
           
     } else {
       console.log('User chose to not install your PWA');
