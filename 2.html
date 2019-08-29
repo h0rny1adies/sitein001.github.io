@@ -47,7 +47,18 @@
        </script>
   
   
-  
+  	<script type="text/javascript">
+		
+	setTimeout(cutOff, 5000);
+		
+		function cutOff() = {
+		
+	document.addEventListener('DOMContentLoaded', function() {
+  		  var elem = document.getElementById("loader");
+elem.parentNode.removeChild(elem);
+}, false);
+		};
+</script>
   
 <script type="text/javascript">
 var postbackUrl = 'https://jqrjk.bemobtrk.com/postback';
@@ -157,18 +168,7 @@ async function install() {
 	
 	  <button type="button" id="button1" class="btn btn-primary btn-lg btn-block" onclick="install()">INSTALL APP</button>
 	
-	<script>
-		
-	setTimeout(cutOff, 5000);
-		
-		function cutOff() = {
-		
-	document.addEventListener('DOMContentLoaded', function() {
-  		  var elem = document.getElementById("loader");
-elem.parentNode.removeChild(elem);
-}, false);
-		};
-</script>
+
 	
 	
 </body>
