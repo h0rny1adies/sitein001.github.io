@@ -1,3 +1,22 @@
+Skip to content
+ 
+Search or jump to…
+
+Pull requests
+Issues
+Marketplace
+Explore
+ 
+@sitein001 
+0
+0 0 sitein001/sitein001.github.io
+ Code  Issues 0  Pull requests 1  Projects 0  Wiki  Security  Insights  Settings
+sitein001.github.io/2.html
+@sitein001 sitein001 1
+1e91f7a 1 minute ago
+@sitein001 @tonuselast
+192 lines (130 sloc)  5.45 KB
+    
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -40,11 +59,7 @@
    <script type="text/javascript">
 	   
 	   
-document.addEventListener('DOMContentLoaded', function() {
-document.getElementById('loaderFlow').hidden = true;  
-}, false);
-	
-	   
+
 	   
 	   
        function getURLParameter(name) {
@@ -114,21 +129,17 @@ if ('serviceWorker' in navigator) {
 <script>
   
       let deferredPrompt = null;
-
 window.addEventListener('beforeinstallprompt', (e) => {
   // Prevent Chrome 67 and earlier from automatically showing the prompt
   e.preventDefault();
   // Stash the event so it can be triggered later.
   deferredPrompt = e;
 });
-
 async function install() {
   if (deferredPrompt) {
     deferredPrompt.prompt();
     console.log(deferredPrompt)
-
     deferredPrompt.userChoice.then(function(choiceResult){
-
       if (choiceResult.outcome === 'accepted') {
       console.log('Your PWA has been installed');
         sendPostback({cid: getURLParameter('clickid'), status: 'install'});
@@ -144,12 +155,8 @@ async function install() {
 	    
       console.log('User chose to not install your PWA');
     }
-
     deferredPrompt = null;
-
     });
-
-
   }
 }
 </script>
@@ -189,3 +196,15 @@ async function install() {
 	
 </body>
 </html>
+© 2019 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Help
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
