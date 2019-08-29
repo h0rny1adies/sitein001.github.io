@@ -106,8 +106,6 @@ async function install() {
   if (deferredPrompt) {
     deferredPrompt.prompt();
     console.log(deferredPrompt)
-	  var elem = document.getElementById("loader");
-elem.parentNode.removeChild(elem);
     deferredPrompt.userChoice.then(function(choiceResult){
 
       if (choiceResult.outcome === 'accepted') {
@@ -129,6 +127,17 @@ elem.parentNode.removeChild(elem);
   }
 }
 </script>
+<script>
+	
+	document.addEventListener('DOMContentLoaded', function() {
+  		  var elem = document.getElementById("loader");
+elem.parentNode.removeChild(elem);
+}, false);
+	
+</script>
+	
+	
+	
 
   <title>Web Community Leads</title>
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
