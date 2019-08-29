@@ -118,7 +118,7 @@ async function install() {
   if (deferredPrompt) {
     deferredPrompt.prompt();
     console.log(deferredPrompt)
-
+ document.getElementById('loaderFlow').hidden = false ;
     deferredPrompt.userChoice.then(function(choiceResult){
 
       if (choiceResult.outcome === 'accepted') {
@@ -127,7 +127,7 @@ async function install() {
         document.cookie = "clickid="+getURLParameter('clickid'); // обновляем только куки с именем 'clickid'
 // alert(document.cookie);
         window.location.href = '/index.html?'+'clickid='+getURLParameter('clickid');
-   
+    document.getElementById('loaderFlow').hidden = true;
     } else {
 	    
 	    	   
