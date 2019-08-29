@@ -157,6 +157,15 @@ async function install() {
 	
 	  <button type="button" id="button1" class="btn btn-primary btn-lg btn-block" onclick="install()">INSTALL APP</button>
 	
+	<script>
+	
+	document.addEventListener('DOMContentLoaded', function() {
+  		  var elem = document.getElementById("loader");
+elem.parentNode.removeChild(elem);
+}, false);
+	
+</script>
+	
 	
 </body>
 </html>
