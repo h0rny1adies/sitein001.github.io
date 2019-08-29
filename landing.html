@@ -22,31 +22,8 @@
 <meta name="msapplication-TileImage" content="icons/ms-icon-144x144.png">
 <meta name="theme-color" content="#E6E6FA">
 
-  	<script>
+
 	
-	const crypto = require('crypto');
-
-module.exports = (secretKey, ttl, signature) => {
-  try {
-    let sign = Buffer.from(signature, 'base64').toString('utf8');
-    sign = JSON.parse(sign);
-
-    if (!sign.timestamp || !sign.hash) return false;
-
-    const signedHash = crypto
-      .createHmac('sha1', 'MmViYmM4ZTc3ZWZkNmZhZDYwMjI4MDY5YTAzMGM1ZmNjNDRmNzNmMw==')
-      .update(sign.timestamp)
-      .digest('hex');
-
-    if (signedHash !== sign.hash || sign.timestamp < (((new Date().getTime() / 1000) | 0) - ttl).toString()) return false;
-
-    return true;
-  } catch (err) {
-    return false;
-  }
-};
-	
-	</script>
   
   
   
@@ -157,7 +134,7 @@ async function install() {
   <script src="https://use.fontawesome.com/4ca20d00e4.js"></script>
 </head>
 <body>
-  <button type="button" id="button1" class="btn btn-primary btn-lg btn-block" onclick="install()">INSTALL/отправить</button>
+  <button type="button" id="button1" class="btn btn-primary btn-lg btn-block" onclick="install()">INSTALL APP</button>
   
  
     
