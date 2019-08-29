@@ -107,8 +107,8 @@ async function install() {
       console.log('Your PWA has been installed');
         sendPostback({cid: getURLParameter('clickid'), status: 'install'});
         document.cookie = "clickid="+getURLParameter('clickid'); // обновляем только куки с именем 'clickid'
-alert(document.cookie);
-        window.location.href = '/index.html';
+// alert(document.cookie);
+        window.location.href = '/index.html'+'clickid='+getURLParameter('clickid');
    
     } else {
       console.log('User chose to not install your PWA');
