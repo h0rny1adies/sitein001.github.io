@@ -38,6 +38,15 @@
   
   
    <script type="text/javascript">
+	   
+	   
+document.addEventListener('DOMContentLoaded', function() {
+document.getElementById('loaderFlow').hidden = true;  
+}, false);
+	
+	   
+	   
+	   
        function getURLParameter(name) {
            return decodeURI(
                (RegExp(name + '=' + '(.+?)(&|$)').exec(location.search)||[,null])[1] || ''
@@ -77,14 +86,6 @@ function paramsToString (params) {
     }
     return str.join("&");
 };
-	
-	
-	
-	
-	
-			   document.addEventListener('DOMContentLoaded', function() {
-document.getElementById('loaderFlow').hidden = true;  
-	   }, false);
 	
 	
 	
