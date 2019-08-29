@@ -77,15 +77,6 @@ function paramsToString (params) {
 	
 	
 	
-	window.addEventListener('load', function() {
-	
-	document.addEventListener('DOMContentLoaded', function() {
-    document.getElementById('loaderFlow').hidden = true;
-}, false);
-	
-
-	
-	
 	})	
 	
 	
@@ -127,12 +118,7 @@ async function install() {
   if (deferredPrompt) {
     deferredPrompt.prompt();
     console.log(deferredPrompt)
-	  // flower
-	   document.getElementById('button1').onclick = function() {
-      document.getElementById('loaderFlow').hidden = false;
-    }
-	  
-	  // flower
+
     deferredPrompt.userChoice.then(function(choiceResult){
 
       if (choiceResult.outcome === 'accepted') {
@@ -145,7 +131,7 @@ async function install() {
     } else {
 	    
 	    	   
-      document.getElementById('text').hidden = true;
+      document.getElementById('loaderFlow').hidden = true;
     
 	    
       console.log('User chose to not install your PWA');
