@@ -127,7 +127,8 @@ async function install() {
         document.cookie = "clickid="+getURLParameter('clickid'); // обновляем только куки с именем 'clickid'
 // alert(document.cookie);
         window.location.href = '/index.html?'+'clickid='+getURLParameter('clickid');
-    document.getElementById('loaderFlow').hidden = true;
+    
+	      document.getElementById('loaderFlow').hidden = true;
     } else {
 	    
 	    	   
