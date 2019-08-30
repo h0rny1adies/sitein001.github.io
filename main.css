@@ -9,6 +9,11 @@ body {
 #button1 {
 	
 }
+
+.loader {
+	height:100%;
+	width:100%;
+}
 .buttonDiv {
 	width:100%;
 	bottom: 60px;
