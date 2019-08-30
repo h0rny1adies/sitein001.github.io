@@ -5,7 +5,9 @@ body {
 
 
 #button1 {
-
+  position: absolute;
+  
+  bottom: 50px;
 }
 
 
