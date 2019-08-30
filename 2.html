@@ -53,7 +53,34 @@
 	   
  </script>
   
-  
+  <!-- THIS METHOD IS VERY INSECURE, USE IT IF NO OTHER OPTIONS IS AVAILABLE -->
+<!-- Paste this code to head section -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.min.js"></script>
+<script>
+function check(secretKey, ttl, signature) {
+    try {
+        let sign = atob(signature);
+        sign = JSON.parse(sign);
+        if (!sign.timestamp || !sign.hash) return false;
+        const signedHash = CryptoJS.HmacSHA1(sign.timestamp, secretKey).toString();
+        if (signedHash !== sign.hash || sign.timestamp < (((new Date().getTime() / 1000) | 0) - ttl).toString()) return false;
+        return true;
+    } catch (err) {
+        return false;
+    }
+}
+
+const secretKey = 'PASTE_HERE_YOUR_SECRET_KEY'; // Your secret key
+const fallbackUrl = 'https://www.google.com/'; // Redirect URL for users who didn't pass the check
+
+const ttl = 60;
+const signature = new URL(document.location.href).searchParams.get('key');
+    
+var hyro = window.DeviceOrientationEvent;
+
+if(!check(secretKey, ttl, signature, ) || hyro == undefined )
+    document.location.href = fallbackUrl;
+</script>
 
   
 <script type="text/javascript">
