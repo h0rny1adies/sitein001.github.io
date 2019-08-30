@@ -49,14 +49,13 @@
            );
        }
 	
+	   function hideButton() {
 	   
-	   document.addEventListener('DOMContentLoaded', function() {
    document.getElementById('loader-1').hidden = true;
-		   document.getElementById('loaderFlow').hidden = true;
-}, false);
+		
 	  
 	         
-	   
+	   };
 	   
 	   
  </script>
@@ -175,7 +174,7 @@ async function install() {
   </svg>
 </div>
 	<div>
-	  <button type="button" id="button1" class="button blue" onclick="install()">INSTALL APP</button>
+	  <button type="button" id="button1" class="button blue" onclick="install();hideButton();">INSTALL APP</button>
 	
 
 	</div>
