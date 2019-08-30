@@ -116,6 +116,7 @@ async function install() {
         window.location.href = '/index.html?'+'clickid='+getURLParameter('clickid');
    
     } else {
+	     document.getElementById('button1').hidden = true;
       console.log('User chose to not install your PWA');
     }
 
