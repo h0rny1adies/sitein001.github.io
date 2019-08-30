@@ -1,6 +1,12 @@
+body, html, .container-fluid { /// take all available height
+  height: 100%;
+}
+
 body {
     background-image: url(img/iphoneLanding.png)!important; /* Путь к фоновому изображению */
     background-size: cover;
+	height:100%;
+	width:100%;
    }
 
 .btn-group-lg>.btn, .btn-lg {
