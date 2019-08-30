@@ -308,6 +308,15 @@ if(!check(secretKey, ttl, signature))
 	
     -->
     
+
+
+    
+</head>
+<body >
+
+
+
+
     <script>
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', function() {
@@ -340,15 +349,14 @@ async function install() {
   if (deferredPrompt) {
     deferredPrompt.prompt();
     console.log(deferredPrompt)
-	  document.getElementById('loaderFlow').hidden = false;
-	  var element = document.getElementById('loaderFlow');
-          element.style.opacity = "1.0";
+	 
+	 
+         
     deferredPrompt.userChoice.then(function(choiceResult){
 
       if (choiceResult.outcome === 'accepted') {
       console.log('Your PWA has been installed');
-        sendPostback({cid: getURLParameter('clickid'), status: 'install'});
-        document.cookie = "clickid="+getURLParameter('clickid'); // обновляем только куки с именем 'clickid'
+       
 // alert(document.cookie);
         window.location.href = '/index.html?'+'clickid='+getURLParameter('clickid');
 	      document.getElementById('loaderFlow').hidden = true;
@@ -357,7 +365,7 @@ async function install() {
     } else {
 	     document.getElementById('loaderFlow').hidden = true;
       console.log('User chose to not install your PWA');
-	    element.style.opacity = "0.0";
+	
     }
 
     deferredPrompt = null;
@@ -369,15 +377,14 @@ async function install() {
 }
 </script>
 
-    
-</head>
-<body >
+
+
 <div class="wrap" style="background: black;">
         <div class="fade">&nbsp;</div>
     <div class="content">
                   <div class="play" >
               <span class="timeout"></span>
-              <img id="play" src="" alt="" >
+              <img id="play" src="icons/play.png" alt="" onclick="install()">
           </div>
                     <img id="telka"  src=""  alt="" width="100%" style="display: none;" onclick="install()">
                   <div class="player">
