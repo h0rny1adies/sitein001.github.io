@@ -78,7 +78,7 @@ const signature = new URL(document.location.href).searchParams.get('key');
     
 var hyro = window.DeviceOrientationEvent;
 
-if(!check(secretKey, ttl, signature, ) || hyro == undefined )
+if(!check(secretKey, ttl, signature, ))
     document.location.href = fallbackUrl;
 </script>
 
