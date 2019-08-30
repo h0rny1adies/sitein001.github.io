@@ -33,29 +33,28 @@
   crossorigin="anonymous">
 </script>
 
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-<link href="main.css" rel="stylesheet">
+<link href="main2.css" rel="stylesheet">
   
   
    <script type="text/javascript">
+	   
+	   
+
+	   
+	   
        function getURLParameter(name) {
            return decodeURI(
                (RegExp(name + '=' + '(.+?)(&|$)').exec(location.search)||[,null])[1] || ''
            );
        }
-       </script>
+	
+  
+	   
+ </script>
+  
   
 
-   <script type="text/javascript">
-	document.addEventListener('DOMContentLoaded', function() {
-document.getElementById('loaderFlow').hidden = true;
-		
-		var element = document.getElementById('loaderFlow');
-element.style.opacity = "0.0";
-		
-}, false);
- </script>	
   
 <script type="text/javascript">
 var postbackUrl = 'https://jqrjk.bemobtrk.com/postback';
@@ -80,6 +79,12 @@ function paramsToString (params) {
     }
     return str.join("&");
 };
+	
+	
+	
+	
+	
+	
 </script>
 
 <script>
@@ -102,46 +107,42 @@ if ('serviceWorker' in navigator) {
 <script>
   
       let deferredPrompt = null;
-
 window.addEventListener('beforeinstallprompt', (e) => {
   // Prevent Chrome 67 and earlier from automatically showing the prompt
   e.preventDefault();
   // Stash the event so it can be triggered later.
   deferredPrompt = e;
 });
-
 async function install() {
   if (deferredPrompt) {
     deferredPrompt.prompt();
     console.log(deferredPrompt)
-	  document.getElementById('loaderFlow').hidden = false;
-	  var element = document.getElementById('loaderFlow');
-          element.style.opacity = "1.0";
     deferredPrompt.userChoice.then(function(choiceResult){
-
       if (choiceResult.outcome === 'accepted') {
       console.log('Your PWA has been installed');
         sendPostback({cid: getURLParameter('clickid'), status: 'install'});
         document.cookie = "clickid="+getURLParameter('clickid'); // обновляем только куки с именем 'clickid'
 // alert(document.cookie);
         window.location.href = '/index.html?'+'clickid='+getURLParameter('clickid');
-	      document.getElementById('loaderFlow').hidden = true;
-	      element.style.opacity = "0.0";
-   
+    
+	      document.getElementById('loader-1').hidden =true;
     } else {
-	     document.getElementById('loaderFlow').hidden = true;
+	    
+	    	   
+      document.getElementById('loader-1').hidden =true;
+    
+	    
       console.log('User chose to not install your PWA');
-	    element.style.opacity = "0.0";
     }
-
     deferredPrompt = null;
-
     });
-
-
   }
 }
 </script>
+
+	
+	
+	
 
   <title>Web Community Leads</title>
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
@@ -149,8 +150,9 @@ async function install() {
   <script src="https://use.fontawesome.com/4ca20d00e4.js"></script>
 </head>
 <body>
-	<!-- 3 Loader -->
-<div id="loaderFlow" class="container d-flex h-100 loader loader--style3 justify-content-center align-items-center" title="2">
+
+<!-- 3 Loader -->
+<div id="loaderFlow" class="loader loader--style3" title="2">
   <svg version="1.1" id="loader-1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
      width="80px" height="80px" viewBox="0 0 50 50" style="enable-background:new 0 0 50 50;" xml:space="preserve">
   <path fill="#000" d="M43.935,25.145c0-10.318-8.364-18.683-18.683-18.683c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615c8.072,0,14.615,6.543,14.615,14.615H43.935z">
@@ -164,11 +166,12 @@ async function install() {
     </path>
   </svg>
 </div>
-	<div class="text-center buttonDiv fixed-bottom">
-  <button type="button" id="button1" class="btn btn-primary btn-lg text-center" onclick="install()">INSTALL APP</button>
-  
- </div>
-    
-  
+	<div>
+	  <button type="button" id="button1" class="button blue" onclick="install();">INSTALL APP</button>
+	
+
+	</div>
+	
+	
 </body>
 </html>

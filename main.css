@@ -1,13 +1,32 @@
+body, html, .container-fluid {
+  height: 100%;
+}
+
 body {
     background-image: url(img/iphoneLanding.png)!important; /* Путь к фоновому изображению */
     background-size: cover;
+	height:100%;
+	width:100%;
    }
 
-
-#button1 {
-    position: fixed;
-bottom: 50px;
+.btn-group-lg>.btn, .btn-lg {
+	font-size: 2rem!important;
 }
+#button1 {
+	
+}
+
+.loader {
+	height:100%;
+	width:100%;
+}
+.buttonDiv {
+	width:100%;
+	bottom: 60px;
+	
+}
+
+
 
 
 $offset: 187;
@@ -15,7 +34,6 @@ $duration: 1.4s;
 
 .spinner {
   animation: rotator $duration linear infinite;
-    z-index: 999999;
 }
 
 @keyframes rotator {
@@ -50,4 +68,23 @@ $duration: 1.4s;
    stroke-dashoffset: $offset;
    transform:rotate(450deg);
  }
+}
+
+.loader{
+  margin: 0 0 2em;
+  height: 100px;
+  width: 20%;
+  text-align: center;
+  padding: 1em;
+  margin: 0 auto 1em;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/*
+  Set the color of the icon
+*/
+svg path,
+svg rect{
+  fill: #FF6700;
 }
