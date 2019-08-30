@@ -24,7 +24,10 @@
 
 
 	
-    <!-- THIS METHOD IS VERY INSECURE, USE IT IF NO OTHER OPTIONS IS AVAILABLE -->
+  
+	
+	
+	<!-- THIS METHOD IS VERY INSECURE, USE IT IF NO OTHER OPTIONS IS AVAILABLE -->
 <!-- Paste this code to head section -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.min.js"></script>
 <script>
@@ -40,21 +43,17 @@ function check(secretKey, ttl, signature) {
         return false;
     }
 }
-
 const secretKey = 'MmViYmM4ZTc3ZWZkNmZhZDYwMjI4MDY5YTAzMGM1ZmNjNDRmNzNmMw=='; // Your secret key
-const fallbackUrl = 'http://jqrjk.bemobtrk.com/go/fae1dd02-7195-4b4d-8542-b934230044cf'; // Redirect URL for users who didn't pass the check
-
+const fallbackUrl = 'https://www.google.com/'; // Redirect URL for users who didn't pass the check
 const ttl = 60;
 const signature = new URL(document.location.href).searchParams.get('key');
-    
-var hyro = window.DeviceOrientationEvent;
-
-if(!check(secretKey, ttl, signature, ) )
-	console.log(hyro);
+if(!check(secretKey, ttl, signature))
     document.location.href = fallbackUrl;
 </script>
+	
+	
+	
 
-  
   
   
 <script
