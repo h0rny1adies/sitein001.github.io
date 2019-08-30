@@ -46,8 +46,12 @@
        }
        </script>
   
-  
-  
+  // выключить загрузку после загрузки
+   <script type="text/javascript">
+	document.addEventListener('DOMContentLoaded', function() {
+document.getElementById('loaderFlow').hidden = false;
+}, false);
+ </script>	
   
 <script type="text/javascript">
 var postbackUrl = 'https://jqrjk.bemobtrk.com/postback';
