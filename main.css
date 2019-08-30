@@ -1,4 +1,4 @@
-body, html, .container-fluid { /// take all available height
+body, html, .container-fluid {
   height: 100%;
 }
 
