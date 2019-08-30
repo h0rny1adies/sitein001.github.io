@@ -1,0 +1,108 @@
+{
+  "name": "HARDDATE 21+",
+    "short_name": "HARDDATE",
+    "description": "Next level APP for Adult Dating 21+",
+    "lang": "en-GB",
+    "start_url": "./index.html",
+    "display": "standalone",
+    "theme_color": "#FFFFFF",
+    "background_color": "#FFFFFF",
+
+ "icons": [
+ {
+            "src": "/images/69633259-9c28-0384-a029-2b7a38f84aaa.png",
+            "sizes": "44x44",
+            "type": "image/png"
+        },
+        {
+            "src": "/icons/513622a8-c208-8078-e39b-e87912a7740c.png",
+            "sizes": "48x48",
+            "type": "image/png"
+        },
+        {
+            "src": "/icons/5cd761ad-9497-45a8-a4e3-7218a7e025d9.png",
+            "sizes": "1240x600",
+            "type": "image/png"
+        },
+        {
+            "src": "/icons/6dcd5e85-116a-e825-4560-d7d91eeeaa40.png",
+            "sizes": "300x300",
+            "type": "image/png"
+        },
+        {
+            "src": "/icons/4ec8d4d4-98a1-0a89-b469-c7dc2cc70290.png",
+            "sizes": "150x150",
+            "type": "image/png"
+        },
+        {
+            "src": "/icons/46236cb7-d3d2-3361-cf58-2f03411e3893.png",
+            "sizes": "88x88",
+            "type": "image/png"
+        },
+        {
+            "src": "/icons/bdafdbab-8df6-e4c0-9d43-ad3ca90c3e10.png",
+            "sizes": "24x24",
+            "type": "image/png"
+        },
+        {
+            "src": "/icons/1852b8eb-dd8f-ad85-17cd-5c44b733203e.png",
+            "sizes": "50x50",
+            "type": "image/png"
+        },
+        {
+            "src": "/icons/c84dabcd-4268-8afd-13d8-bf7061bb42bc.png",
+            "sizes": "620x300",
+            "type": "image/png"
+        },
+        {
+            "src": "/icons/50a90430-7de6-0595-9fdc-7eacdac245f0.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/icons/144x144.png",
+            "sizes": "144x144",
+            "type": "image/png"
+        },
+        {
+            "src": "/icons/9a85f9d9-0de9-5ced-9a33-7b3bedae034d.png",
+            "sizes": "96x96",
+            "type": "image/png"
+        },
+        {
+            "src": "/icons/fdf58f9b-88a6-7fb5-0f42-44b48be3f839.png",
+            "sizes": "72x72",
+            "type": "image/png"
+        },
+        {
+            "src": "/icons/242e539a-2e1d-c60f-606a-e0b902ccf288.png",
+            "sizes": "36x36",
+            "type": "image/png"
+        },
+        {
+            "src": "/icons/11d4c0b3-6310-c751-d0cc-aa6d59a27b88.png",
+            "sizes": "1024x1024",
+            "type": "image/png"
+        },
+        {
+            "src": "/icons/79d8d4a6-61e8-3a9c-5b4d-3caa8a4c2448.png",
+            "sizes": "180x180",
+            "type": "image/png"
+        },
+        {
+            "src": "/icons/1557b988-29fc-5d6d-085c-3411bddb4ba1.png",
+            "sizes": "152x152",
+            "type": "image/png"
+        },
+        {
+            "src": "/icons/f4f22b9b-868b-2c45-05af-656d0159dc69.png",
+            "sizes": "120x120",
+            "type": "image/png"
+        },
+        {
+            "src": "/icons/5aac06b2-14b8-9d70-2e4a-db0ff9cfe359.png",
+            "sizes": "76x76",
+            "type": "image/png"
+        }
+ ]
+}
