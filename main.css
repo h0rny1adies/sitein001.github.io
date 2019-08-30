@@ -3,7 +3,9 @@ body {
     background-size: cover;
    }
 
-
+.btn-group-lg>.btn, .btn-lg {
+	font-size: 2rem!important;
+}
 #button1 {
 	
 }
