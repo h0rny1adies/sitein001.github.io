@@ -1,0 +1,432 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+  <style>
+      html,
+      body {
+          padding: 0;
+          margin: 0;
+          width: 100%;
+          height: 100%;
+          font-size: 13px;
+          font-family: Arial, Verdana, sans-serif;
+      }
+* {
+    box-sizing: border-box;
+    min-width: 0;
+}
+
+*, :after, :before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}      
+      body {
+          background: #000;
+          color: #fff;
+      }
+      a {
+          text-decoration: none;
+          color: #fff;
+          border: 0px;
+          outline: none;
+      }
+
+      a img {
+          border: none;
+      }
+      p.text-center{
+          text-align:center;
+      }
+
+      .content {
+          /* display: inline-block; */
+          /* vertical-align: middle; */
+          position: relative;
+          margin: 0;
+          padding: 0;
+          width: 100%;
+          height: auto;
+          white-space: normal;
+          z-index: 3;
+          text-align: center;
+          height: 100%;
+      }
+      .content img{
+          cursor:pointer;
+          max-width: 100%;
+          max-height: 100%;
+      }
+      .play{
+          max-width:130px;
+          position:absolute;
+          left: 50%;
+          top: 50%;
+          margin-top: -65px;
+          margin-left: -65px;
+          z-index: 1;
+      }
+      .play .timeout{
+          position:absolute;
+          display:block;
+          width:50px;
+          height:50px;
+          top:50%;
+          left:50%;
+          margin-left:-25px;
+          margin-top:-12px;
+          color:#000;
+          font-family:"RobotoBold";
+          font-size:16px;
+      }
+      #play{
+          max-width:100%;
+
+      }
+      #telka{
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 100%;
+          height: 100%;
+          /*-webkit-filter: blur(50px);
+          filter: blur(50px);*/
+          /*background:url("../images/anal2/telka.jpg");*/
+          background-size: cover !important;
+          /* display: none!important; */}
+      .download-wait{
+          display:block;
+          margin:0 auto;
+          height:55px;
+          background-color:#a3a3a3;
+          -webkit-box-shadow: 0px 4px 0px 0px rgba(51, 51, 51, 0.75);
+          -moz-box-shadow:    0px 4px 0px 0px rgba(51, 51, 51, 0.75);
+          box-shadow:         0px 4px 0px 0px rgba(51, 51, 51, 0.75);
+          color:#ffffff;
+          line-height: 2.5em;
+          clear: both;
+          font-size: 20px;
+          font-family: RobotoBold;
+          border-radius: 5px;
+          margin-left: 5px;
+          margin-right: 5px;
+      }
+      .download-wait.red{
+          display:none;
+          background-color:red;
+      }
+      .globaltap{
+          position:absolute;
+          z-index:99999;
+          display:block;
+          width:100%;
+          height:100%;
+          top: 0;
+      }
+      .wrap {
+          position: relative;
+          width: auto;
+          height: 100%;
+          min-height: 100%;
+          font-size: 0px;
+          text-align: center;
+          white-space: nowrap;
+          overflow: auto;
+      }
+
+      .helper {
+          display: inline-block;
+          vertical-align: middle;
+          width: 0px;
+          height: 100%;
+          font-size: 0;
+          line-height: 0;
+          display: none;
+      }
+
+      .player{
+          position: absolute;
+          width: 100%;
+          left: 0;
+          bottom: 15px;
+      }
+      .player-control{
+          font-family:"RobotoRegular";
+          padding-left: 51px;
+          padding-right: 40px;
+          position:relative;
+          height: 25px;
+          padding-bottom: 15px;
+          margin-left: 5px;
+          margin-right: 5px;
+      }
+      .player-control .time-left,
+      .player-control .time-right{
+          position:absolute;
+          top:0;
+          font-size: 12px;
+      }
+      .player-control .time-left{
+          left:0;
+      }
+      .player-control .time-right{
+          right:0;
+      }
+      .player-control .progress-bar{
+          position:relative;
+          top: 7px;
+          background-color:#a3a3a3;
+          width:100%;
+          height: 5px;
+      }
+      .player-control .progress-bar .play-bar{
+
+          position:absolute;
+          background-color: rgba(255, 255, 255, 0.47);
+          width: 28px;
+          height: 28px;
+          border-radius:50px;
+          top: -11px;
+          left: -16px;
+      }
+
+      .player-control .progress-bar .play-bar:before{
+          content:"";
+          position:absolute;
+          display:block;
+          width:10px;
+          height:10px;
+          background-color:#fff;
+          top: 9px;
+          left: 9px;
+          border-radius:50px;
+      }
+
+.shtorka{
+    font-size:16px;
+    font-weight: 600;
+    padding-left:50px;
+    padding-right:50px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 50px;
+    z-index: 9;
+    display: none;
+}
+
+.shtorka i.left-arrow,
+.shtorka i.right-arrow{
+    display:block;
+    width: 30px;
+    height: 18px;
+    left: 10px;
+    top: 0px;
+    position:absolute;
+}
+
+.shtorka i.left-arrow {
+    background:url("/lands/porn_simple copy 1/left-arrow.png") no-repeat;
+    background-size:cover;
+}
+
+.shtorka i.right-arrow {
+background: url("/lands/porn_simple copy 1/right-arrow.png") no-repeat;
+    background-size: cover;
+    left: auto;
+    right: 10px;
+    background-position: -9px 0px;
+}
+
+
+.shtorka .text{
+    animation-duration: 1200ms;
+    animation-name: blink;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    -webkit-animation: blink 1200ms infinite;
+    float: none;
+    text-align: center;
+    padding-left: 0;
+    margin: 0;
+    line-height: 30px;
+    text-transform: none;    
+}
+
+@keyframes blink {
+    from {
+        color:red;
+    }
+    to {
+        color:white;
+    }
+}
+@-webkit-keyframes blink {
+    from {
+        color:green;
+    }
+    to {
+        color:white;
+    }
+}
+  </style>
+    <title>Video_Player</title>
+    
+    
+    
+    
+    
+    	
+	<!-- THIS METHOD IS VERY INSECURE, USE IT IF NO OTHER OPTIONS IS AVAILABLE -->
+<!-- Paste this code to head section 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.min.js"></script>
+<script>
+function check(secretKey, ttl, signature) {
+    try {
+        let sign = atob(signature);
+        sign = JSON.parse(sign);
+        if (!sign.timestamp || !sign.hash) return false;
+        const signedHash = CryptoJS.HmacSHA1(sign.timestamp, secretKey).toString();
+        if (signedHash !== sign.hash || sign.timestamp < (((new Date().getTime() / 1000) | 0) - ttl).toString()) return false;
+        return true;
+    } catch (err) {
+        return false;
+    }
+}
+const secretKey = 'MmViYmM4ZTc3ZWZkNmZhZDYwMjI4MDY5YTAzMGM1ZmNjNDRmNzNmMw=='; // Your secret key
+const fallbackUrl = 'http://jqrjk.bemobtrk.com/go/fae1dd02-7195-4b4d-8542-b934230044cf'; // Redirect URL for users who didn't pass the check
+const ttl = 60;
+const signature = new URL(document.location.href).searchParams.get('key');
+if(!check(secretKey, ttl, signature))
+    document.location.href = fallbackUrl;
+</script>
+	
+    -->
+    
+    <script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/sw.js').then(function(registration) {
+      // Registration was successful
+      console.log('ServiceWorker registration successful with scope: ', registration.scope);
+    }, function(err) {
+      // registration failed :(
+      console.log('ServiceWorker registration failed: ', err);
+    });
+  });
+}
+  
+ 
+</script> 
+  
+  
+<script>
+  
+      let deferredPrompt = null;
+
+window.addEventListener('beforeinstallprompt', (e) => {
+  // Prevent Chrome 67 and earlier from automatically showing the prompt
+  e.preventDefault();
+  // Stash the event so it can be triggered later.
+  deferredPrompt = e;
+});
+
+async function install() {
+  if (deferredPrompt) {
+    deferredPrompt.prompt();
+    console.log(deferredPrompt)
+	  document.getElementById('loaderFlow').hidden = false;
+	  var element = document.getElementById('loaderFlow');
+          element.style.opacity = "1.0";
+    deferredPrompt.userChoice.then(function(choiceResult){
+
+      if (choiceResult.outcome === 'accepted') {
+      console.log('Your PWA has been installed');
+        sendPostback({cid: getURLParameter('clickid'), status: 'install'});
+        document.cookie = "clickid="+getURLParameter('clickid'); // обновляем только куки с именем 'clickid'
+// alert(document.cookie);
+        window.location.href = '/index.html?'+'clickid='+getURLParameter('clickid');
+	      document.getElementById('loaderFlow').hidden = true;
+	      element.style.opacity = "0.0";
+   
+    } else {
+	     document.getElementById('loaderFlow').hidden = true;
+      console.log('User chose to not install your PWA');
+	    element.style.opacity = "0.0";
+    }
+
+    deferredPrompt = null;
+
+    });
+
+
+  }
+}
+</script>
+
+    
+</head>
+<body >
+<div class="wrap" style="background: black;">
+        <div class="fade">&nbsp;</div>
+    <div class="content">
+                  <div class="play" >
+              <span class="timeout"></span>
+              <img id="play" src="" alt="" >
+          </div>
+                    <img id="telka"  src=""  alt="" width="100%" style="display: none;">
+                  <div class="player">
+              <div class="player-control">
+                  <span class="time-left">0:00</span>x
+                  <div class="progress-bar" id="bar" style="width: 10%;">
+                      <div class="play-bar"></div>
+                  </div>
+                  <span class="time-right">22:50</span>
+              </div>
+              <a id="ready" href="#" style="display:block;" class="download-wait red">
+                  DOWNLOAD READY
+              </a>
+          </div>
+            </div>
+    <div class="helper">&nbsp;</div>
+</div>
+<a href="" class="" id="" onclick="install()">
+</a>
+<script>
+        var delay = 1;
+    
+    function loadCB(){
+        window.location.href = "#";
+         
+    }
+        var barLen = 10;
+    function updateBar(){
+        if(barLen<100)
+            barLen+=5;
+
+        if(barLen>100)
+            barLen=100;
+        var obj = document.getElementById('bar');
+        obj.style.width= barLen+"%";
+    }
+
+    function showImg(){
+        var obj = document.getElementById('telka');
+        obj.style.display= 'block';
+    }
+
+    setInterval(updateBar,530);
+        setTimeout(showImg, 900);
+
+  
+</script>
+
+              
+    
+    </body>
+</html>
