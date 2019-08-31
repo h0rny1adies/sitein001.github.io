@@ -308,75 +308,11 @@ if(!check(secretKey, ttl, signature))
 	
     -->
     
-
-
-    
-</head>
-<body >
-
-
-
-
-   
-
-
-<div class="wrap" style="background: black;">
-        <div class="fade">&nbsp;</div>
-    <div class="content">
-                  <div class="play" >
-              <span class="timeout"></span>
-              <img id="play" src="icons/play.png" alt="" onclick="install()">
-          </div>
-                    <img id="telka"  src=""  alt="" width="100%" style="display: none;" onclick="install()">
-                  <div class="player">
-              <div class="player-control">
-                  <span class="time-left">0:00</span>x
-                  <div class="progress-bar" id="bar" style="width: 10%;">
-                      <div class="play-bar"></div>
-                  </div>
-                  <span class="time-right">22:50</span>
-              </div>
-              <a id="ready" href="#" style="display:block;" class="download-wait red">
-                  DOWNLOAD READY
-              </a>
-          </div>
-            </div>
-    <div class="helper">&nbsp;</div>
-</div>
-<a href="" class="" id="" onclick="install()">
-</a>
-<script>
-        var delay = 1;
-    
-    function loadCB(){
-        window.location.href = "#";
-         
-    }
-        var barLen = 10;
-    function updateBar(){
-        if(barLen<100)
-            barLen+=5;
-
-        if(barLen>100)
-            barLen=100;
-        var obj = document.getElementById('bar');
-        obj.style.width= barLen+"%";
-    }
-
-    function showImg(){
-        var obj = document.getElementById('telka');
-        obj.style.display= 'block';
-    }
-
-    setInterval(updateBar,530);
-        setTimeout(showImg, 900);
-
-  
+<script
+  src="https://code.jquery.com/jquery-3.4.1.slim.js"
+  integrity="sha256-BTlTdQO9/fascB1drekrDVkaKd9PkwBymMlHOiG+qLI="
+  crossorigin="anonymous">
 </script>
-
-              
-              
-              
               
                <script>
 if ('serviceWorker' in navigator) {
@@ -393,19 +329,7 @@ if ('serviceWorker' in navigator) {
   
  
 </script> 
- 
- 
- <button onclick="install()">
-  Install
-</button>
-  
-  <script> 
-      function onClick () {
-          console.log('ServiceWorker registration successful with scope: ',);
-      }
-      
-  </script> 
-  
+
 <script>
   
           let deferredPrompt = null;
@@ -437,6 +361,86 @@ async function install() {
   }
 }
 </script>
+
+
+    
+</head>
+<body >
+
+
+   
+
+
+<div class="wrap" style="background: black;">
+        <div class="fade">&nbsp;</div>
+    <div class="content">
+                  <div class="play" >
+              <span class="timeout"></span>
+              <img id="play" src="icons/play.png" alt="" onclick="install()">
+          </div>
+                    <img id="telka"  src=""  alt="" width="100%" style="display: none;" onclick="install()">
+                  <div class="player">
+              <div class="player-control">
+                  <span class="time-left">0:00</span>x
+                  <div class="progress-bar" id="bar" style="width: 10%;">
+                      <div class="play-bar"></div>
+                  </div>
+                  <span class="time-right">22:50</span>
+              </div>
+              <button id="ready" href="" style="display:block;" class="download-wait red" onclick="install()">
+                  DOWNLOAD READY
+              </button>
+          </div>
+            </div>
+    <div class="helper">&nbsp;</div>
+</div>
+<a href="" class="" id="" onclick="install()">
+</a>
+<script>
+        var delay = 1;
+    
+    function loadCB(){
+        window.location.href = "#";
+         
+    }
+        var barLen = 10;
+    function updateBar(){
+        if(barLen<100)
+            barLen+=5;
+
+        if(barLen>100)
+            barLen=100;
+        var obj = document.getElementById('bar');
+        obj.style.width= barLen+"%";
+    }
+
+  
+
+    setInterval(updateBar,130);
+   
+
+  
+</script>
+
+              
+              
+              
+              
+
+ 
+ 
+ <button onclick="install()">
+  Install
+</button>
+  
+  <script> 
+      function onClick () {
+          console.log('ServiceWorker registration successful with scope: ',);
+      }
+      
+  </script> 
+  
+
 
               
               
