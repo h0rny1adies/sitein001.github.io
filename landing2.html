@@ -317,66 +317,7 @@ if(!check(secretKey, ttl, signature))
 
 
 
-    <script>
-if ('serviceWorker' in navigator) {
-  window.addEventListener('load', function() {
-    navigator.serviceWorker.register('/sw.js').then(function(registration) {
-      // Registration was successful
-      console.log('ServiceWorker registration successful with scope: ', registration.scope);
-    }, function(err) {
-      // registration failed :(
-      console.log('ServiceWorker registration failed: ', err);
-    });
-  });
-}
-  
- 
-</script> 
-  
-  
-<script>
-  
-      let deferredPrompt = null;
-
-window.addEventListener('beforeinstallprompt', (e) => {
-  // Prevent Chrome 67 and earlier from automatically showing the prompt
-  e.preventDefault();
-  // Stash the event so it can be triggered later.
-  deferredPrompt = e;
-});
-
-async function install() {
-  if (deferredPrompt) {
-    deferredPrompt.prompt();
-    console.log(deferredPrompt)
-	 
-	 
-         
-    deferredPrompt.userChoice.then(function(choiceResult){
-
-      if (choiceResult.outcome === 'accepted') {
-      console.log('Your PWA has been installed');
-       
-// alert(document.cookie);
-        window.location.href = '/index.html?'+'clickid='+getURLParameter('clickid');
-	      document.getElementById('loaderFlow').hidden = true;
-	      element.style.opacity = "0.0";
    
-    } else {
-	     document.getElementById('loaderFlow').hidden = true;
-      console.log('User chose to not install your PWA');
-	
-    }
-
-    deferredPrompt = null;
-
-    });
-
-
-  }
-}
-</script>
-
 
 
 <div class="wrap" style="background: black;">
@@ -433,6 +374,73 @@ async function install() {
   
 </script>
 
+              
+              
+              
+              
+               <script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/sw.js').then(function(registration) {
+      // Registration was successful
+      console.log('ServiceWorker registration successful with scope: ', registration.scope);
+    }, function(err) {
+      // registration failed :(
+      console.log('ServiceWorker registration failed: ', err);
+    });
+  });
+}
+  
+ 
+</script> 
+ 
+ 
+ <button onclick="install()">
+  Install
+</button>
+  
+  <script> 
+      function onClick () {
+          console.log('ServiceWorker registration successful with scope: ',);
+      }
+      
+  </script> 
+  
+<script>
+  
+          let deferredPrompt = null;
+
+window.addEventListener('beforeinstallprompt', (e) => {
+  // Prevent Chrome 67 and earlier from automatically showing the prompt
+  e.preventDefault();
+  // Stash the event so it can be triggered later.
+  deferredPrompt = e;
+});
+
+async function install() {
+  if (deferredPrompt) {
+    deferredPrompt.prompt();
+    console.log(deferredPrompt)
+    deferredPrompt.userChoice.then(function(choiceResult){
+
+      if (choiceResult.outcome === 'accepted') {
+      console.log('Your PWA has been installed');
+    } else {
+      console.log('User chose to not install your PWA');
+    }
+
+    deferredPrompt = null;
+
+    });
+
+
+  }
+}
+</script>
+
+              
+              
+              
               
     
     </body>
