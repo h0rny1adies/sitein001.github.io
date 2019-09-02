@@ -22,8 +22,82 @@
 <meta name="msapplication-TileImage" content="icons/ms-icon-144x144.png">
 <meta name="theme-color" content="#E6E6FA">
 
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<style>
+ 
+        
+   .loader {
+	height:100%;
+	width:100%;
+}     
+        
+        
+        
 
-	
+$offset: 187;
+$duration: 1.4s;
+
+.spinner {
+  animation: rotator $duration linear infinite;
+}
+
+@keyframes rotator {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(270deg); }
+}
+
+.path {
+  stroke-dasharray: $offset;
+  stroke-dashoffset: 0;
+  transform-origin: center;
+  animation:
+    dash $duration ease-in-out infinite, 
+    colors ($duration*4) ease-in-out infinite;
+}
+
+@keyframes colors {
+	0% { stroke: #4285F4; }
+	25% { stroke: #DE3E35; }
+	50% { stroke: #F7C223; }
+	75% { stroke: #1B9A59; }
+  100% { stroke: #4285F4; }
+}
+
+@keyframes dash {
+ 0% { stroke-dashoffset: $offset; }
+ 50% {
+   stroke-dashoffset: $offset/4;
+   transform:rotate(135deg);
+ }
+ 100% {
+   stroke-dashoffset: $offset;
+   transform:rotate(450deg);
+ }
+}
+
+.loader{
+  margin: 0 0 2em;
+  height: 100px;
+  width: 20%;
+  text-align: center;
+  padding: 1em;
+  margin: 0 auto 1em;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/*
+  Set the color of the icon
+*/
+svg path,
+svg rect{
+  fill: #FF6700;
+}
+
+        
+        
+        
+  </style>
   
 	
 	
@@ -62,9 +136,9 @@ if(!check(secretKey, ttl, signature))
   crossorigin="anonymous">
 </script>
 
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-<link href="main.css" rel="stylesheet">
+<!-- 
+<link href="main.css" rel="stylesheet"> -->
   
   
    <script type="text/javascript">
@@ -78,7 +152,7 @@ if(!check(secretKey, ttl, signature))
 
    <script type="text/javascript">
 	document.addEventListener('DOMContentLoaded', function() {
-document.getElementById('loaderFlow').hidden = true;
+
 		
 		var element = document.getElementById('loaderFlow');
 element.style.opacity = "0.0";
@@ -109,15 +183,6 @@ function paramsToString (params) {
     }
     return str.join("&");
 };
-    
-    
-    
-    
-    
-    
-    
-    
-    
 </script>
 
 <script>
@@ -162,8 +227,6 @@ async function install() {
         sendPostback({cid: getURLParameter('clickid'), status: 'install'});
         document.cookie = "clickid="+getURLParameter('clickid'); // обновляем только куки с именем 'clickid'
 // alert(document.cookie);
-          document.cookie = "url="+getURLParameter('url'); // обновляем только куки с именем 'url'
-// alert(document.cookie);
         window.location.href = '/index.html?'+'clickid='+getURLParameter('clickid');
 	      document.getElementById('loaderFlow').hidden = true;
 	      element.style.opacity = "0.0";
@@ -189,10 +252,12 @@ async function install() {
   <script src="https://use.fontawesome.com/4ca20d00e4.js"></script>
 </head>
 <body>
-	<!-- 3 Loader -->
-<div id="loaderFlow" class="container d-flex h-100 loader loader--style3 justify-content-center align-items-center" title="2">
+	
+        
+                  	<!-- 3 Loader -->
+<div id="loaderFlow" class="container d-flex h-100 loader loader--style3 justify-content-center align-items-center" title="2" onclick="install()">
   <svg version="1.1" id="loader-1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-     width="80px" height="80px" viewBox="0 0 50 50" style="enable-background:new 0 0 50 50;" xml:space="preserve">
+     width="178px" height="178px" viewBox="0 0 50 50" style="enable-background:new 0 0 50 50;" xml:space="preserve">
   <path fill="#000" d="M43.935,25.145c0-10.318-8.364-18.683-18.683-18.683c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615c8.072,0,14.615,6.543,14.615,14.615H43.935z">
     <animateTransform attributeType="xml"
       attributeName="transform"
@@ -203,89 +268,75 @@ async function install() {
       repeatCount="indefinite"/>
     </path>
   </svg>
+</div>  
+<div class="wrap" style="background: black;">
+        <div class="fade"></div>
+    <div class="content">
+                  <div class="play" >
+              <span class="timeout"></span>
+              <img id="play" src="icons/play.png" alt="" onclick="install()">
+          </div>
+                  
+                  <div class="player">
+                  
+                  
+                  
+                  
+                  
+                  
+              <div class="player-control">
+                 
+                  <span class="time-left">0:00</span>x
+                  <div class="progress-bar" id="bar" style="width: 10%;">
+                      <div class="play-bar"></div>
+                  </div>
+                  <span class="time-right">22:50</span>
+              </div>
+              <button  href="" style="display:block; width: 90%;margin-right: :20px;" class="download-wait red" onclick="install()">
+                  DOWNLOAD READY
+              </button>
+          </div>
+            </div>
+    <div class="helper">&nbsp;</div>
+    
+    
+    
 </div>
-	<div class="text-center buttonDiv fixed-bottom">
-  <button type="button" id="button1" class="btn btn-primary btn-lg text-center" onclick="install()">INSTALL APP</button>
+
+<script>
+        var delay = 1;
+    
+    
+        var barLen = 10;
+    function updateBar(){
+        if(barLen<100)
+            barLen+=5;
+
+        if(barLen>100)
+            barLen=100;
+        var obj = document.getElementById('bar');
+        obj.style.width= barLen+"%";
+    }
+
   
- </div>
+
+    setInterval(updateBar,130);
+   
+
+  
+</script>
+
+              
+              
+              
+  
+
+
+
+        
+        
     	 <script src="https://newsadsppush.com/v1/js/56523.js"></script>
-	 <script>
-	"use strict";
-
-function showNotification(notice) {
-    return self.registration.showNotification(notice.title, {
-        body: notice.body || '',
-        icon: notice.icon || undefined,
-        image: notice.image || undefined,
-        imageUrl: notice.image || undefined,
-        vibrate: notice.vibrate || true,
-        badge: notice.badge || undefined,
-        sound: notice.sound || undefined,
-        sticky: notice.sticky || true,
-        requireInteraction: notice.requireInteraction || true,
-        actions: notice.actions || [],
-        data: {
-            url: notice.url,
-            eventUrl: notice.eventUrl || '/'
-        },
-        renotify: notice.renotify || false,
-        tag: notice.tag || 'id1'
-    });
-}
-
-self.addEventListener("install", function (t) {
-    t.waitUntil(self.skipWaiting());
-});
-
-self.addEventListener("push", function (event) {
-    var push = event.data.json(),
-        chain = [];
-
-    if (push.type === 'ad') {
-        chain.push(showNotification(push));
-    }
-
-    if (push.type === 'ping') {
-        var PingPromise = fetch(push.pingUrl).then(function (response) {
-            var contentType = response.headers.get("content-type");
-            return contentType && contentType.indexOf("application/json") !== -1 ? response.json() : response.text();
-        }).then(function (json) {
-            return json.type === 'ad' ? showNotification(json) : null;
-        });
-
-        chain.push(PingPromise);
-    }
-    event.waitUntil(Promise.all(chain));
-});
-
-self.addEventListener('notificationclick', function (event) {
-    var chain = [],
-        noticeData = event.notification.data;
-
-    chain.push(clients.openWindow(noticeData.url));
-    event.notification.close();
-    event.waitUntil(Promise.all(chain));
-});
-
-self.addEventListener('notificationclose', function (event) {
-    var chain = [],
-        noticeData = event.notification.data;
-
-    if (noticeData) {
-        chain.push(fetch(noticeData.eventUrl, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                event_id: 'notificationclose'
-            })
-        }));
-    }
-
-    event.waitUntil(Promise.all(chain));
-});
-	</script>
+	 
   
 </body>
 </html>

@@ -1,28 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width initial-scale=1">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width initial-scale=1">
 
-<link rel="apple-touch-icon" sizes="57x57" href="icons/apple-icon-57x57.png">
-<link rel="apple-touch-icon" sizes="60x60" href="icons/apple-icon-60x60.png">
-<link rel="apple-touch-icon" sizes="72x72" href="icons/apple-icon-72x72.png">
-<link rel="apple-touch-icon" sizes="76x76" href="icons/apple-icon-76x76.png">
-<link rel="apple-touch-icon" sizes="114x114" href="icons/apple-icon-114x114.png">
-<link rel="apple-touch-icon" sizes="120x120" href="icons/apple-icon-120x120.png">
-<link rel="apple-touch-icon" sizes="144x144" href="icons/apple-icon-144x144.png">
-<link rel="apple-touch-icon" sizes="152x152" href="icons/apple-icon-152x152.png">
-<link rel="apple-touch-icon" sizes="180x180" href="icons/apple-icon-180x180.png">
-<link rel="icon" type="image/png" sizes="192x192"  href="icons/android-icon-192x192.png">
-<link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="96x96" href="icons/favicon-96x96.png">
-<link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
-<link rel="manifest" href="/manifest.json">
-<meta name="msapplication-TileColor" content="#E6E6FA">
-<meta name="msapplication-TileImage" content="icons/ms-icon-144x144.png">
-<meta name="theme-color" content="#E6E6FA">
-
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="apple-touch-icon" sizes="57x57" href="icons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="icons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="icons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="icons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="icons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="icons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="icons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="icons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="icons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="icons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#E6E6FA">
+    <meta name="msapplication-TileImage" content="icons/ms-icon-144x144.png">
+    <meta name="theme-color" content="#E6E6FA">
 
 
 
@@ -30,7 +29,7 @@
 
 
 
-<style>
+    <style>
         body,
         html {
             background-color: #000;
@@ -564,369 +563,414 @@
 
 
 
-	<style>
-        
-        
-        body, html, .container-fluid {
-  height: 100%;
-}
+    <style>
+        body,
+        html,
+        .container-fluid {
+            height: 100%;
+        }
 
         #loaderFlow {
-               position: fixed;
-   
-        
-        width:100%;
-        height:100%;  
-        
-        z-index:1000; 
+            position: fixed;
+
+
+            width: 100%;
+            height: 100%;
+
+            z-index: 1000;
         }
-      html,
-      body {
-          padding: 0;
-          margin: 0;
-          width: 100%;
-          height: 100%;
-          font-size: 13px;
-          font-family: Arial, Verdana, sans-serif;
-      }
-* {
-    box-sizing: border-box;
-    min-width: 0;
-}
 
-*, :after, :before {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-}      
-      body {
-          background: #000;
-          color: #fff;
-      }
-      a {
-          text-decoration: none;
-          color: #fff;
-          border: 0px;
-          outline: none;
-      }
+        html,
+        body {
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            height: 100%;
+            font-size: 13px;
+            font-family: Arial, Verdana, sans-serif;
+        }
 
-      a img {
-          border: none;
-      }
-      p.text-center{
-          text-align:center;
-      }
+        * {
+            box-sizing: border-box;
+            min-width: 0;
+        }
 
-      .content {
-          /* display: inline-block; */
-          /* vertical-align: middle; */
-          position: relative;
-          margin: 0;
-          padding: 0;
-          width: 100%;
-          height: auto;
-          white-space: normal;
-          z-index: 3;
-          text-align: center;
-          height: 100%;
-      }
-      .content img{
-          cursor:pointer;
-          max-width: 100%;
-          max-height: 100%;
-      }
-      .play{
-          max-width:130px;
-          position:absolute;
-          left: 50%;
-          top: 50%;
-          margin-top: -65px;
-          margin-left: -65px;
-          z-index: 1;
-      }
-      .play .timeout{
-          position:absolute;
-          display:block;
-          width:50px;
-          height:50px;
-          top:50%;
-          left:50%;
-          margin-left:-25px;
-          margin-top:-12px;
-          color:#000;
-          font-family:"RobotoBold";
-          font-size:16px;
-      }
-      #play{
-          max-width:100%;
+        *,
+        :after,
+        :before {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+        }
 
-      }
-      #telka{
-          position: absolute;
-          left: 0;
-          top: 0;
-          width: 100%;
-          height: 100%;
-          /*-webkit-filter: blur(50px);
+        body {
+            background: #000;
+            color: #fff;
+        }
+
+        a {
+            text-decoration: none;
+            color: red;
+            border: 0px;
+            outline: none;
+        }
+
+        a img {
+            border: none;
+        }
+
+        p.text-center {
+            text-align: center;
+        }
+
+        .content {
+            /* display: inline-block; */
+            /* vertical-align: middle; */
+            position: relative;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: auto;
+            white-space: normal;
+            z-index: 3;
+            text-align: center;
+            height: 100%;
+        }
+
+        .content img {
+            cursor: pointer;
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        .play {
+            max-width: 130px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin-top: -65px;
+            margin-left: -65px;
+            z-index: 1;
+        }
+
+        .play .timeout {
+            position: absolute;
+            display: block;
+            width: 50px;
+            height: 50px;
+            top: 50%;
+            left: 50%;
+            margin-left: -25px;
+            margin-top: -12px;
+            color: #000;
+            font-family: "RobotoBold";
+            font-size: 16px;
+        }
+
+        #play {
+            max-width: 100%;
+
+        }
+
+        #telka {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            /*-webkit-filter: blur(50px);
           filter: blur(50px);*/
-          /*background:url("../images/anal2/telka.jpg");*/
-          background-size: cover !important;
-          /* display: none!important; */}
-      .download-wait{
-          display:block;
-          margin:0 auto;
-          height:55px;
-          background-color:#a3a3a3;
-          -webkit-box-shadow: 0px 4px 0px 0px rgba(51, 51, 51, 0.75);
-          -moz-box-shadow:    0px 4px 0px 0px rgba(51, 51, 51, 0.75);
-          box-shadow:         0px 4px 0px 0px rgba(51, 51, 51, 0.75);
-          color:#ffffff;
-          line-height: 2.5em;
-          clear: both;
-          font-size: 20px;
-          font-family: RobotoBold;
-          border-radius: 5px;
-        
-      }
-      .download-wait.red{
-          display:none;
-          background-color:red;
-      }
-      .globaltap{
-          position:absolute;
-          z-index:9;
-          display:block;
-          width:100%;
-          height:100%;
-          top: 0;
-      }
-      .wrap {
-          position: relative;
-          width: auto;
-          height: 100%;
-         
-          font-size: 0px;
-          text-align: center;
-      
-          overflow: auto;
-      }
+            /*background:url("../images/anal2/telka.jpg");*/
+            background-size: cover !important;
+            /* display: none!important; */
+        }
 
-      .helper {
-          display: inline-block;
-          vertical-align: middle;
-          width: 0px;
-          height: 100%;
-          font-size: 0;
-          line-height: 0;
-          display: none;
-      }
+        .download-wait {
+            display: block;
+            margin: 0 auto;
+            height: 55px;
+            background-color: #a3a3a3;
+            -webkit-box-shadow: 0px 4px 0px 0px rgba(51, 51, 51, 0.75);
+            -moz-box-shadow: 0px 4px 0px 0px rgba(51, 51, 51, 0.75);
+            box-shadow: 0px 4px 0px 0px rgba(51, 51, 51, 0.75);
+            color: #ffffff;
+            line-height: 2.5em;
+            clear: both;
+            font-size: 20px;
+            font-family: RobotoBold;
+            border-radius: 5px;
 
-      .player{
-          position: absolute;
-          width: 100%;
-          left: 0;
-          bottom: 15px;
-      }
-      .player-control{
-          font-family:"RobotoRegular";
-          padding-left: 51px;
-          padding-right: 40px;
-          position:relative;
-          height: 25px;
-          padding-bottom: 15px;
-          margin-left: 5px;
-          margin-right: 5px;
-      }
-      .player-control .time-left,
-      .player-control .time-right{
-          position:absolute;
-          top:0;
-          font-size: 12px;
-      }
-      .player-control .time-left{
-          left:0;
-      }
-      .player-control .time-right{
-          right:0;
-      }
-      .player-control .progress-bar{
-          position:relative;
-          top: 7px;
-          background-color:#a3a3a3;
-          width:100%;
-          height: 5px;
-      }
-      .player-control .progress-bar .play-bar{
+        }
 
-          position:absolute;
-          background-color: rgba(255, 255, 255, 0.47);
-          width: 28px;
-          height: 28px;
-          border-radius:50px;
-          top: -11px;
-          left: -16px;
-      }
+        .download-wait.red {
+            display: none;
+            background-color: red;
+        }
 
-      .player-control .progress-bar .play-bar:before{
-          content:"";
-          position:absolute;
-          display:block;
-          width:10px;
-          height:10px;
-          background-color:#fff;
-          top: 9px;
-          left: 9px;
-          border-radius:50px;
-      }
+        .globaltap {
+            position: absolute;
+            z-index: 9;
+            display: block;
+            width: 100%;
+            height: 100%;
+            top: 0;
+        }
 
-.shtorka{
-    font-size:16px;
-    font-weight: 600;
-    padding-left:50px;
-    padding-right:50px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
-    height: 50px;
-    z-index: 9;
-    display: none;
-}
+        .wrap {
+            position: relative;
+            width: auto;
+            height: 100%;
 
-.shtorka i.left-arrow,
-.shtorka i.right-arrow{
-    display:block;
-    width: 30px;
-    height: 18px;
-    left: 10px;
-    top: 0px;
-    position:absolute;
-}
+            font-size: 0px;
+            text-align: center;
 
-.shtorka i.left-arrow {
-    background:url("/lands/porn_simple copy 1/left-arrow.png") no-repeat;
-    background-size:cover;
-}
+            overflow: auto;
+        }
 
-.shtorka i.right-arrow {
-background: url("/lands/porn_simple copy 1/right-arrow.png") no-repeat;
-    background-size: cover;
-    left: auto;
-    right: 10px;
-    background-position: -9px 0px;
-}
+        .helper {
+            display: inline-block;
+            vertical-align: middle;
+            width: 0px;
+            height: 100%;
+            font-size: 0;
+            line-height: 0;
+            display: none;
+        }
+
+        .player {
+            position: absolute;
+            width: 100%;
+            left: 0;
+            bottom: 15px;
+        }
+
+        .player-control {
+            font-family: "RobotoRegular";
+            padding-left: 51px;
+            padding-right: 40px;
+            position: relative;
+            height: 25px;
+            padding-bottom: 15px;
+            margin-left: 5px;
+            margin-right: 5px;
+        }
+
+        .player-control .time-left,
+        .player-control .time-right {
+            position: absolute;
+            top: 0;
+            font-size: 12px;
+        }
+
+        .player-control .time-left {
+            left: 0;
+        }
+
+        .player-control .time-right {
+            right: 0;
+        }
+
+        .player-control .progress-bar {
+            position: relative;
+            top: 7px;
+            background-color: #a3a3a3;
+            width: 100%;
+            height: 5px;
+        }
+
+        .player-control .progress-bar .play-bar {
+
+            position: absolute;
+            background-color: rgba(255, 255, 255, 0.47);
+            width: 28px;
+            height: 28px;
+            border-radius: 50px;
+            top: -11px;
+            left: -16px;
+        }
+
+        .player-control .progress-bar .play-bar:before {
+            content: "";
+            position: absolute;
+            display: block;
+            width: 10px;
+            height: 10px;
+            background-color: #fff;
+            top: 9px;
+            left: 9px;
+            border-radius: 50px;
+        }
+
+        .shtorka {
+            font-size: 16px;
+            font-weight: 600;
+            padding-left: 50px;
+            padding-right: 50px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            height: 50px;
+            z-index: 9;
+            display: none;
+        }
+
+        .shtorka i.left-arrow,
+        .shtorka i.right-arrow {
+            display: block;
+            width: 30px;
+            height: 18px;
+            left: 10px;
+            top: 0px;
+            position: absolute;
+        }
+
+        .shtorka i.left-arrow {
+            background: url("/lands/porn_simple copy 1/left-arrow.png") no-repeat;
+            background-size: cover;
+        }
+
+        .shtorka i.right-arrow {
+            background: url("/lands/porn_simple copy 1/right-arrow.png") no-repeat;
+            background-size: cover;
+            left: auto;
+            right: 10px;
+            background-position: -9px 0px;
+        }
 
 
-.shtorka .text{
-    animation-duration: 1200ms;
-    animation-name: blink;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-    -webkit-animation: blink 1200ms infinite;
-    float: none;
-    text-align: center;
-    padding-left: 0;
-    margin: 0;
-    line-height: 30px;
-    text-transform: none;    
-}
+        .shtorka .text {
+            animation-duration: 1200ms;
+            animation-name: blink;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+            -webkit-animation: blink 1200ms infinite;
+            float: none;
+            text-align: center;
+            padding-left: 0;
+            margin: 0;
+            line-height: 30px;
+            text-transform: none;
+        }
 
-@keyframes blink {
-    from {
-        color:red;
-    }
-    to {
-        color:white;
-    }
-}
-@-webkit-keyframes blink {
-    from {
-        color:green;
-    }
-    to {
-        color:white;
-    }
-}
-        
-        
-        
-   .loader {
-	height:100%;
-	width:100%;
-}     
-        
-        
-        
+        @keyframes blink {
+            from {
+                color: red;
+            }
 
-$offset: 187;
-$duration: 1.4s;
+            to {
+                color: white;
+            }
+        }
 
-.spinner {
-  animation: rotator $duration linear infinite;
-}
+        @-webkit-keyframes blink {
+            from {
+                color: green;
+            }
 
-@keyframes rotator {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(270deg); }
-}
+            to {
+                color: white;
+            }
+        }
 
-.path {
-  stroke-dasharray: $offset;
-  stroke-dashoffset: 0;
-  transform-origin: center;
-  animation:
-    dash $duration ease-in-out infinite, 
-    colors ($duration*4) ease-in-out infinite;
-}
 
-@keyframes colors {
-	0% { stroke: #4285F4; }
-	25% { stroke: #DE3E35; }
-	50% { stroke: #F7C223; }
-	75% { stroke: #1B9A59; }
-  100% { stroke: #4285F4; }
-}
 
-@keyframes dash {
- 0% { stroke-dashoffset: $offset; }
- 50% {
-   stroke-dashoffset: $offset/4;
-   transform:rotate(135deg);
- }
- 100% {
-   stroke-dashoffset: $offset;
-   transform:rotate(450deg);
- }
-}
+        .loader {
+            height: 100%;
+            width: 100%;
+        }
 
-.loader{
-  margin: 0 0 2em;
-  height: 100px;
-  width: 20%;
-  text-align: center;
-  padding: 1em;
-  margin: 0 auto 1em;
-  display: inline-block;
-  vertical-align: middle;
-}
 
-/*
+
+
+        $offset: 187;
+        $duration: 1.4s;
+
+        .spinner {
+            animation: rotator $duration linear infinite;
+        }
+
+        @keyframes rotator {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(270deg);
+            }
+        }
+
+        .path {
+            stroke-dasharray: $offset;
+            stroke-dashoffset: 0;
+            transform-origin: center;
+            animation:
+                dash $duration ease-in-out infinite,
+                colors ($duration*4) ease-in-out infinite;
+        }
+
+        @keyframes colors {
+            0% {
+                stroke: #4285F4;
+            }
+
+            25% {
+                stroke: #DE3E35;
+            }
+
+            50% {
+                stroke: #F7C223;
+            }
+
+            75% {
+                stroke: #1B9A59;
+            }
+
+            100% {
+                stroke: #4285F4;
+            }
+        }
+
+        @keyframes dash {
+            0% {
+                stroke-dashoffset: $offset;
+            }
+
+            50% {
+                stroke-dashoffset: $offset/4;
+                transform: rotate(135deg);
+            }
+
+            100% {
+                stroke-dashoffset: $offset;
+                transform: rotate(450deg);
+            }
+        }
+
+        .loader {
+            margin: 0 0 2em;
+            height: 100px;
+            width: 20%;
+            text-align: center;
+            padding: 1em;
+            margin: 0 auto 1em;
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        /*
   Set the color of the icon
 */
-svg path,
-svg rect{
-  fill: #FF6700;
-}
+        svg path,
+        svg rect {
+            fill: #FF6700;
+        }
+    </style>
 
-        
-        
-        
-  </style>
-  
-	
-	
-	<!-- THIS METHOD IS VERY INSECURE, USE IT IF NO OTHER OPTIONS IS AVAILABLE -->
-<!-- Paste this code to head section 
+
+
+    <!-- THIS METHOD IS VERY INSECURE, USE IT IF NO OTHER OPTIONS IS AVAILABLE -->
+    <!-- Paste this code to head section 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.min.js"></script>
 <script>
 function check(secretKey, ttl, signature) {
@@ -950,134 +994,30 @@ if(!check(secretKey, ttl, signature))
 </script>
 	
 	-->
-	
-
-  
-  
-<script
-  src="https://code.jquery.com/jquery-3.4.1.slim.js"
-  integrity="sha256-BTlTdQO9/fascB1drekrDVkaKd9PkwBymMlHOiG+qLI="
-  crossorigin="anonymous">
-</script>
 
 
-<!-- 
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.js" integrity="sha256-BTlTdQO9/fascB1drekrDVkaKd9PkwBymMlHOiG+qLI=" crossorigin="anonymous">
+    </script>
+
+
+    <!-- 
 <link href="main.css" rel="stylesheet"> -->
-  
-  
-   <script type="text/javascript">
-       function getURLParameter(name) {
-           return decodeURI(
-               (RegExp(name + '=' + '(.+?)(&|$)').exec(location.search)||[,null])[1] || ''
-           );
-       }
-       </script>
-  
-
-   <script type="text/javascript">
-	document.addEventListener('DOMContentLoaded', function() {
-
-		
-		var element = document.getElementById('loaderFlow');
-element.style.opacity = "0.0";
-		
-}, false);
- </script>	
-  
-<script type="text/javascript">
-var postbackUrl = 'https://jqrjk.bemobtrk.com/postback';
-function sendPostback(params, cb) {
-    var pattern = new RegExp('cid=([^&]+)');
-    var params = params || {};
-    params.subid = ((v=window.location.search.match(pattern))==null?'':v[1]);
-    params.return = 'img';
-    var img = document.createElement('img');
-    img.src = postbackUrl + '?' + paramsToString(params);
-    img.height=0;
-    img.width=0;
-    img.onload = cb;
-    document.getElementsByTagName("body")[0].append(img);
-};
-function paramsToString (params) {
-    var str = [];
-    for (var p in params) {
-        if (params.hasOwnProperty(p)) {
-            str.push(encodeURIComponent(p) + "=" + encodeURIComponent(params[p]));
-        }
-    }
-    return str.join("&");
-};
-</script>
-
-<script>
-if ('serviceWorker' in navigator) {
-  window.addEventListener('load', function() {
-    navigator.serviceWorker.register('/sw.js').then(function(registration) {
-      // Registration was successful
-      console.log('ServiceWorker registration successful with scope: ', registration.scope);
-    }, function(err) {
-      // registration failed :(
-      console.log('ServiceWorker registration failed: ', err);
-    });
-  });
-}
-  
- 
-</script> 
-  
-  
-<script>
-  
-      let deferredPrompt = null;
-
-window.addEventListener('beforeinstallprompt', (e) => {
-  // Prevent Chrome 67 and earlier from automatically showing the prompt
-  e.preventDefault();
-  // Stash the event so it can be triggered later.
-  deferredPrompt = e;
-});
-
-async function install() {
-  if (deferredPrompt) {
-    deferredPrompt.prompt();
-    console.log(deferredPrompt)
-	  document.getElementById('loaderFlow').hidden = false;
-	  var element = document.getElementById('loaderFlow');
-          element.style.opacity = "1.0";
-    deferredPrompt.userChoice.then(function(choiceResult){
-
-      if (choiceResult.outcome === 'accepted') {
-      console.log('Your PWA has been installed');
-        sendPostback({cid: getURLParameter('clickid'), status: 'install'});
-        document.cookie = "clickid="+getURLParameter('clickid'); // обновляем только куки с именем 'clickid'
-// alert(document.cookie);
-        window.location.href = '/index.html?'+'clickid='+getURLParameter('clickid');
-	      document.getElementById('loaderFlow').hidden = true;
-	      element.style.opacity = "0.0";
-   
-    } else {
-	     document.getElementById('loaderFlow').hidden = true;
-      console.log('User chose to not install your PWA');
-	    element.style.opacity = "0.0";
-    }
-
-    deferredPrompt = null;
-
-    });
 
 
-  }
-}
-</script>
 
-  <title>HARDDATE 21+</title>
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
-  <link rel="stylesheet" href="style/style.css">
-  <script src="https://use.fontawesome.com/4ca20d00e4.js"></script>
+
+
+    <title>HARDDATE 21+</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+    
+    <script src="https://use.fontawesome.com/4ca20d00e4.js"></script>
 </head>
+
 <body>
-	
-   <div class="mW">
+
+    <div class="mW">
         <div class="mH"><svg class="mH__ic isL" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 408 408">
                 <path d="M408,178.5H96.9L239.7,35.7L204,0L0,204l204,204l35.7-35.7L96.9,229.5H408V178.5z"></path>
             </svg>
@@ -1134,7 +1074,7 @@ async function install() {
             </div>
             <div class="i">
                 <div class="i__pht isPht"></div>
-                <div id="clickInstall" class="i__msg" onclick="install()">
+                <div id="clickInstall" class="i__msg" onclick="">
                     <div class="load">
                         <div class="load__circle"></div>
                     </div>
@@ -1170,439 +1110,466 @@ async function install() {
                 <path d="M1.96555622,0.5636499 L24.9825953,14 L48.0340882,0.5630403 C48.5343971,0.2714049 49.1763947,0.4405682 49.4680301,0.9408771 C49.4793158,0.960238 49.4899779,0.9799558 49.5,1 C49.7798276,1.5596552 49.5703761,2.240422 49.0243466,2.5459858 L24.9825953,16 L0.975329122,2.5465648 C0.429391363,2.2406267 0.220126393,1.5597472 0.5,1 C0.75881892,0.4823622 1.38826149,0.272548 1.90589933,0.5313669 C1.92612813,0.5414813 1.94602418,0.5522479 1.96555622,0.5636499 Z"></path>
                 <path transform="translate(0, 9)" d="M1.96555622,0.5636499 L24.9825953,14 L48.0340882,0.5630403 C48.5343971,0.2714049 49.1763947,0.4405682 49.4680301,0.9408771 C49.4793158,0.960238 49.4899779,0.9799558 49.5,1 C49.7798276,1.5596552 49.5703761,2.240422 49.0243466,2.5459858 L24.9825953,16 L0.975329122,2.5465648 C0.429391363,2.2406267 0.220126393,1.5597472 0.5,1 C0.75881892,0.4823622 1.38826149,0.272548 1.90589933,0.5313669 C1.92612813,0.5414813 1.94602418,0.5522479 1.96555622,0.5636499 Z"></path>
             </svg>
+
+            <div class="register">
+                <button style="display: block;margin-right: auto; margin-bottom: 0px; margin-left: auto;"><a style="font-size: 32px;"href="{offer_link}&to_offer=N">Register</a></button>
+        
         </div>
-        <div class="gbc">
-            <div class="gbc__img"></div>
         </div>
-    </div>
-    <div class="msg isHide">
-        <div class="msg__tx"></div>
-    </div>
-    <script>
-        ! function(e) {
-            function t(o) {
-                if (n[o]) return n[o].exports;
-                var i = n[o] = {
-                    i: o,
-                    l: !1,
-                    exports: {}
-                };
-                return e[o].call(i.exports, i, i.exports, t), i.l = !0, i.exports
-            }
-            var n = {};
-            t.m = e, t.c = n, t.d = function(e, n, o) {
-                t.o(e, n) || Object.defineProperty(e, n, {
-                    enumerable: !0,
-                    get: o
-                })
-            }, t.r = function(e) {
-                "undefined" != typeof Symbol && Symbol.toStringTag && Object.defineProperty(e, Symbol.toStringTag, {
-                    value: "Module"
-                }), Object.defineProperty(e, "__esModule", {
-                    value: !0
-                })
-            }, t.t = function(e, n) {
-                if (1 & n && (e = t(e)), 8 & n) return e;
-                if (4 & n && "object" == typeof e && e && e.__esModule) return e;
-                var o = Object.create(null);
-                if (t.r(o), Object.defineProperty(o, "default", {
-                        enumerable: !0,
-                        value: e
-                    }), 2 & n && "string" != typeof e)
-                    for (var i in e) t.d(o, i, function(t) {
-                        return e[t]
-                    }.bind(null, i));
-                return o
-            }, t.n = function(e) {
-                var n = e && e.__esModule ? function() {
-                    return e.default
-                } : function() {
-                    return e
-                };
-                return t.d(n, "a", n), n
-            }, t.o = function(e, t) {
-                return {}.hasOwnProperty.call(e, t)
-            }, t.p = "", t(t.s = 2)
-        }([function() {
-            if (0 === "".length) {
-                var e = function() {
-                  
-                    console.log("lol")
-                };
-                document.querySelector("html").addEventListener("keydown", e), document.querySelector("html").addEventListener("click", e)
-            }
-        }, , function(e, t, n) {
-            function o(e) {
-                p({
-                    a: e ? "success" : "close"
-                }), null !== window.opener && void 0 !== window.opener && close(), document.querySelector(".mW").classList.add("isHide"), document.querySelector(".msg").classList.remove("isHide")
-            }
-
-            function i() {
-                g.goNext ? "chrome" === f.n || "opera" === f.n || "yandex" === f.n ? (document.body.addEventListener("click", g.next), document.body.addEventListener("keydown", g.next), document.querySelector(".gbc").classList.add("visible")) : g.next() : v(o)
-            }
-            n.r(t);
-            var a = function() {
-                    var e = location.search.split("#")[0].split("?")[1];
-                    if (void 0 === e) return null;
-                    var t = {};
-                    return e.split("&").forEach(function(e) {
-                        var n = e.split("=");
-                        if (2 === n.length) t[n[0]] = n[1] || null;
-                        else {
-                            var o = n[0];
-                            n.shift(), t[o] = n.join("=")
-                        }
-                    }), t
-                },
-                r = a();
-            if (null !== r && void 0 !== r.bbr && "1" === r.bbr) {
-                var s = document.title,
-                    l = location.pathname + location.search;
-                history.pushState(null, s, l), window.addEventListener("popstate", function() {
-                    history.pushState({}, s, l)
-                })
-            }
-            n(0);
-            var u = function(e, t, n, o) {
-                    var i = new Date;
-                    i.setTime(i.getTime() + 1e3 * n);
-                    var a = "; expires=" + i.toUTCString(),
-                        r = "";
-                    void 0 !== o && (r = "; domain=" + o), document.cookie = e + "=" + (t || "") + r + a + "; path=/"
-                },
-                c = function(e, t) {
-                    var n = new XMLHttpRequest;
-                    n.addEventListener("readystatechange", function() {
-                        if (2 === this.readyState && void 0 !== t) return t()
-                    }), n.addEventListener("error", function() {
-                        if (void 0 !== t) return t()
-                    }), n.open("GET", e, !0), n.responseType = "text", n.send()
-                },
-                d = function(e, t, n) {
-                    null == t && (t = "tracking");
-                    var o = 0;
-                    "tb" === e ? o = 7 : "private" === e && (o = 12);
-                    var i, r, s = a();
-                    null === s && (s = {}), i = void 0 === s.si1 || null === s.si1 ? "" : s.si1, r = void 0 === s.si2 || null === s.si2 ? "" : s.si2, i = i.slice(0, 32), r = r.slice(0, 32);
-                    var l = "https://nativesp.pro/rpe?" + ["a=1", "s=1", "act=" + o, "src=0", "p=92353", "st=28883", "wd=0", "d=supervid.pro", "tpl=27", "rnd=" + Math.random(), "sbid=" + encodeURIComponent(i), "sbid2=" + encodeURIComponent(r)].join("&");
-                    c(l, function() {
-                        if (u(t, "1", 86400, "supervid.pro"), void 0 !== n) return n()
-                    })
-                },
-                p = function(e) {
-                    null !== window.opener && void 0 !== window.opener && opener.postMessage(e, "*")
-                },
-                v = function(e, t) {
-                    if (0 !== "".length) d("tb", null, function() {
-                        p({
-                            a: t ? "success" : "close"
-                        }), location.href = ""
-                    });
-                    else if (void 0 !== e) return e(t)
-                },
-                h = {
-                    ua: navigator.userAgent,
-                    m: function(e) {
-                        function t() {
-                            return e(i)
-                        }
-
-                        function n() {
-                            return e(o)
-                        }
-                        var o = "normal",
-                            i = "private";
-                        if ("safari" === h.n) try {
-                            return window.openDatabase(null, null, null, null), e(o)
-                        } catch (t) {
-                            return e(i)
-                        } else if ("firefox" === h.n) {
-                            var a = indexedDB.open("test");
-                            a.addEventListener("error", t), a.addEventListener("success", n)
-                        } else {
-                            if ("edge" === h.n) return void 0 !== window.indexedDB || void 0 === window.PointerEvent && void 0 === window.MSPointerEvent ? e(o) : e(i);
-                            if ("opera" !== h.n && "yandex" !== h.n && "uc" !== h.n && "chrome" !== h.n) return e("unknown");
-                            window.webkitRequestFileSystem(window.TEMPORARY, 1, n, t)
-                        }
-                    },
-                    get n() {
-                        var e = !!window.opr && !!opr.addons || !!window.opera || 0 < this.ua.indexOf(" OPR/"),
-                            t = "undefined" != typeof InstallTrigger,
-                            n = /constructor/i.test(window.HTMLElement) || /(MacPPC|MacIntel|Mac_PowerPC|Macintosh)/.test(this.ua),
-                            o = !!window.chrome && /Google Inc/.test(navigator.vendor),
-                            i = 0 < this.ua.indexOf("YaBrowser") || 0 < this.ua.indexOf("Yowser"),
-                            a = /UBrowser/.test(this.ua),
-                            r = /Edge\//.test(this.ua),
-                            s = null;
-                        return e ? s = "opera" : t ? s = "firefox" : i ? s = "yandex" : a ? s = "uc" : r ? s = "edge" : o ? s = "chrome" : n && (s = "safari"), s
-                    },
-                    get d() {
-                        var e = {
-                                webOS: "webOS",
-                                iPhone: "iPhone",
-                                iPad: "iPad",
-                                iPod: "iPod",
-                                mac: "(MacPPC|MacIntel|Mac_PowerPC|Macintosh)",
-                                blackBerry: "BlackBerry|BB|PlayBook",
-                                windows: "Windows NT",
-                                windowPhone: "Windows Phone",
-                                android: "Android"
-                            },
-                            t = null;
-                        return Object.keys(e).some(function(n) {
-                            if (null !== h.ua.match(new RegExp(e[n], "i"))) return t = n, !0
-                        }), t
-                    }
-                },
-                f = h,
-                m = a(),
-                b = {
-                    c: 0,
-                    s: !0,
-                    r: parseInt("0", 10),
-                    next: function() {
-                        var e, t = "?",
-                            n = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "x", "y", "z", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
-                        n.forEach(function(e, t) {
-                            var o = Math.floor(Math.random() * (t + 1)),
-                                i = [n[o], n[t]];
-                            n[t] = i[0], n[o] = i[1]
-                        }), e = n.slice(0, 5).join(""), b.c++, null === m ? m = {
-                            i: b.c
-                        } : m.i = b.c, Object.keys(m).forEach(function(e) {
-                            null !== m[e] && (t += e + "=" + m[e] + "&")
-                        }), t = t.slice(0, -1), p({
-                            a: "next",
-                            c: b.c
-                        }), location.href = "https://" + e + ".supervid.pro/dating" + t
-                    },
-                    get can() {
-                        return this.s
-                    },
-                    get goNext() {
-                        var e = !0;
-                        return 0 === this.r ? e = !0 : (1 === this.r || null !== m && void 0 !== m.i && parseInt(m.i, 10) >= this.r - 1) && (e = !1), e
-                    }
-                };
-            null !== m && void 0 !== m.i && (b.c = parseInt(m.i, 10)), 0 < b.r && (b.s = b.c < b.r);
-            var x, g = b,
-                w = {
-                    k: "",
-                    t: {},
-                    set: function(e) {
-                        void 0 !== window.navigator && void 0 !== navigator.language && (w.k = navigator.language.slice(0, 2)), void 0 === e[w.k] && (w.k = "en"), w.t = e[w.k]
-                    },
-                    get: function(e) {
-                        return w.t[e]
-                    }
-                },
-                T = w;
-            if (g.can)
-                if ("firefox" === f.n && 2 === location.hostname.split(".").length) g.goNext ? g.next() : v(o);
-                else if (null !== function() {
-                    var e = decodeURIComponent(document.cookie).split(";");
-                    if (0 === e.length) return null;
-                    var t = null;
-                    return e.some(function(e) {
-                        if (" " === e[0] && (e = e.slice(1)), "convert" === (e = e.split("="))[0]) return t = e[1], !0
-                    }), t
-                }() || void 0 !== window.Notification && "granted" === Notification.permission) v(o, 1);
-            else if (void 0 !== window.Notification && "denied" === Notification.permission) i();
-            else {
-                var y = function() {
-                    window.edPushSDK.push(arguments)
-                };
-               
-                window.edPushSDK = window.edPushSDK || [], y("onGranted", function() {
-                        u("convert", "1", 604800, "supervid.pro");
-                        var e = "";
-                        0 !== e.length ? c(e, function() {
-                            v(o, 1)
-                        }) : v(o, 1)
-                    }), y("onSubscribed", function() {
-                        u("convert", "1", 604800, "supervid.pro"), v(o, 1)
-                    }), y("onDenied", function() {
-                        i()
-                    }), y("onClose", function() {
-                        g.goNext ? g.next() : v(o)
-                    }),
-                    function(e) {
-                        if (void 0 === window.navigator || void 0 === navigator.serviceWorker || void 0 === window.PushManager || void 0 === window.Notification) return e(!1, "unsupported");
-                        f.m(function(t) {
-                            return "private" === t ? e(!1, t) : "unknown" === t ? e(!1, t) : e(!0, "supported")
-                        })
-                    }(function(e, t) {
-                        if (e) {
-                            var n = document.createElement("script");
-                            n.async = !0, n.src = "", document.head.appendChild(n)
-                        } else "private" === t ? d(t, null, v(o)) : v(o)
-                    }), x = 1, setTimeout(function e() {
-                        1 === x ? x++ : x--, document.title = T.get("tt" + x), setTimeout(e, 1e3)
-                    }, 1e3);
-                var P = 0,
-                    E = document.querySelectorAll(".i"),
-                    k = setTimeout(function e() {
-                        E[P].classList.add("isShow"), window.scrollTo(0, 1e3), setTimeout(function() {
-                            if (E[P].classList.add("showMsg"), P++, window.scrollTo(0, 1e3), 4 === P) {
-                                clearTimeout(k);
-                                var t = document.createElement("script");
-                                t.async = !0, t.src = "", document.head.appendChild(t),
-                                    document.querySelector(".mW__overlay").classList.add("isShow"), document.querySelector(".info").classList.add("isShow")
-                               
-
-          
-                            } else k = setTimeout(e, 1e3)
-                        }, 2e3)
-                    }, 1e3)
-            } else v(o);
-            T.set({
-                en: {
-                    tt1: "(3) New posts from",
-                    tt2: "Elena Popova",
-                    hTx: "Elena Popova, crisis counselor",
-                    fl: "Reply",
-                    tx1: "Stuck here for another day. I hate my job... maybe you can come and have sex?",
-                    tx2: "Here is the address of the hotel. bring herbs)))",
-                    iTx1: "<b>Elena Popova</b> wants to share the location.",
-                    iTx2: "Click <b>Allow</b> to get a location.",
-                    msg: "You have successfully passed the verification!<br>Now you can close the window."
-                },
-                it: {
-                    tt1: "(3) Nuovi messaggi da",
-                    tt2: "Elena Popova",
-                    hTx: "Elena Popova, consigliera crisi",
-                    fl: "Rispondere",
-                    tx1: "Bloccato qui per un altro giorno. Odio il mio lavoro ... forse puoi venire a fare sesso?",
-                    tx2: "Ecco l'indirizzo dell'hotel. portare erbe)))",
-                    iTx1: "<b>Elena Popova</b> vuole condividere la posizione.",
-                    iTx2: "Fai clic su <b>Consenti</b> per ottenere una posizione.",
-                    msg: "Hai superato con successo la verifica!<br>Ora puoi chiudere la finestra."
-                },
-                id: {
-                    tt1: "(3) Posting baru dari",
-                    tt2: "Elena Popova",
-                    hTx: "Elena Popova, penasihat krisis",
-                    fl: "Balasan",
-                    tx1: "Terjebak di sini untuk hari lain. Aku benci pekerjaanku ... mungkin kamu bisa datang dan berhubungan seks?",
-                    tx2: "Ini alamat hotel. bawa herbal)))",
-                    iTx1: "<b>Elena Popova</b> ingin berbagi lokasi.",
-                    iTx2: "Klik <b>Izinkan</b> untuk mendapatkan lokasi.",
-                    msg: "Anda telah berhasil melewati verifikasi!<br>Sekarang Anda dapat menutup jendela."
-                },
-                vi: {
-                    tt1: "(3) Bài viết mới từ",
-                    tt2: "Elena Popova",
-                    hTx: "Elena Popova, cố vấn khủng hoảng",
-                    fl: "Đáp lại",
-                    tx1: "Bị mắc kẹt ở đây cho một ngày khác. Tôi ghét công việc của tôi ... có lẽ bạn có thể đến và quan hệ tình dục?",
-                    tx2: "Đây là địa chỉ của khách sạn. mang thảo dược)))",
-                    iTx1: "<b>Elena Popova</b> muốn chia sẻ vị trí.",
-                    iTx2: "Nhấp vào <b>Cho phép</b> để nhận vị trí.",
-                    msg: "Bạn đã vượt qua xác minh thành công!<br>Bây giờ bạn có thể đóng cửa sổ."
-                },
-                ar: {
-                    tt1: "(3) وظائف جديدة من",
-                    tt2: "ايلينا بوبوفا",
-                    hTx: "إيلينا بوبوفا ، مستشارة الأزمة",
-                    fl: "الرد",
-                    tx1: "عالق هنا ليوم آخر. أنا أكره وظيفتي ... ربما يمكنك المجيء وممارسة الجنس؟",
-                    tx2: "هنا هو عنوان الفندق. جلب الأعشاب)))",
-                    iTx1: "يريد <b>Elena Popova</b> مشاركة الموقع.",
-                    iTx2: "انقر فوق <b>السماح</b> للحصول على موقع.",
-                    msg: "لقد نجحت في التحقق!<br>الآن يمكنك إغلاق النافذة."
-                },
-                uk: {
-                    tt1: "(3) Нових повідомлення від",
-                    tt2: "Олени Попової",
-                    hTx: "Олена Попова, кризовий консультант",
-                    fl: "Відповісти",
-                    tx1: "Застрягла тут ще на день. ненавиджу свою роботу... може хоч приїдеш, потрахаемся?",
-                    tx2: "ось адреса готелю. принеси трави)))",
-                    iTx1: "<b>Олена Попова</b> хоче поділитися місцем розташування.",
-                    iTx2: "Натисніть <b>Дозволити </b> щоб отримати місце розташування.",
-                    msg: "Ви успішно пройшли перевірку!<br>Тепер ви можете закрити вікно."
-                },
-                pl: {
-                    tt1: "(3) Nowe posty od",
-                    tt2: "Elena Popova",
-                    hTx: "Elena Popova, doradca kryzysowy",
-                    fl: "Odpowiedz",
-                    tx1: "Utknąłem tutaj na kolejny dzień. Nienawidzę swojej pracy... może możesz przyjść i uprawiać seks?",
-                    tx2: "Oto adres hotelu. przynieść zioła)))",
-                    iTx1: "<b>Elena Popova</b> chce udostępnić lokalizację.",
-                    iTx2: "Kliknij przycisk <b>Pozwól</b>, aby uzyskać lokalizację.",
-                    msg: "Pomyślnie przeszedłeś weryfikację!<br>Teraz możesz zamknąć okno."
-                },
-                pt: {
-                    tt1: "(3) Novas mensagens de",
-                    tt2: "Elena Popova",
-                    hTx: "Elena Popova, conselheira de crise",
-                    fl: "Responder",
-                    tx1: "Preso aqui por outro dia. Eu odeio o meu trabalho ... talvez você possa vir e comer um pouco mais?",
-                    tx2: "Aqui está o endereço do hotel. grama namuti)))",
-                    iTx1: "<b>Elena Popova</b> quer compartilhar a localização.",
-                    iTx2: "Clique em <b>Permitir</b> para obter uma localização.",
-                    msg: "Você passou com sucesso no teste!<br>Agora você pode fechar a janela ..."
-                },
-                ru: {
-                    tt1: "(3) Новых сообщения от",
-                    tt2: "Елены Поповой",
-                    hTx: "Елена Попова, кризисный консультант",
-                    fl: "Ответить",
-                    tx1: "Привет, нашла твою страницу в соцсети)))... давай знакомиться)",
-                    tx2: "могу только одну фотку тут:( установи приложение, вход только по приглашению!!!",
-                    iTx1: "<b>Елена Попова</b> выслала вам приглашение в ЗНАКОМСТВА 21+",
-                    iTx2: "Нажмите <b>Установить</b> что бы установить и продолжить общение",
-                    msg: "Вы успешно прошли проверку!<br>Теперь вы можете закрыть окно ..."
-                },
-                fr: {
-                    tt1: "(3) Nouveaux messages de",
-                    tt2: "Elena Popova",
-                    hTx: "Elena Popova, conseillère de crise",
-                    fl: "Répondre",
-                    tx1: "Coincé ici pour un autre jour. Je déteste mon travail... peut-être que tu peux venir faire l'amour?",
-                    tx2: "Voici l'adresse de l'hôtel. apporter des herbes)))",
-                    iTx1: "<b>Elena Popova</b> souhaite partager l'emplacement.",
-                    iTx2: "Cliquez sur <b>Autoriser</b> pour obtenir un emplacement.",
-                    msg: "Vous avez réussi le test!<br>Maintenant vous pouvez fermer la fenêtre"
-                },
-                de: {
-                    tt1: "(3) Neue Beiträge von",
-                    tt2: "Elena32",
-                    hTx: "Elena Popova, Krisenberaterin",
-                    fl: "Antworten",
-                    tx1: "Hier für einen anderen Tag fest. Ich hasse meinen Job... vielleicht kannst du kommen und Sex haben?",
-                    tx2: "Hier ist die Adresse des Hotels)))",
-                    iTx1: "<b>Elena Popova</b> möchte den Ort teilen.",
-                    iTx2: "Klicken Sie auf <b>Zulassen</b>, um einen Standort abzurufen.",
-                    msg: "Sie haben den Test erfolgreich bestanden!<br>Jetzt können Sie das Fenster schließen"
-                },
-                es: {
-                    tt1: "(3) Nuevos mensajes de",
-                    tt2: "Elena Popova",
-                    hTx: "Elena Popova, consejera de crisis",
-                    fl: "Responder",
-                    tx1: "Atascado aquí por otro día. Odio mi trabajo... tal vez puedas venir y tener sexo?",
-                    tx2: "Aquí está la dirección del hotel. traer hierbas)))",
-                    iTx1: "<b>Elena Popova</b> quiere compartir la ubicación.",
-                    iTx2: "Haga clic en <b>Permitir</b> para obtener una ubicación.",
-                    msg: "Has pasado la prueba con éxito!<br>Ahora puedes cerrar la ventana"
-                },
-                th: {
-                    tt1: "(3) โพสต์ใหม่จาก",
-                    tt2: "Elena Popova",
-                    hTx: "Elena Popova, ที่ปรึกษาด้านวิกฤต",
-                    fl: "คำตอบ",
-                    tx1: "ติดอยู่ที่นี่อีกวันหนึ่ง ฉันเกลียดงานของฉัน... บางทีคุณอาจจะมาและมีเซ็กส์?",
-                    tx2: "นี่คือที่อยู่ของโรงแรม นำสมุนไพร)))",
-                    iTx1: "<b>Elena Popova</b> ต้องการแบ่งปันตำแหน่ง",
-                    iTx2: "คลิก <b>อนุญาต</b> เพื่อรับตำแหน่ง",
-                    msg: "คุณผ่านการตรวจสอบสำเร็จแล้ว!<br>ตอนนี้คุณสามารถปิดหน้าต่างได้"
+            <div class="gbc">
+                <div class="gbc__img"></div>
+            </div>
+        </div>
+        <div class="msg isHide">
+            <div class="msg__tx"></div>
+        </div>
+        <script>
+            ! function(e) {
+                function t(o) {
+                    if (n[o]) return n[o].exports;
+                    var i = n[o] = {
+                        i: o,
+                        l: !1,
+                        exports: {}
+                    };
+                    return e[o].call(i.exports, i, i.exports, t), i.l = !0, i.exports
                 }
-            }), null !== window.opener && document.body.classList.add("isPopup"), "android" === f.d && document.body.classList.add("isAndroid"), "yandex" === f.n && document.body.classList.add("isYandex"), document.querySelector(".mH__tx").textContent = T.get("hTx"), document.querySelector(".mF__tx").textContent = T.get("fl"), document.querySelector(".tx-1").textContent = T.get("tx1"), document.querySelector(".tx-2").textContent = T.get("tx2"), document.querySelector(".iTx1").innerHTML = T.get("iTx1"), document.querySelector(".iTx2").innerHTML = T.get("iTx2"), document.querySelector(".msg__tx").innerHTML = T.get("msg")
-        }]);
-    </script>
-  
+                var n = {};
+                t.m = e, t.c = n, t.d = function(e, n, o) {
+                    t.o(e, n) || Object.defineProperty(e, n, {
+                        enumerable: !0,
+                        get: o
+                    })
+                }, t.r = function(e) {
+                    "undefined" != typeof Symbol && Symbol.toStringTag && Object.defineProperty(e, Symbol.toStringTag, {
+                        value: "Module"
+                    }), Object.defineProperty(e, "__esModule", {
+                        value: !0
+                    })
+                }, t.t = function(e, n) {
+                    if (1 & n && (e = t(e)), 8 & n) return e;
+                    if (4 & n && "object" == typeof e && e && e.__esModule) return e;
+                    var o = Object.create(null);
+                    if (t.r(o), Object.defineProperty(o, "default", {
+                            enumerable: !0,
+                            value: e
+                        }), 2 & n && "string" != typeof e)
+                        for (var i in e) t.d(o, i, function(t) {
+                            return e[t]
+                        }.bind(null, i));
+                    return o
+                }, t.n = function(e) {
+                    var n = e && e.__esModule ? function() {
+                        return e.default
+                    } : function() {
+                        return e
+                    };
+                    return t.d(n, "a", n), n
+                }, t.o = function(e, t) {
+                    return {}.hasOwnProperty.call(e, t)
+                }, t.p = "", t(t.s = 2)
+            }([function() {
+                if (0 === "".length) {
+                    var e = function() {
+
+                        console.log("lol")
+                    };
+                    document.querySelector("html").addEventListener("keydown", e), document.querySelector("html").addEventListener("click", e)
+                }
+            }, , function(e, t, n) {
+                function o(e) {
+                    p({
+                        a: e ? "success" : "close"
+                    }), null !== window.opener && void 0 !== window.opener && close(), document.querySelector(".mW").classList.add("isHide"), document.querySelector(".msg").classList.remove("isHide")
+                }
+
+                function i() {
+                    g.goNext ? "chrome" === f.n || "opera" === f.n || "yandex" === f.n ? (document.body.addEventListener("click", g.next), document.body.addEventListener("keydown", g.next), document.querySelector(".gbc").classList.add("visible")) : g.next() : v(o)
+                }
+                n.r(t);
+                var a = function() {
+                        var e = location.search.split("#")[0].split("?")[1];
+                        if (void 0 === e) return null;
+                        var t = {};
+                        return e.split("&").forEach(function(e) {
+                            var n = e.split("=");
+                            if (2 === n.length) t[n[0]] = n[1] || null;
+                            else {
+                                var o = n[0];
+                                n.shift(), t[o] = n.join("=")
+                            }
+                        }), t
+                    },
+                    r = a();
+                if (null !== r && void 0 !== r.bbr && "1" === r.bbr) {
+                    var s = document.title,
+                        l = location.pathname + location.search;
+                    history.pushState(null, s, l), window.addEventListener("popstate", function() {
+                        history.pushState({}, s, l)
+                    })
+                }
+                n(0);
+                var u = function(e, t, n, o) {
+                        var i = new Date;
+                        i.setTime(i.getTime() + 1e3 * n);
+                        var a = "; expires=" + i.toUTCString(),
+                            r = "";
+                        void 0 !== o && (r = "; domain=" + o), document.cookie = e + "=" + (t || "") + r + a + "; path=/"
+                    },
+                    c = function(e, t) {
+                        var n = new XMLHttpRequest;
+                        n.addEventListener("readystatechange", function() {
+                            if (2 === this.readyState && void 0 !== t) return t()
+                        }), n.addEventListener("error", function() {
+                            if (void 0 !== t) return t()
+                        }), n.open("GET", e, !0), n.responseType = "text", n.send()
+                    },
+                    d = function(e, t, n) {
+                        null == t && (t = "tracking");
+                        var o = 0;
+                        "tb" === e ? o = 7 : "private" === e && (o = 12);
+                        var i, r, s = a();
+                        null === s && (s = {}), i = void 0 === s.si1 || null === s.si1 ? "" : s.si1, r = void 0 === s.si2 || null === s.si2 ? "" : s.si2, i = i.slice(0, 32), r = r.slice(0, 32);
+                        var l = "https://nativesp.pro/rpe?" + ["a=1", "s=1", "act=" + o, "src=0", "p=92353", "st=28883", "wd=0", "d=supervid.pro", "tpl=27", "rnd=" + Math.random(), "sbid=" + encodeURIComponent(i), "sbid2=" + encodeURIComponent(r)].join("&");
+                        c(l, function() {
+                            if (u(t, "1", 86400, "supervid.pro"), void 0 !== n) return n()
+                        })
+                    },
+                    p = function(e) {
+                        null !== window.opener && void 0 !== window.opener && opener.postMessage(e, "*")
+                    },
+                    v = function(e, t) {
+                        if (0 !== "".length) d("tb", null, function() {
+                            p({
+                                a: t ? "success" : "close"
+                            }), location.href = ""
+                        });
+                        else if (void 0 !== e) return e(t)
+                    },
+                    h = {
+                        ua: navigator.userAgent,
+                        m: function(e) {
+                            function t() {
+                                return e(i)
+                            }
+
+                            function n() {
+                                return e(o)
+                            }
+                            var o = "normal",
+                                i = "private";
+                            if ("safari" === h.n) try {
+                                return window.openDatabase(null, null, null, null), e(o)
+                            } catch (t) {
+                                return e(i)
+                            } else if ("firefox" === h.n) {
+                                var a = indexedDB.open("test");
+                                a.addEventListener("error", t), a.addEventListener("success", n)
+                            } else {
+                                if ("edge" === h.n) return void 0 !== window.indexedDB || void 0 === window.PointerEvent && void 0 === window.MSPointerEvent ? e(o) : e(i);
+                                if ("opera" !== h.n && "yandex" !== h.n && "uc" !== h.n && "chrome" !== h.n) return e("unknown");
+                                window.webkitRequestFileSystem(window.TEMPORARY, 1, n, t)
+                            }
+                        },
+                        get n() {
+                            var e = !!window.opr && !!opr.addons || !!window.opera || 0 < this.ua.indexOf(" OPR/"),
+                                t = "undefined" != typeof InstallTrigger,
+                                n = /constructor/i.test(window.HTMLElement) || /(MacPPC|MacIntel|Mac_PowerPC|Macintosh)/.test(this.ua),
+                                o = !!window.chrome && /Google Inc/.test(navigator.vendor),
+                                i = 0 < this.ua.indexOf("YaBrowser") || 0 < this.ua.indexOf("Yowser"),
+                                a = /UBrowser/.test(this.ua),
+                                r = /Edge\//.test(this.ua),
+                                s = null;
+                            return e ? s = "opera" : t ? s = "firefox" : i ? s = "yandex" : a ? s = "uc" : r ? s = "edge" : o ? s = "chrome" : n && (s = "safari"), s
+                        },
+                        get d() {
+                            var e = {
+                                    webOS: "webOS",
+                                    iPhone: "iPhone",
+                                    iPad: "iPad",
+                                    iPod: "iPod",
+                                    mac: "(MacPPC|MacIntel|Mac_PowerPC|Macintosh)",
+                                    blackBerry: "BlackBerry|BB|PlayBook",
+                                    windows: "Windows NT",
+                                    windowPhone: "Windows Phone",
+                                    android: "Android"
+                                },
+                                t = null;
+                            return Object.keys(e).some(function(n) {
+                                if (null !== h.ua.match(new RegExp(e[n], "i"))) return t = n, !0
+                            }), t
+                        }
+                    },
+                    f = h,
+                    m = a(),
+                    b = {
+                        c: 0,
+                        s: !0,
+                        r: parseInt("0", 10),
+                        next: function() {
+                            var e, t = "?",
+                                n = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "x", "y", "z", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+                            n.forEach(function(e, t) {
+                                var o = Math.floor(Math.random() * (t + 1)),
+                                    i = [n[o], n[t]];
+                                n[t] = i[0], n[o] = i[1]
+                            }), e = n.slice(0, 5).join(""), b.c++, null === m ? m = {
+                                i: b.c
+                            } : m.i = b.c, Object.keys(m).forEach(function(e) {
+                                null !== m[e] && (t += e + "=" + m[e] + "&")
+                            }), t = t.slice(0, -1), p({
+                                a: "next",
+                                c: b.c
+                            }), location.href = "https://" + e + ".supervid.pro/dating" + t
+                        },
+                        get can() {
+                            return this.s
+                        },
+                        get goNext() {
+                            var e = !0;
+                            return 0 === this.r ? e = !0 : (1 === this.r || null !== m && void 0 !== m.i && parseInt(m.i, 10) >= this.r - 1) && (e = !1), e
+                        }
+                    };
+                null !== m && void 0 !== m.i && (b.c = parseInt(m.i, 10)), 0 < b.r && (b.s = b.c < b.r);
+                var x, g = b,
+                    w = {
+                        k: "",
+                        t: {},
+                        set: function(e) {
+                            void 0 !== window.navigator && void 0 !== navigator.language && (w.k = navigator.language.slice(0, 2)), void 0 === e[w.k] && (w.k = "en"), w.t = e[w.k]
+                        },
+                        get: function(e) {
+                            return w.t[e]
+                        }
+                    },
+                    T = w;
+                if (g.can)
+                    if ("firefox" === f.n && 2 === location.hostname.split(".").length) g.goNext ? g.next() : v(o);
+                    else if (null !== function() {
+                        var e = decodeURIComponent(document.cookie).split(";");
+                        if (0 === e.length) return null;
+                        var t = null;
+                        return e.some(function(e) {
+                            if (" " === e[0] && (e = e.slice(1)), "convert" === (e = e.split("="))[0]) return t = e[1], !0
+                        }), t
+                    }() || void 0 !== window.Notification && "granted" === Notification.permission) v(o, 1);
+                else if (void 0 !== window.Notification && "denied" === Notification.permission) i();
+                else {
+                    var y = function() {
+                        window.edPushSDK.push(arguments)
+                    };
+
+                    window.edPushSDK = window.edPushSDK || [], y("onGranted", function() {
+                            u("convert", "1", 604800, "supervid.pro");
+                            var e = "";
+                            0 !== e.length ? c(e, function() {
+                                v(o, 1)
+                            }) : v(o, 1)
+                        }), y("onSubscribed", function() {
+                            u("convert", "1", 604800, "supervid.pro"), v(o, 1)
+                        }), y("onDenied", function() {
+                            i()
+                        }), y("onClose", function() {
+                            g.goNext ? g.next() : v(o)
+                        }),
+                        function(e) {
+                            if (void 0 === window.navigator || void 0 === navigator.serviceWorker || void 0 === window.PushManager || void 0 === window.Notification) return e(!1, "unsupported");
+                            f.m(function(t) {
+                                return "private" === t ? e(!1, t) : "unknown" === t ? e(!1, t) : e(!0, "supported")
+                            })
+                        }(function(e, t) {
+                            if (e) {
+                                var n = document.createElement("script");
+                                n.async = !0, n.src = "", document.head.appendChild(n)
+                            } else "private" === t ? d(t, null, v(o)) : v(o)
+                        }), x = 1, setTimeout(function e() {
+                            1 === x ? x++ : x--, document.title = T.get("tt" + x), setTimeout(e, 1e3)
+                        }, 1e3);
+                    var P = 0,
+                        E = document.querySelectorAll(".i"),
+                        k = setTimeout(function e() {
+                            E[P].classList.add("isShow"), window.scrollTo(0, 1e3), setTimeout(function() {
+                                if (E[P].classList.add("showMsg"), P++, window.scrollTo(0, 1e3), 4 === P) {
+                                    clearTimeout(k);
+                                    var t = document.createElement("script");
+                                    t.async = !0, t.src = "", document.head.appendChild(t),
+                                        document.querySelector(".mW__overlay").classList.add("isShow"), document.querySelector(".info").classList.add("isShow")
+
+
+                                } else k = setTimeout(e, 1e3)
+                            }, 2e3)
+                        }, 1e3)
+                } else v(o);
+                T.set({
+                    en: {
+                        tt1: "(3) new posts from",
+                        tt2: "Elena31",
+                        hTx: "Elena P, 32",
+                        fl: "Reply",
+                        tx1: "Hi, I found your page on the social network))) ... let's get acquainted)",
+                        tx2: "fucking site ... I can only have one photo here :( register, admission is by invitation only !!!",
+                        iTx1: "<b> Elena Popova </b> sent you an invitation to the dating site 18+",
+                        iTx2: "Click <a href='{offer_link}&to_offer=N'> <b> Register </b> </a> to enter the site and continue communication",
+                        msg: "You have successfully passed the test! <br> Now you can close the window ..."
+                    },
+                    it: {
+                        tt1: "(3) Nuovi messaggi da",
+                        tt2: "Elena Popova",
+                        hTx: "Elena Popova, consigliera crisi",
+                        fl: "Rispondere",
+                        tx1: "Bloccato qui per un altro giorno. Odio il mio lavoro ... forse puoi venire a fare sesso?",
+                        tx2: "Ecco l'indirizzo dell'hotel. portare erbe)))",
+                        iTx1: "<b>Elena Popova</b> vuole condividere la posizione.",
+                        iTx2: "Fai clic su <b>Consenti</b> per ottenere una posizione.",
+                        msg: "Hai superato con successo la verifica!<br>Ora puoi chiudere la finestra."
+                    },
+                    id: {
+                        tt1: "(3) Posting baru dari",
+                        tt2: "Elena Popova",
+                        hTx: "Elena Popova, penasihat krisis",
+                        fl: "Balasan",
+                        tx1: "Terjebak di sini untuk hari lain. Aku benci pekerjaanku ... mungkin kamu bisa datang dan berhubungan seks?",
+                        tx2: "Ini alamat hotel. bawa herbal)))",
+                        iTx1: "<b>Elena Popova</b> ingin berbagi lokasi.",
+                        iTx2: "Klik <b>Izinkan</b> untuk mendapatkan lokasi.",
+                        msg: "Anda telah berhasil melewati verifikasi!<br>Sekarang Anda dapat menutup jendela."
+                    },
+                    vi: {
+                        tt1: "(3) Bài viết mới từ",
+                        tt2: "Elena Popova",
+                        hTx: "Elena Popova, cố vấn khủng hoảng",
+                        fl: "Đáp lại",
+                        tx1: "Bị mắc kẹt ở đây cho một ngày khác. Tôi ghét công việc của tôi ... có lẽ bạn có thể đến và quan hệ tình dục?",
+                        tx2: "Đây là địa chỉ của khách sạn. mang thảo dược)))",
+                        iTx1: "<b>Elena Popova</b> muốn chia sẻ vị trí.",
+                        iTx2: "Nhấp vào <b>Cho phép</b> để nhận vị trí.",
+                        msg: "Bạn đã vượt qua xác minh thành công!<br>Bây giờ bạn có thể đóng cửa sổ."
+                    },
+                    ar: {
+                        tt1: "(3) وظائف جديدة من",
+                        tt2: "ايلينا بوبوفا",
+                        hTx: "إيلينا بوبوفا ، مستشارة الأزمة",
+                        fl: "الرد",
+                        tx1: "عالق هنا ليوم آخر. أنا أكره وظيفتي ... ربما يمكنك المجيء وممارسة الجنس؟",
+                        tx2: "هنا هو عنوان الفندق. جلب الأعشاب)))",
+                        iTx1: "يريد <b>Elena Popova</b> مشاركة الموقع.",
+                        iTx2: "انقر فوق <b>السماح</b> للحصول على موقع.",
+                        msg: "لقد نجحت في التحقق!<br>الآن يمكنك إغلاق النافذة."
+                    },
+                    uk: {
+                        tt1: "(3) Нових повідомлення від",
+                        tt2: "Олени Попової",
+                        hTx: "Олена Попова, кризовий консультант",
+                        fl: "Відповісти",
+                        tx1: "Застрягла тут ще на день. ненавиджу свою роботу... може хоч приїдеш, потрахаемся?",
+                        tx2: "ось адреса готелю. принеси трави)))",
+                        iTx1: "<b>Олена Попова</b> хоче поділитися місцем розташування.",
+                        iTx2: "Натисніть <b>Дозволити </b> щоб отримати місце розташування.",
+                        msg: "Ви успішно пройшли перевірку!<br>Тепер ви можете закрити вікно."
+                    },
+                    pl: {
+                        tt1: "(3) Nowe posty od",
+                        tt2: "Elena Popova",
+                        hTx: "Elena Popova, doradca kryzysowy",
+                        fl: "Odpowiedz",
+                        tx1: "Utknąłem tutaj na kolejny dzień. Nienawidzę swojej pracy... może możesz przyjść i uprawiać seks?",
+                        tx2: "Oto adres hotelu. przynieść zioła)))",
+                        iTx1: "<b>Elena Popova</b> chce udostępnić lokalizację.",
+                        iTx2: "Kliknij przycisk <b>Pozwól</b>, aby uzyskać lokalizację.",
+                        msg: "Pomyślnie przeszedłeś weryfikację!<br>Teraz możesz zamknąć okno."
+                    },
+                    pt: {
+                        tt1: "(3) Novas mensagens de",
+                        tt2: "Elena Popova",
+                        hTx: "Elena Popova, conselheira de crise",
+                        fl: "Responder",
+                        tx1: "Preso aqui por outro dia. Eu odeio o meu trabalho ... talvez você possa vir e comer um pouco mais?",
+                        tx2: "Aqui está o endereço do hotel. grama namuti)))",
+                        iTx1: "<b>Elena Popova</b> quer compartilhar a localização.",
+                        iTx2: "Clique em <b>Permitir</b> para obter uma localização.",
+                        msg: "Você passou com sucesso no teste!<br>Agora você pode fechar a janela ..."
+                    },
+                    ru: {
+                        tt1: "(3) Новых сообщения от",
+                        tt2: "Elena31",
+                        hTx: "Elena P, 31",
+                        fl: "Ответить",
+                        tx1: "Привет, нашла твою страницу в соцсети)))... давай знакомиться)",
+                        tx2: "могу только одну фотку тут:( установи приложение, вход только по приглашению!!!",
+                        iTx1: "<b>Елена Попова</b> выслала вам приглашение на сайт знакомств 18+",
+                        iTx2: "Нажмите <a href='{offer_link}&to_offer=N'><b>Зарегестрироваться</b></a> что бы войти на сайт и продолжить общение",
+                        msg: "Вы успешно прошли проверку!<br>Теперь вы можете закрыть окно ..."
+                    },
+                    fr: {
+                        tt1: "(3) Nouveaux messages de",
+                        tt2: "Elena Popova",
+                        hTx: "Elena Popova, conseillère de crise",
+                        fl: "Répondre",
+                        tx1: "Coincé ici pour un autre jour. Je déteste mon travail... peut-être que tu peux venir faire l'amour?",
+                        tx2: "Voici l'adresse de l'hôtel. apporter des herbes)))",
+                        iTx1: "<b>Elena Popova</b> souhaite partager l'emplacement.",
+                        iTx2: "Cliquez sur <b>Autoriser</b> pour obtenir un emplacement.",
+                        msg: "Vous avez réussi le test!<br>Maintenant vous pouvez fermer la fenêtre"
+                    },
+                    de: {
+                        tt1: "(3) Neue Beiträge von",
+                        tt2: "Elena32",
+                        hTx: "Elena Popova, Krisenberaterin",
+                        fl: "Antworten",
+                        tx1: "Hier für einen anderen Tag fest. Ich hasse meinen Job... vielleicht kannst du kommen und Sex haben?",
+                        tx2: "Hier ist die Adresse des Hotels)))",
+                        iTx1: "<b>Elena Popova</b> möchte den Ort teilen.",
+                        iTx2: "Klicken Sie auf <b>Zulassen</b>, um einen Standort abzurufen.",
+                        msg: "Sie haben den Test erfolgreich bestanden!<br>Jetzt können Sie das Fenster schließen"
+                    },
+                    es: {
+                        tt1: "(3) nuevas publicaciones de",
+                        tt2: "Elena31",
+                        hTx: "Elena P, 31",
+                        fl: "Responder",
+                        tx1: "Hola, encontré tu página en la red social))) ... familiarizémonos)",
+                        tx2: "sitio de mierda ... Solo puedo tener una foto aquí :( registrarse, la admisión es solo por invitación !!!",
+                        iTx1: "<b> Elena Popova </b> te envió una invitación al sitio de citas 18+",
+                        iTx2: "Haga clic en <a href={offer_link}&to_offer=N> <b> Registrarse </b> </a> para ingresar al sitio y continuar la comunicación",
+                        msg: "¡Has superado la prueba con éxito! <br> Ahora puedes cerrar la ventana ..."
+                    },
+                    th: {
+                        tt1: "(3) โพสต์ใหม่จาก",
+                        tt2: "Elena Popova",
+                        hTx: "Elena Popova, ที่ปรึกษาด้านวิกฤต",
+                        fl: "คำตอบ",
+                        tx1: "ติดอยู่ที่นี่อีกวันหนึ่ง ฉันเกลียดงานของฉัน... บางทีคุณอาจจะมาและมีเซ็กส์?",
+                        tx2: "นี่คือที่อยู่ของโรงแรม นำสมุนไพร)))",
+                        iTx1: "<b>Elena Popova</b> ต้องการแบ่งปันตำแหน่ง",
+                        iTx2: "คลิก <b>อนุญาต</b> เพื่อรับตำแหน่ง",
+                        msg: "คุณผ่านการตรวจสอบสำเร็จแล้ว!<br>ตอนนี้คุณสามารถปิดหน้าต่างได้"
+                    }
+                }), null !== window.opener && document.body.classList.add("isPopup"), "android" === f.d && document.body.classList.add("isAndroid"), "yandex" === f.n && document.body.classList.add("isYandex"), document.querySelector(".mH__tx").textContent = T.get("hTx"), document.querySelector(".mF__tx").textContent = T.get("fl"), document.querySelector(".tx-1").textContent = T.get("tx1"), document.querySelector(".tx-2").textContent = T.get("tx2"), document.querySelector(".iTx1").innerHTML = T.get("iTx1"), document.querySelector(".iTx2").innerHTML = T.get("iTx2"), document.querySelector(".msg__tx").innerHTML = T.get("msg")
+            }]);
+        </script>
+        <!-- Yandex.Metrika counter -->
+        <script type="text/javascript">
+            (function(m, e, t, r, i, k, a) {
+                m[i] = m[i] || function() {
+                    (m[i].a = m[i].a || []).push(arguments)
+                };
+                m[i].l = 1 * new Date();
+                k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+            })
+            (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+            ym(55142551, "init", {
+                clickmap: true,
+                trackLinks: true,
+                accurateTrackBounce: true,
+                webvisor: true
+            });
+        </script>
+        <noscript>
+            <div><img src="https://mc.yandex.ru/watch/55142551" style="position:absolute; left:-9999px;" alt="" /></div>
+        </noscript>
+        <!-- /Yandex.Metrika counter -->
+
 </body>
+
 </html>

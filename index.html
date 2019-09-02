@@ -73,7 +73,22 @@ if ('serviceWorker' in navigator) {
 	
 }
     
-    var clickidFromCookie = readCookie("clickid");
+    var clickidFromCookie = readCookie("clickid");\
+      var urlFromCookie = readCookie("indexUrl");
+      
+      
+      
+      
+      function getCookie(name) {
+   var matches = document.cookie.match(new RegExp(
+    "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
+  ));
+  return matches ? decodeURIComponent(matches[1]) : undefined;
+}
+      alert(getCookie("clickid"));
+      alert(getCookie("indexUrl"));
+      
+      
 </script>
                              
 </head>
