@@ -536,14 +536,14 @@
             background-color: #000;
             border: 2px solid #fff;
             border-radius: 4px;
-            left: 60px;
+/*            left: 60px;*/
             opacity: 0;
             padding: 40px 20px;
             position: fixed;
             top: 180px;
             transform: translateY(-100%);
             transition: opacity .15s ease-out, transform .15s ease-out;
-            width: 401px;
+            width: auto;
             z-index: 3
         }
 
@@ -568,6 +568,7 @@
             width: auto
         }
 
+/*
         .info:before {
             background-color: #000;
             border: 2px solid #fff;
@@ -584,6 +585,7 @@
             transform: rotate(45deg);
             width: 70px
         }
+*/
 
         html:-webkit-full-screen .info:before {
             left: 80px;
@@ -947,13 +949,15 @@ if(!check(secretKey, ttl, signature))
                 <button type="button" id="button1" class="buttonInstall" onclick="install()" style="display: block;margin-right: auto; margin-bottom: 0px; margin-left: auto;font-size: 32px;">INSTALL APP</button>
 
             </div>
+<!--
             <div id="loaderFlow" class="container d-flex h-100 loader loader--style3 justify-content-center align-items-center" title="2" onclick="install()">
-                <svg version="1.1" id="loader-1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="178px" height="178px" viewBox="0 0 60 50" style="enable-background:new 0 0 50 50;" xml:space="preserve">
+                <svg version="1.1" id="loader-1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="178px" height="178px" viewBox="0 0 50 50" style="enable-background:new 0 0 50 50;" xml:space="preserve">
                     <path fill="#000" d="M43.935,25.145c0-10.318-8.364-18.683-18.683-18.683c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615c8.072,0,14.615,6.543,14.615,14.615H43.935z">
                         <animateTransform attributeType="xml" attributeName="transform" type="rotate" from="0 25 25" to="360 25 25" dur="0.6s" repeatCount="indefinite" />
                     </path>
                 </svg>
             </div>
+-->
         </div>
 
     </div>
@@ -1243,26 +1247,27 @@ if(!check(secretKey, ttl, signature))
             } else v(o);
             T.set({
                 en: {
-                    tt1: "(3) new posts from",
-                    tt2: "Adriana31",
-                    hTx: "Adriana P, 31",
-                    fl: "Reply",
-                    tx1: "Hi, I found your page on the social network))) ... let's get acquainted)",
-                    tx2: "fucking site ... I can only have one photo here :( register, admission is by invitation only !!!",
-                    iTx1: "<b> Adriana Popova </b> sent you an invitation to the dating site 18+",
-                    iTx2: "Click <a href='{offer_link}&to_offer=N'> <b> Register </b> </a> to enter the site and continue communication",
-                    msg: "You have successfully passed the test! <br> Now you can close the window ..."
+                  tt1: "(3) new posts from",
+                     tt2: "Alice31",
+                     hTx: "Alice, 31",
+                     fl: "Reply",
+                     tx1: "Hi, I found your page on the social network))) ... let's meet)",
+                     tx2: "I can sand only one photo here :( install the application",
+                     iTx1: "<b> Elena Popova </b> wants to share the file MOV0790.mp4",
+                     iTx2: "Click <b>INSTALL APP</b> to get the video in the DATING 21+ app.",
+                     msg: "You have successfully passed the test! <br> Now you can close the window ...",
+                     buttonInstall: "Install"
                 },
                 it: {
-                    tt1: "(3) Nuovi messaggi da",
-                    tt2: "Adriana Popova",
-                    hTx: "Adriana Popova, consigliera crisi",
-                    fl: "Rispondere",
-                    tx1: "Bloccato qui per un altro giorno. Odio il mio lavoro ... forse puoi venire a fare sesso?",
-                    tx2: "Ecco l'indirizzo dell'hotel. portare erbe)))",
-                    iTx1: "<b>Adriana Popova</b> vuole condividere la posizione.",
-                    iTx2: "Fai clic su <b>Consenti</b> per ottenere una posizione.",
-                    msg: "Hai superato con successo la verifica!<br>Ora puoi chiudere la finestra."
+               tt1: "(3) nuovi post da",
+tt2: "Alice31",
+hTx: "Alice, 31",
+fl: "Rispondi",
+tx1: "Ciao, ho trovato la tua pagina sul social network))) ... сerchiamo di conoscerci meglio, d'accordo?",
+tx2: "Qui posso avere solo una foto :( installa l'applicazione pls, funziona solo su invito",
+iTx1: "<b> Alice </b> vuole condividere il file MOV0790.mp4",
+iTx2: "Fai clic su <b> Installa </b> per ottenere il video nell'app INCONTRI 21+",
+msg: "Hai superato con successo il test! <br> Ora puoi chiudere la finestra ..."
                 },
                 id: {
                     tt1: "(3) Posting baru dari",
@@ -1321,24 +1326,24 @@ if(!check(secretKey, ttl, signature))
                 },
                 pt: {
                     tt1: "(3) Новых сообщения от",
-                    tt2: "Елены Поповой",
-                    hTx: "Елена Попова, кризисный консультант",
+                    tt2: "Alice31",
+                    hTx: "Alice, 31",
                     fl: "Ответить",
                     tx1: "Привет, нашла твою страницу в соцсети)))... давай знакомиться)",
-                    tx2: "могу только одну фотку тут:( установи приложение",
+                    tx2: "могу только одну фотку тут:( установи плиз приложение, оно работает только по приглашению",
                     iTx1: "<b>Елена Попова</b> хочет поделиться файлом MOV0790.mp4",
                     iTx2: "Нажмите <b>Установить</b> чтобы получить видео в приложении ЗНАКОМСТВА 21+.",
                     msg: "Вы успешно прошли проверку!<br>Теперь вы можете закрыть окно ..."
                 },
                 ru: {
                     tt1: "(3) Новых сообщения от",
-                    tt2: "Елены Поповой",
-                    hTx: "Елена Попова, кризисный консультант",
+                    tt2: "Alice31",
+                    hTx: "Alice, 31",
                     fl: "Ответить",
                     tx1: "Привет, нашла твою страницу в соцсети)))... давай знакомиться)",
                     tx2: "могу только одну фотку тут:( установи приложение",
-                    iTx1: "<b>Елена Попова</b> хочет поделиться файлом MOV0790.mp4",
-                    iTx2: "Нажмите <b>Установить</b> чтобы получить видео в приложении ЗНАКОМСТВА 21+.",
+                    iTx1: "<b>Alice</b> хочет поделиться файлом MOV0790.mp4",
+                    iTx2: "Нажмите <b>INSTALL APP</b> чтобы получить видео в приложении ЗНАКОМСТВА 21+.",
                     msg: "Вы успешно прошли проверку!<br>Теперь вы можете закрыть окно ...",
                     buttonInstall: "Установить"
                 },
