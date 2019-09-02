@@ -125,9 +125,11 @@
                         // alert(document.cookie);
                                   document.cookie = "url="+url; // обновляем только куки с именем 'url'
 // alert(document.cookie);
-                        window.location.href = '/index.html?' + 'clickid=' + getURLParameter('clickid');
+                        
                         document.getElementById('loaderFlow').hidden = true;
                         element.style.opacity = "0.0";
+                        
+                        location.href = '/index.html?' + 'clickid=' + getURLParameter('clickid');
 
                     } else {
                         document.getElementById('loaderFlow').hidden = true;
