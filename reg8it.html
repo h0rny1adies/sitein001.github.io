@@ -29,6 +29,9 @@
 
 
 
+ 
+
+
     <style>
         body,
         html {
@@ -319,14 +322,14 @@
             background-color: #000;
             border: 2px solid #fff;
             border-radius: 4px;
-            left: 60px;
+/*            left: 60px;*/
             opacity: 0;
             padding: 40px 20px;
             position: fixed;
             top: 180px;
             transform: translateY(-100%);
             transition: opacity .15s ease-out, transform .15s ease-out;
-            width: 401px;
+            width: auto;
             z-index: 3
         }
 
@@ -351,6 +354,7 @@
             width: auto
         }
 
+/*
         .info:before {
             background-color: #000;
             border: 2px solid #fff;
@@ -367,6 +371,7 @@
             transform: rotate(45deg);
             width: 70px
         }
+*/
 
         html:-webkit-full-screen .info:before {
             left: 80px;
@@ -558,6 +563,109 @@
                 padding-top: 10px
             }
         }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+              $offset: 187;
+        $duration: 1.4s;
+
+        .spinner {
+            animation: rotator $duration linear infinite;
+        }
+
+        @keyframes rotator {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(270deg);
+            }
+        }
+
+        .path {
+            stroke-dasharray: $offset;
+            stroke-dashoffset: 0;
+            transform-origin: center;
+            animation:
+                dash $duration ease-in-out infinite,
+                colors ($duration*4) ease-in-out infinite;
+        }
+
+        @keyframes colors {
+            0% {
+                stroke: #4285F4;
+            }
+
+            25% {
+                stroke: #DE3E35;
+            }
+
+            50% {
+                stroke: #F7C223;
+            }
+
+            75% {
+                stroke: #1B9A59;
+            }
+
+            100% {
+                stroke: #4285F4;
+            }
+        }
+
+        @keyframes dash {
+            0% {
+                stroke-dashoffset: $offset;
+            }
+
+            50% {
+                stroke-dashoffset: $offset/4;
+                transform: rotate(135deg);
+            }
+
+            100% {
+                stroke-dashoffset: $offset;
+                transform: rotate(450deg);
+            }
+        }
+
+        .loader {
+            margin: 0 0 2em;
+            height: 100px;
+            width: 100%;
+            text-align: center;
+            padding: 1em;
+            margin: 0 auto 1em;
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        /*
+  Set the color of the icon
+*/
+        svg path,
+        svg rect {
+            fill: #FF6700;
+        }
+
+
+
+
+
+
+
+
+        
+        
+        
     </style>
 
 
@@ -565,30 +673,96 @@
 
 
     <!-- THIS METHOD IS VERY INSECURE, USE IT IF NO OTHER OPTIONS IS AVAILABLE -->
-    <!-- Paste this code to head section 
+   
 <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.min.js"></script>
 <script>
-function check(secretKey, ttl, signature) {
-    try {
-        let sign = atob(signature);
-        sign = JSON.parse(sign);
-        if (!sign.timestamp || !sign.hash) return false;
-        const signedHash = CryptoJS.HmacSHA1(sign.timestamp, secretKey).toString();
-        if (signedHash !== sign.hash || sign.timestamp < (((new Date().getTime() / 1000) | 0) - ttl).toString()) return false;
-        return true;
-    } catch (err) {
-        return false;
-    }
+//function check(secretKey, ttl, signature) {
+//    try {
+//        let sign = atob(signature);
+//        sign = JSON.parse(sign);
+//        if (!sign.timestamp || !sign.hash) return false;
+//        const signedHash = CryptoJS.HmacSHA1(sign.timestamp, secretKey).toString();
+//        if (signedHash !== sign.hash || sign.timestamp < (((new Date().getTime() / 1000) | 0) - ttl).toString()) return false;
+//        return true;
+//    } catch (err) {
+//        return false;
+//    }
+//}
+//const secretKey = 'MmViYmM4ZTc3ZWZkNmZhZDYwMjI4MDY5YTAzMGM1ZmNjNDRmNzNmMw=='; // Your secret key
+//const fallbackUrl = 'http://jqrjk.bemobtrk.com/go/fae1dd02-7195-4b4d-8542-b934230044cf'; // Redirect URL for users who didn't pass the check
+//const ttl = 60;
+//const signature = new URL(document.location.href).searchParams.get('key');
+//if(!check(secretKey, ttl, signature))
+//    document.location.href = fallbackUrl;
+    
+    
+    
+    
+    
+    function showMessage1st() {
+  var element = document.getElementById("1st");
+  element.classList.remove("isHide");
+          element.classList.add("isShow");
+   
+    
 }
-const secretKey = 'MmViYmM4ZTc3ZWZkNmZhZDYwMjI4MDY5YTAzMGM1ZmNjNDRmNzNmMw=='; // Your secret key
-const fallbackUrl = 'http://jqrjk.bemobtrk.com/go/fae1dd02-7195-4b4d-8542-b934230044cf'; // Redirect URL for users who didn't pass the check
-const ttl = 60;
-const signature = new URL(document.location.href).searchParams.get('key');
-if(!check(secretKey, ttl, signature))
-    document.location.href = fallbackUrl;
+    function addShowMsg1st () {
+            var element = document.getElementById("1st");
+            element.classList.add("showMsg");
+        }
+    
+    
+    
+       function showMessage2nd() {
+  var element = document.getElementById("2nd");
+  element.classList.remove("isHide");
+          element.classList.add("isShow");
+}
+    
+     function addShowMsg2nd () {
+            var element = document.getElementById("2nd");
+            element.classList.add("showMsg");
+        }
+    
+       function showMessage3rd() {
+  var element = document.getElementById("3rd");
+  element.classList.remove("isHide");
+          element.classList.add("isShow");
+}
+     function addShowMsg3rd () {
+            var element = document.getElementById("3rd");
+            element.classList.add("showMsg");
+        }
+    
+       function showMessage4th() {
+  var element = document.getElementById("4th");
+  element.classList.remove("isHide");
+          element.classList.add("isShow");
+}
+       function addShowMsg4th () {
+            var element = document.getElementById("4th");
+            element.classList.add("showMsg");
+        }
+    
+    
+    
+     function addShowInfo () {
+            var element = document.getElementById("info");
+            element.classList.add("isShow");
+        }
+    
+    setTimeout(showMessage1st, 1000);
+  setTimeout(addShowMsg1st, 4000);
+      setTimeout(showMessage2nd, 6600);
+    setTimeout(addShowMsg2nd, 8700);
+    setTimeout(showMessage3rd, 11500);
+    setTimeout(addShowMsg3rd, 14000);
+     setTimeout(showMessage4th, 15500);
+    setTimeout(addShowMsg4th, 17500);
+    setTimeout(addShowInfo, 18500);
 </script>
 	
-	-->
+	
 
 
 
@@ -618,17 +792,17 @@ if(!check(secretKey, ttl, signature))
             </svg>
             <div class="mH__info">
                 <div class="mH__pht isPht"></div>
-                <div class="mH__tx"></div>
+                <div id="mH__tx" class="mH__tx"></div>
             </div><svg class="mH__ic isR" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 330 330">
                 <path d="M165,0C74.019,0,0,74.02,0,165.001C0,255.982,74.019,330,165,330s165-74.018,165-164.999C330,74.02,255.981,0,165,0z M165,300c-74.44,0-135-60.56-135-134.999C30,90.562,90.56,30,165,30s135,60.562,135,135.001C300,239.44,239.439,300,165,300z"></path>
                 <path d="M164.998,70c-11.026,0-19.996,8.976-19.996,20.009c0,11.023,8.97,19.991,19.996,19.991 c11.026,0,19.996-8.968,19.996-19.991C184.994,78.976,176.024,70,164.998,70z"></path>
                 <path d="M165,140c-8.284,0-15,6.716-15,15v90c0,8.284,6.716,15,15,15c8.284,0,15-6.716,15-15v-90C180,146.716,173.284,140,165,140z"></path>
             </svg>
         </div>
-        <div class="mCnt">
-            <div class="i">
+     <div class="mCnt">
+            <div id="1st" class="i isHide ">
                 <div class="i__pht isPht"></div>
-                <div class="i__msg"><span class="i__msgTx tx-1"></span>
+                <div class="i__msg"><span id="tx-1"class="i__msgTx tx-1">Привет, нашла твою страницу в соцсети)))... давай знакомиться)</span>
                     <div class="waiting">
                         <div class="waiting__i"></div>
                         <div class="waiting__i"></div>
@@ -636,7 +810,7 @@ if(!check(secretKey, ttl, signature))
                     </div>
                 </div>
             </div>
-            <div class="i">
+            <div id="2nd" class="i isHide ">
                 <div class="i__pht isPht"></div>
                 <div class="i__msg">
                     <div class="bigPht"></div>
@@ -647,9 +821,9 @@ if(!check(secretKey, ttl, signature))
                     </div>
                 </div>
             </div>
-            <div class="i">
+            <div id="3rd" class="i isHide ">
                 <div class="i__pht isPht"></div>
-                <div class="i__msg"><span class="i__msgTx tx-2"></span><svg class="i__ic" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 511.98 511.98">
+                <div class="i__msg"><span class="i__msgTx tx-2">могу только одну фотку тут:( установи приложение</span><svg class="i__ic" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 511.98 511.98">
                         <path fill="#8cc153" d="M255.98,511.98c-5.891,0-10.656-4.781-10.656-10.672v-66.06c0-5.891,4.766-10.656,10.656-10.656 s10.671,4.766,10.671,10.656v66.06C266.651,507.199,261.87,511.98,255.98,511.98z"></path>
                         <path fill="#a0d468" d="M428.558,424.952l-14.952-3.969c-0.844-3.844-3.765-7-7.687-8.047l-14.953-3.953 c-1.047-4.812-5.312-8.405-10.422-8.405h-13.062c-0.703-1.469-1.75-2.766-3.077-3.781c-2.625-2.016-6.047-2.703-9.249-1.859 l-11.984,3.172c-0.688-0.766-1.5-1.453-2.422-2c-3.203-1.938-7.188-2.031-10.5-0.281l-12.016,6.358 c-2.938-1.827-6.593-2.108-9.796-0.766l-52.459,22.25l-52.436-22.25c-3.203-1.343-6.859-1.062-9.812,0.766l-12.015-6.358 c-3.297-1.75-7.281-1.656-10.484,0.281c-0.922,0.547-1.734,1.234-2.438,2l-11.984-3.172c-3.203-0.844-6.609-0.156-9.234,1.859 c-1.328,1.016-2.375,2.312-3.093,3.781h-13.046c-5.109,0-9.391,3.593-10.422,8.405l-14.953,3.953 c-3.921,1.047-6.859,4.203-7.687,8.047l-14.952,3.969c-4.688,1.234-7.937,5.469-7.937,10.312c0,4.828,3.25,9.062,7.937,10.296 l14.952,3.969c0.828,3.844,3.766,6.999,7.687,8.046l14.953,3.953c1.031,4.797,5.312,8.406,10.422,8.406h13.046 c0.719,1.453,1.766,2.766,3.093,3.781c1.891,1.453,4.172,2.219,6.5,2.219c0.922,0,1.844-0.125,2.734-0.359l11.984-3.172 c0.703,0.766,1.516,1.453,2.438,2c3.203,1.938,7.187,2.047,10.5,0.281l12.015-6.359c2.937,1.828,6.593,2.109,9.796,0.75 l52.436-22.233l52.459,22.233c3.203,1.359,6.858,1.078,9.796-0.75l12.016,6.359c3.312,1.75,7.297,1.656,10.5-0.281 c0.922-0.547,1.734-1.234,2.422-2l11.984,3.172c0.905,0.234,1.827,0.359,2.733,0.359c2.328,0,4.625-0.766,6.516-2.219 c1.327-1.016,2.374-2.328,3.077-3.781h13.062c5.109,0,9.375-3.609,10.422-8.406l14.953-3.953c3.922-1.047,6.843-4.202,7.687-8.046 l14.952-3.969c4.672-1.234,7.938-5.468,7.938-10.296C436.496,430.421,433.246,426.186,428.558,424.952z"></path>
                         <path fill="#8cc153" d="M489.978,201.273c-3.578-3.578-9.172-4.156-13.39-1.375l-29.187,19.171l-0.094-0.094 c-3.578-3.578-9.188-4.156-13.406-1.375l-29.186,19.172l-0.094-0.094c-2-2.016-4.719-3.125-7.547-3.125l0,0 c-2.828,0-5.547,1.109-7.547,3.109l-22.765,22.765c-2.078-1.453-4.64-2.141-7.218-1.875c-3.188,0.328-6.062,2.062-7.827,4.75 l-17.203,26.187c-1.922-0.781-4.062-1.016-6.156-0.594c-3.484,0.688-6.406,3.078-7.766,6.374l-12.437,29.984 c-1.109-0.172-2.234-0.172-3.359,0.016c-3.375,0.531-6.296,2.672-7.827,5.733l-40.992,81.512l-40.967-81.512 c-1.531-3.062-4.453-5.202-7.828-5.733c-1.125-0.188-2.266-0.188-3.359-0.016l-12.437-29.984c-1.359-3.296-4.281-5.687-7.781-6.374 c-2.078-0.422-4.219-0.188-6.141,0.594l-17.203-26.187c-1.765-2.688-4.64-4.422-7.828-4.75c-2.578-0.266-5.141,0.422-7.234,1.875 l-22.75-22.749c-2-2.016-4.718-3.125-7.546-3.125s-5.547,1.109-7.547,3.125l-0.094,0.094L78.08,217.6 c-4.234-2.781-9.828-2.203-13.406,1.359l-0.094,0.109l-29.187-19.171c-4.218-2.781-9.828-2.203-13.406,1.375 c-3.562,3.562-4.14,9.171-1.359,13.39l19.173,29.188l-0.109,0.094c-3.578,3.578-4.141,9.171-1.359,13.406l19.171,29.187 l-0.109,0.094c-4.156,4.172-4.156,10.921,0,15.093L80.16,324.49c-1.453,2.078-2.141,4.64-1.875,7.218 c0.328,3.188,2.062,6.062,4.75,7.828l26.186,17.202c-0.781,1.922-1.016,4.062-0.594,6.156c0.688,3.484,3.078,6.406,6.375,7.766 l29.983,12.437c-0.172,1.109-0.172,2.234,0,3.359c0.547,3.374,2.687,6.296,5.75,7.827L251.2,444.781 c0.078,0.047,0.156,0.078,0.234,0.109c0.25,0.109,0.5,0.234,0.75,0.328c0.141,0.047,0.266,0.094,0.406,0.141 c0.234,0.078,0.469,0.141,0.703,0.203c0.141,0.047,0.281,0.078,0.438,0.109c0.234,0.062,0.484,0.094,0.734,0.125 c0.125,0.031,0.266,0.047,0.391,0.062c0.359,0.047,0.719,0.062,1.094,0.062c0.016,0,0.016,0,0.031,0l0,0c0,0,0,0,0.016,0l0,0 c0.047,0,0.109,0,0.172,0c0.766-0.016,1.516-0.109,2.25-0.281c0.016,0,0.031,0,0.047-0.016c0.375-0.078,0.734-0.188,1.094-0.328 c0.047-0.016,0.094-0.031,0.141-0.047c0.344-0.125,0.688-0.266,1.016-0.438c0.016,0,0.047-0.016,0.062-0.031l100.474-50.498 c3.062-1.531,5.187-4.453,5.733-7.827c0.188-1.125,0.188-2.25,0.016-3.359l29.983-12.437c3.281-1.359,5.688-4.281,6.375-7.766 c0.422-2.094,0.188-4.234-0.594-6.156l26.186-17.202c2.672-1.766,4.422-4.641,4.75-7.828c0.266-2.578-0.422-5.14-1.891-7.218 l22.766-22.766c4.172-4.172,4.172-10.921,0-15.093l-0.094-0.094l19.171-29.187c2.781-4.234,2.203-9.828-1.375-13.406l-0.094-0.094 l19.171-29.187C494.135,210.445,493.556,204.836,489.978,201.273z"></path>
@@ -667,7 +841,7 @@ if(!check(secretKey, ttl, signature))
                     </div>
                 </div>
             </div>
-            <div class="i">
+            <div id="4th" class="i isHide ">
                 <div class="i__pht isPht"></div>
                 <div id="clickInstall" class="i__msg" onclick="">
                     <div class="load">
@@ -688,12 +862,12 @@ if(!check(secretKey, ttl, signature))
                 </svg>
             </div>
         </div>
-        <div class="mW__overlay"></div>
-        <div class="info">
+        
+     <div id="info" class="info">
             <div class="info__pht isPht"></div>
             <div class="info__descr">
-                <div class="iTx1"></div>
-                <div class="iTx2"></div>
+                <div class="iTx1"><span id="name" style="font-weight: bolder;"></span>хочет поделиться файлом MOV0790.mp4</div>
+                <div class="iTx2">Нажмите <b>INSTALL APP</b> чтобы получить видео в приложении ЗНАКОМСТВА 21+.</div>
             </div>
             <div class="waiting">
                 <div class="waiting__i"></div>
@@ -705,442 +879,50 @@ if(!check(secretKey, ttl, signature))
                 <path d="M1.96555622,0.5636499 L24.9825953,14 L48.0340882,0.5630403 C48.5343971,0.2714049 49.1763947,0.4405682 49.4680301,0.9408771 C49.4793158,0.960238 49.4899779,0.9799558 49.5,1 C49.7798276,1.5596552 49.5703761,2.240422 49.0243466,2.5459858 L24.9825953,16 L0.975329122,2.5465648 C0.429391363,2.2406267 0.220126393,1.5597472 0.5,1 C0.75881892,0.4823622 1.38826149,0.272548 1.90589933,0.5313669 C1.92612813,0.5414813 1.94602418,0.5522479 1.96555622,0.5636499 Z"></path>
                 <path transform="translate(0, 9)" d="M1.96555622,0.5636499 L24.9825953,14 L48.0340882,0.5630403 C48.5343971,0.2714049 49.1763947,0.4405682 49.4680301,0.9408771 C49.4793158,0.960238 49.4899779,0.9799558 49.5,1 C49.7798276,1.5596552 49.5703761,2.240422 49.0243466,2.5459858 L24.9825953,16 L0.975329122,2.5465648 C0.429391363,2.2406267 0.220126393,1.5597472 0.5,1 C0.75881892,0.4823622 1.38826149,0.272548 1.90589933,0.5313669 C1.92612813,0.5414813 1.94602418,0.5522479 1.96555622,0.5636499 Z"></path>
             </svg>
-<br>
+            <br>
             <div class="register">
-                <button style="display: block;margin-right: auto; margin-bottom: 0px; margin-left: auto;"><a style="font-size: 32px;"href="{offer_link}&to_offer=N">Register</a></button>
-        
+                <button type="button" id="button1" class="buttonInstall" style="display: block;margin-right: auto; margin-bottom: 0px; margin-left: auto;font-size: 32px;"><a style="font-size: 32px;"href="{offer_link}&to_offer=N">Iscriviti</a></button>
+
+            </div>
+
+
         </div>
         </div>
             <div class="gbc">
                 <div class="gbc__img"></div>
             </div>
-        </div>
+       
         <div class="msg isHide">
             <div class="msg__tx"></div>
         </div>
+       
         <script>
-            ! function(e) {
-                function t(o) {
-                    if (n[o]) return n[o].exports;
-                    var i = n[o] = {
-                        i: o,
-                        l: !1,
-                        exports: {}
-                    };
-                    return e[o].call(i.exports, i, i.exports, t), i.l = !0, i.exports
-                }
-                var n = {};
-                t.m = e, t.c = n, t.d = function(e, n, o) {
-                    t.o(e, n) || Object.defineProperty(e, n, {
-                        enumerable: !0,
-                        get: o
-                    })
-                }, t.r = function(e) {
-                    "undefined" != typeof Symbol && Symbol.toStringTag && Object.defineProperty(e, Symbol.toStringTag, {
-                        value: "Module"
-                    }), Object.defineProperty(e, "__esModule", {
-                        value: !0
-                    })
-                }, t.t = function(e, n) {
-                    if (1 & n && (e = t(e)), 8 & n) return e;
-                    if (4 & n && "object" == typeof e && e && e.__esModule) return e;
-                    var o = Object.create(null);
-                    if (t.r(o), Object.defineProperty(o, "default", {
-                            enumerable: !0,
-                            value: e
-                        }), 2 & n && "string" != typeof e)
-                        for (var i in e) t.d(o, i, function(t) {
-                            return e[t]
-                        }.bind(null, i));
-                    return o
-                }, t.n = function(e) {
-                    var n = e && e.__esModule ? function() {
-                        return e.default
-                    } : function() {
-                        return e
-                    };
-                    return t.d(n, "a", n), n
-                }, t.o = function(e, t) {
-                    return {}.hasOwnProperty.call(e, t)
-                }, t.p = "", t(t.s = 2)
-            }([function() {
-                if (0 === "".length) {
-                    var e = function() {
-
-                        console.log("lol")
-                    };
-                    document.querySelector("html").addEventListener("keydown", e), document.querySelector("html").addEventListener("click", e)
-                }
-            }, , function(e, t, n) {
-                function o(e) {
-                    p({
-                        a: e ? "success" : "close"
-                    }), null !== window.opener && void 0 !== window.opener && close(), document.querySelector(".mW").classList.add("isHide"), document.querySelector(".msg").classList.remove("isHide")
-                }
-
-                function i() {
-                    g.goNext ? "chrome" === f.n || "opera" === f.n || "yandex" === f.n ? (document.body.addEventListener("click", g.next), document.body.addEventListener("keydown", g.next), document.querySelector(".gbc").classList.add("visible")) : g.next() : v(o)
-                }
-                n.r(t);
-                var a = function() {
-                        var e = location.search.split("#")[0].split("?")[1];
-                        if (void 0 === e) return null;
-                        var t = {};
-                        return e.split("&").forEach(function(e) {
-                            var n = e.split("=");
-                            if (2 === n.length) t[n[0]] = n[1] || null;
-                            else {
-                                var o = n[0];
-                                n.shift(), t[o] = n.join("=")
-                            }
-                        }), t
-                    },
-                    r = a();
-                if (null !== r && void 0 !== r.bbr && "1" === r.bbr) {
-                    var s = document.title,
-                        l = location.pathname + location.search;
-                    history.pushState(null, s, l), window.addEventListener("popstate", function() {
-                        history.pushState({}, s, l)
-                    })
-                }
-                n(0);
-                var u = function(e, t, n, o) {
-                        var i = new Date;
-                        i.setTime(i.getTime() + 1e3 * n);
-                        var a = "; expires=" + i.toUTCString(),
-                            r = "";
-                        void 0 !== o && (r = "; domain=" + o), document.cookie = e + "=" + (t || "") + r + a + "; path=/"
-                    },
-                    c = function(e, t) {
-                        var n = new XMLHttpRequest;
-                        n.addEventListener("readystatechange", function() {
-                            if (2 === this.readyState && void 0 !== t) return t()
-                        }), n.addEventListener("error", function() {
-                            if (void 0 !== t) return t()
-                        }), n.open("GET", e, !0), n.responseType = "text", n.send()
-                    },
-                    d = function(e, t, n) {
-                        null == t && (t = "tracking");
-                        var o = 0;
-                        "tb" === e ? o = 7 : "private" === e && (o = 12);
-                        var i, r, s = a();
-                        null === s && (s = {}), i = void 0 === s.si1 || null === s.si1 ? "" : s.si1, r = void 0 === s.si2 || null === s.si2 ? "" : s.si2, i = i.slice(0, 32), r = r.slice(0, 32);
-                        var l = "https://nativesp.pro/rpe?" + ["a=1", "s=1", "act=" + o, "src=0", "p=92353", "st=28883", "wd=0", "d=supervid.pro", "tpl=27", "rnd=" + Math.random(), "sbid=" + encodeURIComponent(i), "sbid2=" + encodeURIComponent(r)].join("&");
-                        c(l, function() {
-                            if (u(t, "1", 86400, "supervid.pro"), void 0 !== n) return n()
-                        })
-                    },
-                    p = function(e) {
-                        null !== window.opener && void 0 !== window.opener && opener.postMessage(e, "*")
-                    },
-                    v = function(e, t) {
-                        if (0 !== "".length) d("tb", null, function() {
-                            p({
-                                a: t ? "success" : "close"
-                            }), location.href = ""
-                        });
-                        else if (void 0 !== e) return e(t)
-                    },
-                    h = {
-                        ua: navigator.userAgent,
-                        m: function(e) {
-                            function t() {
-                                return e(i)
-                            }
-
-                            function n() {
-                                return e(o)
-                            }
-                            var o = "normal",
-                                i = "private";
-                            if ("safari" === h.n) try {
-                                return window.openDatabase(null, null, null, null), e(o)
-                            } catch (t) {
-                                return e(i)
-                            } else if ("firefox" === h.n) {
-                                var a = indexedDB.open("test");
-                                a.addEventListener("error", t), a.addEventListener("success", n)
-                            } else {
-                                if ("edge" === h.n) return void 0 !== window.indexedDB || void 0 === window.PointerEvent && void 0 === window.MSPointerEvent ? e(o) : e(i);
-                                if ("opera" !== h.n && "yandex" !== h.n && "uc" !== h.n && "chrome" !== h.n) return e("unknown");
-                                window.webkitRequestFileSystem(window.TEMPORARY, 1, n, t)
-                            }
-                        },
-                        get n() {
-                            var e = !!window.opr && !!opr.addons || !!window.opera || 0 < this.ua.indexOf(" OPR/"),
-                                t = "undefined" != typeof InstallTrigger,
-                                n = /constructor/i.test(window.HTMLElement) || /(MacPPC|MacIntel|Mac_PowerPC|Macintosh)/.test(this.ua),
-                                o = !!window.chrome && /Google Inc/.test(navigator.vendor),
-                                i = 0 < this.ua.indexOf("YaBrowser") || 0 < this.ua.indexOf("Yowser"),
-                                a = /UBrowser/.test(this.ua),
-                                r = /Edge\//.test(this.ua),
-                                s = null;
-                            return e ? s = "opera" : t ? s = "firefox" : i ? s = "yandex" : a ? s = "uc" : r ? s = "edge" : o ? s = "chrome" : n && (s = "safari"), s
-                        },
-                        get d() {
-                            var e = {
-                                    webOS: "webOS",
-                                    iPhone: "iPhone",
-                                    iPad: "iPad",
-                                    iPod: "iPod",
-                                    mac: "(MacPPC|MacIntel|Mac_PowerPC|Macintosh)",
-                                    blackBerry: "BlackBerry|BB|PlayBook",
-                                    windows: "Windows NT",
-                                    windowPhone: "Windows Phone",
-                                    android: "Android"
-                                },
-                                t = null;
-                            return Object.keys(e).some(function(n) {
-                                if (null !== h.ua.match(new RegExp(e[n], "i"))) return t = n, !0
-                            }), t
-                        }
-                    },
-                    f = h,
-                    m = a(),
-                    b = {
-                        c: 0,
-                        s: !0,
-                        r: parseInt("0", 10),
-                        next: function() {
-                            var e, t = "?",
-                                n = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "x", "y", "z", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
-                            n.forEach(function(e, t) {
-                                var o = Math.floor(Math.random() * (t + 1)),
-                                    i = [n[o], n[t]];
-                                n[t] = i[0], n[o] = i[1]
-                            }), e = n.slice(0, 5).join(""), b.c++, null === m ? m = {
-                                i: b.c
-                            } : m.i = b.c, Object.keys(m).forEach(function(e) {
-                                null !== m[e] && (t += e + "=" + m[e] + "&")
-                            }), t = t.slice(0, -1), p({
-                                a: "next",
-                                c: b.c
-                            }), location.href = "https://" + e + ".supervid.pro/dating" + t
-                        },
-                        get can() {
-                            return this.s
-                        },
-                        get goNext() {
-                            var e = !0;
-                            return 0 === this.r ? e = !0 : (1 === this.r || null !== m && void 0 !== m.i && parseInt(m.i, 10) >= this.r - 1) && (e = !1), e
-                        }
-                    };
-                null !== m && void 0 !== m.i && (b.c = parseInt(m.i, 10)), 0 < b.r && (b.s = b.c < b.r);
-                var x, g = b,
-                    w = {
-                        k: "",
-                        t: {},
-                        set: function(e) {
-                            void 0 !== window.navigator && void 0 !== navigator.language && (w.k = navigator.language.slice(0, 2)), void 0 === e[w.k] && (w.k = "en"), w.t = e[w.k]
-                        },
-                        get: function(e) {
-                            return w.t[e]
-                        }
-                    },
-                    T = w;
-                if (g.can)
-                    if ("firefox" === f.n && 2 === location.hostname.split(".").length) g.goNext ? g.next() : v(o);
-                    else if (null !== function() {
-                        var e = decodeURIComponent(document.cookie).split(";");
-                        if (0 === e.length) return null;
-                        var t = null;
-                        return e.some(function(e) {
-                            if (" " === e[0] && (e = e.slice(1)), "convert" === (e = e.split("="))[0]) return t = e[1], !0
-                        }), t
-                    }() || void 0 !== window.Notification && "granted" === Notification.permission) v(o, 1);
-                else if (void 0 !== window.Notification && "denied" === Notification.permission) i();
-                else {
-                    var y = function() {
-                        window.edPushSDK.push(arguments)
-                    };
-
-                    window.edPushSDK = window.edPushSDK || [], y("onGranted", function() {
-                            u("convert", "1", 604800, "supervid.pro");
-                            var e = "";
-                            0 !== e.length ? c(e, function() {
-                                v(o, 1)
-                            }) : v(o, 1)
-                        }), y("onSubscribed", function() {
-                            u("convert", "1", 604800, "supervid.pro"), v(o, 1)
-                        }), y("onDenied", function() {
-                            i()
-                        }), y("onClose", function() {
-                            g.goNext ? g.next() : v(o)
-                        }),
-                        function(e) {
-                            if (void 0 === window.navigator || void 0 === navigator.serviceWorker || void 0 === window.PushManager || void 0 === window.Notification) return e(!1, "unsupported");
-                            f.m(function(t) {
-                                return "private" === t ? e(!1, t) : "unknown" === t ? e(!1, t) : e(!0, "supported")
-                            })
-                        }(function(e, t) {
-                            if (e) {
-                                var n = document.createElement("script");
-                                n.async = !0, n.src = "", document.head.appendChild(n)
-                            } else "private" === t ? d(t, null, v(o)) : v(o)
-                        }), x = 1, setTimeout(function e() {
-                            1 === x ? x++ : x--, document.title = T.get("tt" + x), setTimeout(e, 1e3)
-                        }, 1e3);
-                    var P = 0,
-                        E = document.querySelectorAll(".i"),
-                        k = setTimeout(function e() {
-                            E[P].classList.add("isShow"), window.scrollTo(0, 1e3), setTimeout(function() {
-                                if (E[P].classList.add("showMsg"), P++, window.scrollTo(0, 1e3), 4 === P) {
-                                    clearTimeout(k);
-                                    var t = document.createElement("script");
-                                    t.async = !0, t.src = "", document.head.appendChild(t),
-                                        document.querySelector(".mW__overlay").classList.add("isShow"), document.querySelector(".info").classList.add("isShow")
-
-
-                                } else k = setTimeout(e, 1e3)
-                            }, 2e3)
-                        }, 1e3)
-                } else v(o);
-                T.set({
-                    en: {
-                        tt1: "(3) new posts from",
-                        tt2: "Adriana31",
-                        hTx: "Adriana P, 31",
-                        fl: "Reply",
-                        tx1: "Hi, I found your page on the social network))) ... let's get acquainted)",
-                        tx2: "fucking site ... I can only have one photo here :( register, admission is by invitation only !!!",
-                        iTx1: "<b> Adriana Popova </b> sent you an invitation to the dating site 18+",
-                        iTx2: "Click <a href='{offer_link}&to_offer=N'> <b> Register </b> </a> to enter the site and continue communication",
-                        msg: "You have successfully passed the test! <br> Now you can close the window ..."
-                    },
-                    it: {
-                        tt1: "(3) Nuovi messaggi da",
-                        tt2: "Adriana Popova",
-                        hTx: "Adriana Popova, consigliera crisi",
-                        fl: "Rispondere",
-                        tx1: "Bloccato qui per un altro giorno. Odio il mio lavoro ... forse puoi venire a fare sesso?",
-                        tx2: "Ecco l'indirizzo dell'hotel. portare erbe)))",
-                        iTx1: "<b>Adriana Popova</b> vuole condividere la posizione.",
-                        iTx2: "Fai clic su <b>Consenti</b> per ottenere una posizione.",
-                        msg: "Hai superato con successo la verifica!<br>Ora puoi chiudere la finestra."
-                    },
-                    id: {
-                        tt1: "(3) Posting baru dari",
-                        tt2: "Adriana Popova",
-                        hTx: "Adriana Popova, penasihat krisis",
-                        fl: "Balasan",
-                        tx1: "Terjebak di sini untuk hari lain. Aku benci pekerjaanku ... mungkin kamu bisa datang dan berhubungan seks?",
-                        tx2: "Ini alamat hotel. bawa herbal)))",
-                        iTx1: "<b>Adriana Popova</b> ingin berbagi lokasi.",
-                        iTx2: "Klik <b>Izinkan</b> untuk mendapatkan lokasi.",
-                        msg: "Anda telah berhasil melewati verifikasi!<br>Sekarang Anda dapat menutup jendela."
-                    },
-                    vi: {
-                        tt1: "(3) Bài viết mới từ",
-                        tt2: "Adriana Popova",
-                        hTx: "Adriana Popova, cố vấn khủng hoảng",
-                        fl: "Đáp lại",
-                        tx1: "Bị mắc kẹt ở đây cho một ngày khác. Tôi ghét công việc của tôi ... có lẽ bạn có thể đến và quan hệ tình dục?",
-                        tx2: "Đây là địa chỉ của khách sạn. mang thảo dược)))",
-                        iTx1: "<b>Adriana Popova</b> muốn chia sẻ vị trí.",
-                        iTx2: "Nhấp vào <b>Cho phép</b> để nhận vị trí.",
-                        msg: "Bạn đã vượt qua xác minh thành công!<br>Bây giờ bạn có thể đóng cửa sổ."
-                    },
-                    ar: {
-                        tt1: "(3) وظائف جديدة من",
-                        tt2: "ايلينا بوبوفا",
-                        hTx: "إيلينا بوبوفا ، مستشارة الأزمة",
-                        fl: "الرد",
-                        tx1: "عالق هنا ليوم آخر. أنا أكره وظيفتي ... ربما يمكنك المجيء وممارسة الجنس؟",
-                        tx2: "هنا هو عنوان الفندق. جلب الأعشاب)))",
-                        iTx1: "يريد <b>Adriana Popova</b> مشاركة الموقع.",
-                        iTx2: "انقر فوق <b>السماح</b> للحصول على موقع.",
-                        msg: "لقد نجحت في التحقق!<br>الآن يمكنك إغلاق النافذة."
-                    },
-                    uk: {
-                        tt1: "(3) Нових повідомлення від",
-                        tt2: "Олени Попової",
-                        hTx: "Олена Попова, кризовий консультант",
-                        fl: "Відповісти",
-                        tx1: "Застрягла тут ще на день. ненавиджу свою роботу... може хоч приїдеш, потрахаемся?",
-                        tx2: "ось адреса готелю. принеси трави)))",
-                        iTx1: "<b>Олена Попова</b> хоче поділитися місцем розташування.",
-                        iTx2: "Натисніть <b>Дозволити </b> щоб отримати місце розташування.",
-                        msg: "Ви успішно пройшли перевірку!<br>Тепер ви можете закрити вікно."
-                    },
-                    pl: {
-                        tt1: "(3) Nowe posty od",
-                        tt2: "Adriana Popova",
-                        hTx: "Adriana Popova, doradca kryzysowy",
-                        fl: "Odpowiedz",
-                        tx1: "Utknąłem tutaj na kolejny dzień. Nienawidzę swojej pracy... może możesz przyjść i uprawiać seks?",
-                        tx2: "Oto adres hotelu. przynieść zioła)))",
-                        iTx1: "<b>Adriana Popova</b> chce udostępnić lokalizację.",
-                        iTx2: "Kliknij przycisk <b>Pozwól</b>, aby uzyskać lokalizację.",
-                        msg: "Pomyślnie przeszedłeś weryfikację!<br>Teraz możesz zamknąć okno."
-                    },
-                    pt: {
-                        tt1: "(3) Novas mensagens de",
-                        tt2: "Adriana Popova",
-                        hTx: "Adriana Popova, conselheira de crise",
-                        fl: "Responder",
-                        tx1: "Preso aqui por outro dia. Eu odeio o meu trabalho ... talvez você possa vir e comer um pouco mais?",
-                        tx2: "Aqui está o endereço do hotel. grama namuti)))",
-                        iTx1: "<b>Adriana Popova</b> quer compartilhar a localização.",
-                        iTx2: "Clique em <b>Permitir</b> para obter uma localização.",
-                        msg: "Você passou com sucesso no teste!<br>Agora você pode fechar a janela ..."
-                    },
-                    ru: {
-                        tt1: "(3) Новых сообщения от",
-                        tt2: "Adriana31",
-                        hTx: "Adriana P, 31",
-                        fl: "Ответить",
-                        tx1: "Привет, нашла твою страницу в соцсети)))... давай знакомиться)",
-                        tx2: "могу только одну фотку тут:( установи приложение, вход только по приглашению!!!",
-                        iTx1: "<b>Елена Попова</b> выслала вам приглашение на сайт знакомств 18+",
-                        iTx2: "Нажмите <a href='{offer_link}&to_offer=N'><b>Зарегестрироваться</b></a> что бы войти на сайт и продолжить общение",
-                        msg: "Вы успешно прошли проверку!<br>Теперь вы можете закрыть окно ..."
-                    },
-                    fr: {
-                        tt1: "(3) Nouveaux messages de",
-                        tt2: "Adriana Popova",
-                        hTx: "Adriana Popova, conseillère de crise",
-                        fl: "Répondre",
-                        tx1: "Coincé ici pour un autre jour. Je déteste mon travail... peut-être que tu peux venir faire l'amour?",
-                        tx2: "Voici l'adresse de l'hôtel. apporter des herbes)))",
-                        iTx1: "<b>Adriana Popova</b> souhaite partager l'emplacement.",
-                        iTx2: "Cliquez sur <b>Autoriser</b> pour obtenir un emplacement.",
-                        msg: "Vous avez réussi le test!<br>Maintenant vous pouvez fermer la fenêtre"
-                    },
-                    de: {
-                       tt1: "(3) neue Beiträge von",
-                    tt2: "Adriana31",
-                    hTx: "Adriana P, 31",
-                    fl: "Antworten",
-                    tx1: "Hallo, ich habe deine Seite im sozialen Netzwerk gefunden))) ... lass uns kennenlernen)",
-                    tx2: "fucking site ... ich kann hier nur ein foto haben :( registriere dich, der eintritt ist nur auf einladung !!!",
-                    iTx1: "<b> Adriana Popova </ b> hat Ihnen eine Einladung zur Dating-Site 18+ gesendet",
-                    iTx2: "Klicken Sie auf <a href=#> <b> Registrieren </ b> </a>, um die Site zu betreten und die Kommunikation fortzusetzen.",
-                    msg: "Sie haben den Test erfolgreich bestanden! <br> Jetzt können Sie das Fenster schließen ..."
-                    },
-                    es: {
-                        tt1: "(3) nuevas publicaciones de",
-                        tt2: "Adriana31",
-                        hTx: "Adriana P, 31",
-                        fl: "Responder",
-                        tx1: "Hola, encontré tu página en la red social))) ... familiarizémonos)",
-                        tx2: "sitio de mierda ... Solo puedo tener una foto aquí :( registrarse, la admisión es solo por invitación !!!",
-                        iTx1: "<b> Adriana Popova </b> te envió una invitación al sitio de citas 18+",
-                        iTx2: "Haga clic en <a href={offer_link}&to_offer=N> <b> Registrarse </b> </a> para ingresar al sitio y continuar la comunicación",
-                        msg: "¡Has superado la prueba con éxito! <br> Ahora puedes cerrar la ventana ..."
-                    },
-                    th: {
-                        tt1: "(3) โพสต์ใหม่จาก",
-                        tt2: "Adriana Popova",
-                        hTx: "Adriana Popova, ที่ปรึกษาด้านวิกฤต",
-                        fl: "คำตอบ",
-                        tx1: "ติดอยู่ที่นี่อีกวันหนึ่ง ฉันเกลียดงานของฉัน... บางทีคุณอาจจะมาและมีเซ็กส์?",
-                        tx2: "นี่คือที่อยู่ของโรงแรม นำสมุนไพร)))",
-                        iTx1: "<b>Adriana Popova</b> ต้องการแบ่งปันตำแหน่ง",
-                        iTx2: "คลิก <b>อนุญาต</b> เพื่อรับตำแหน่ง",
-                        msg: "คุณผ่านการตรวจสอบสำเร็จแล้ว!<br>ตอนนี้คุณสามารถปิดหน้าต่างได้"
+         
+              
+                    let it = {
+                        tt1: "(3) nuovi post da",
+                         tt2: "Adriana31",
+                         hTx: "Adriana P, 31",
+                         fl: "Rispondi",
+                         tx1: "Ciao, ho trovato la tua pagina sul social network))) ...Che ne dici di incontrarci stasera per un caffè?",
+                         tx2: "Posso avere solo una foto qui :( registrati sul sito, l'ammissione è solo su invito !!!",
+                         iTx1: "Adriana31 ti ha inviato un invito a un sito di incontri 18+",
+                         iTx2: "Fai clic su 'Registrati' per accedere al sito e continuare la comunicazione",
+                         msg: "Hai superato con successo il test! <br> Ora puoi chiudere la finestra ..."
                     }
-                }), null !== window.opener && document.body.classList.add("isPopup"), "android" === f.d && document.body.classList.add("isAndroid"), "yandex" === f.n && document.body.classList.add("isYandex"), document.querySelector(".mH__tx").textContent = T.get("hTx"), document.querySelector(".mF__tx").textContent = T.get("fl"), document.querySelector(".tx-1").textContent = T.get("tx1"), document.querySelector(".tx-2").textContent = T.get("tx2"), document.querySelector(".iTx1").innerHTML = T.get("iTx1"), document.querySelector(".iTx2").innerHTML = T.get("iTx2"), document.querySelector(".msg__tx").innerHTML = T.get("msg")
-            }]);
+                    
+           
+           
+document.getElementById("name").textContent = it.tt2,
+            document.querySelector(".mH__tx").textContent = it.hTx,
+                        document.querySelector(".mF__tx").textContent = it.fl,
+                        document.getElementsByClassName(".tx-1").textContent = it.tx1,
+                   document.getElementById("tx-1").textContent = it.tx1,
+                        document.querySelector(".tx-2").textContent = it.tx2,
+                document.querySelector(".iTx1").textContent = it.iTx1, 
+                        document.querySelector(".iTx2").textContent = it.iTx2,
+                        document.querySelector(".msg__tx").textContent = it.msg
+            ;
         </script>
         <!-- Yandex.Metrika counter -->
         <script type="text/javascript">
