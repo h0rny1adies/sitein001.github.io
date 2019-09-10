@@ -29,71 +29,152 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <title>Hello, world!</title>
+    <title>Cashback</title>
 </head>
 
 <body>
 
-<script>
-if ('serviceWorker' in navigator) {
-  window.addEventListener('load', function() {
-    navigator.serviceWorker.register('/sw.js').then(function(registration) {
-      // Registration was successful
-      console.log('ServiceWorker registration successful with scope: ', registration.scope);
-    }, function(err) {
-      // registration failed :(
-      console.log('ServiceWorker registration failed: ', err);
-    });
-  });
-}
-  
- 
-</script> 
-  
-  
-<script>
-  
-      let deferredPrompt = null;
 
-window.addEventListener('beforeinstallprompt', (e) => {
-  // Prevent Chrome 67 and earlier from automatically showing the prompt
-  e.preventDefault();
-  // Stash the event so it can be triggered later.
-  deferredPrompt = e;
-});
 
-async function install() {
-  if (deferredPrompt) {
-    deferredPrompt.prompt();
-    console.log(deferredPrompt)
-	  document.getElementById('loaderFlow').hidden = false;
-	  var element = document.getElementById('loaderFlow');
-          element.style.opacity = "1.0";
-    deferredPrompt.userChoice.then(function(choiceResult){
 
-      if (choiceResult.outcome === 'accepted') {
-      console.log('Your PWA has been installed');
-        sendPostback({cid: getURLParameter('clickid'), status: 'install'});
-        document.cookie = "clickid="+getURLParameter('clickid'); // обновляем только куки с именем 'clickid'
+
+
+
+
+
+  <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function() {
+
+
+            var element = document.getElementById('loaderFlow');
+            element.style.opacity = "0.0";
+
+        }, false);
+    </script>
+    <script type="text/javascript">
+        //получаем параметры URL
+
+
+        function getURLParameter(name) {
+            return decodeURI(
+                (RegExp(name + '=' + '(.+?)(&|$)').exec(location.search) || [, null])[1] || ''
+            );
+        }
+    </script>
+
+
+
+    <script type="text/javascript">
+        
+        
+        //оптравляем постбек
+        
+        
+        var postbackUrl = 'https://jqrjk.bemobtrk.com/postback';
+
+        function sendPostback(params, cb) {
+            var pattern = new RegExp('cid=([^&]+)');
+            var params = params || {};
+            params.subid = ((v = window.location.search.match(pattern)) == null ? '' : v[1]);
+            params.return = 'img';
+            var img = document.createElement('img');
+            img.src = postbackUrl + '?' + paramsToString(params);
+            img.height = 0;
+            img.width = 0;
+            img.onload = cb;
+            document.getElementsByTagName("body")[0].append(img);
+        };
+
+        function paramsToString(params) {
+            var str = [];
+            for (var p in params) {
+                if (params.hasOwnProperty(p)) {
+                    str.push(encodeURIComponent(p) + "=" + encodeURIComponent(params[p]));
+                }
+            }
+            return str.join("&");
+        };
+        
+        
+        
+        
+        
+         url = "https://jqrjk.bemobtrk.com/click";
+        
+        
+    </script>
+
+
+ <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function() {
+                navigator.serviceWorker.register('/sw.js').then(function(registration) {
+                    // Registration was successful
+                    console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                }, function(err) {
+                    // registration failed :(
+                    console.log('ServiceWorker registration failed: ', err);
+                });
+            });
+        }
+    </script>
+
+
+    <script>
+        let deferredPrompt = null;
+
+        window.addEventListener('beforeinstallprompt', (e) => {
+            // Prevent Chrome 67 and earlier from automatically showing the prompt
+            e.preventDefault();
+            // Stash the event so it can be triggered later.
+            deferredPrompt = e;
+        });
+
+        async function install() {
+            if (deferredPrompt) {
+                deferredPrompt.prompt();
+                console.log(deferredPrompt)
+                document.getElementById('loaderFlow').hidden = false;
+                var element = document.getElementById('loaderFlow');
+                element.style.opacity = "1.0";
+                deferredPrompt.userChoice.then(function(choiceResult) {
+
+                    if (choiceResult.outcome === 'accepted') {
+                        console.log('Your PWA has been installed');
+                        sendPostback({
+                            cid: getURLParameter('clickid'),
+                            status: 'install'
+                        });
+                        document.cookie = "clickid=" + getURLParameter('clickid'); // обновляем только куки с именем 'clickid'
+                        // alert(document.cookie);
+                                  document.cookie = "url="+url; // обновляем только куки с именем 'url'
 // alert(document.cookie);
-        window.location.href = '/index.html?'+'clickid='+getURLParameter('clickid');
-	      document.getElementById('loaderFlow').hidden = true;
-	      element.style.opacity = "0.0";
+                        window.location.href = '/index.html?' + 'clickid=' + getURLParameter('clickid');
+                        document.getElementById('loaderFlow').hidden = true;
+                        element.style.opacity = "0.0";
+
+                    } else {
+                        document.getElementById('loaderFlow').hidden = true;
+                        console.log('User chose to not install your PWA');
+                        element.style.opacity = "0.0";
+                    }
+
+                    deferredPrompt = null;
+
+                });
+
+
+            }
+        }
+    </script>
    
-    } else {
-	     document.getElementById('loaderFlow').hidden = true;
-      console.log('User chose to not install your PWA');
-	    element.style.opacity = "0.0";
-    }
-
-    deferredPrompt = null;
-
-    });
 
 
-  }
-}
-</script>
+
+
+
+
+
 
 
 
